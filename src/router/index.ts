@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import AdminMusic from '../views/admin/AdminMusic.vue'
 import AdminSentence from '../views/admin/AdminSentence.vue'
@@ -6,7 +6,7 @@ import Game from '../views/Game.vue'
 import DemoAlignment from '../views/DemoAlignment.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     {
       path: '/',

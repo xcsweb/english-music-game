@@ -44,8 +44,13 @@ onMounted(() => {
     return
   }
 
+  let audioUrl = music.value.audioUrl
+  if (audioUrl.startsWith('/')) {
+    audioUrl = import.meta.env.BASE_URL + audioUrl.slice(1)
+  }
+
   sound = new Howl({
-    src: [music.value.audioUrl],
+    src: [audioUrl],
     html5: true,
     onload: () => {
       if (sound) {

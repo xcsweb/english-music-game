@@ -227,9 +227,12 @@ onMounted(() => {
   }
 
   // Removed ?cb suffix as we use local files now
-  const audioUrl = music.value.audioUrl
+    let audioUrl = music.value.audioUrl
+    if (audioUrl.startsWith('/')) {
+      audioUrl = import.meta.env.BASE_URL + audioUrl.slice(1)
+    }
 
-  const sprites: Record<string, [number, number]> = {}
+    const sprites: Record<string, [number, number]> = {}
   sentences.value.forEach((s, index) => {
     sprites[`segment_${index}`] = [s.startTime * 1000, (s.endTime - s.startTime) * 1000]
   })
