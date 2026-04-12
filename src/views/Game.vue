@@ -21,9 +21,18 @@
         <button type="button" @click="router.push('/')" class="mt-6 px-8 py-3 bg-gray-800 border border-red-500/50 rounded-xl hover:bg-gray-700 transition-all">Go Back</button>
       </div>
       
-      <div v-else-if="!isAudioLoaded" class="flex flex-col items-center">
-        <div class="w-12 h-12 rounded-full border-4 border-gray-700 border-t-cyan-500 animate-spin mb-4"></div>
-        <p class="text-cyan-400 animate-pulse font-medium">Loading high-quality audio...</p>
+      <div v-else-if="!isAudioLoaded" class="flex flex-col items-center w-full max-w-sm px-4">
+        <div class="w-full bg-gray-800 rounded-full h-3 mb-4 overflow-hidden border border-gray-700/50 shadow-inner">
+          <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-full rounded-full transition-all duration-200 ease-out"
+               :style="{ width: loadingPhase === 'decoding' ? '100%' : `${loadingProgress}%` }">
+          </div>
+        </div>
+        <p class="text-cyan-400 font-medium mb-2 text-sm sm:text-base">
+          {{ loadingPhase === 'decoding' ? '音频解压中...' : `正在下载高质量音频 (${loadingProgress}%)...` }}
+        </p>
+        <p class="text-gray-400 text-xs sm:text-sm text-center">
+          为了保证游戏时能实现无缝的切词播放与绝对零延迟，需要将音频一次性载入内存，请耐心等待。
+        </p>
       </div>
 
       <button type="button" v-else @click="handleStartGame" 
@@ -203,8 +212,10 @@ let buildTimer: number | null = null
 const isTimeoutHandling = ref(false)
 let sound: Howl | null = null
 const isAudioLoaded = ref(false)
-const audioLoadError = ref(false)
-const showStartOverlay = ref(true)
+  const audioLoadError = ref(false)
+  const loadingProgress = ref(0)
+  const loadingPhase = ref<'downloading' | 'decoding' | 'ready'>('downloading')
+  const showStartOverlay = ref(true)
 const isSettingsOpen = ref(false)
 
 interface WordItem {
@@ -220,44 +231,78 @@ const isWrong = ref(false)
 const isSuccess = ref(false)
 
 // Initialize Audio
-onMounted(() => {
-  if (!music.value || !sentences.value.length) return
+onMounted(async () => {
+    if (!music.value || !sentences.value.length) return
 
-  const progress = progressStore.getProgress(musicId)
-  if (progress && progress.currentIndex < sentences.value.length) {
-    currentIndex.value = progress.currentIndex
-  }
+    const progress = progressStore.getProgress(musicId)
+    if (progress && progress.currentIndex < sentences.value.length) {
+      currentIndex.value = progress.currentIndex
+    }
 
-  // Removed ?cb suffix as we use local files now
+    // Removed ?cb suffix as we use local files now
     let audioUrl = music.value.audioUrl
     if (audioUrl.startsWith('/')) {
       audioUrl = import.meta.env.BASE_URL + audioUrl.slice(1)
     }
 
     const sprites: Record<string, [number, number]> = {}
-  sentences.value.forEach((s, index) => {
-    sprites[`segment_${index}`] = [s.startTime * 1000, (s.endTime - s.startTime) * 1000]
-  })
+    sentences.value.forEach((s, index) => {
+      sprites[`segment_${index}`] = [s.startTime * 1000, (s.endTime - s.startTime) * 1000]
+    })
 
-  sound = new Howl({
-    src: [audioUrl],
-    html5: false, // Using Web Audio API for precise sprite seeking
-    format: ['m4a', 'aac', 'mp3'],
-    sprite: sprites,
-    onload: () => {
-      isAudioLoaded.value = true
-    },
-    onloaderror: (_id, err) => {
-      console.error('Audio load error:', err)
+    try {
+      loadingPhase.value = 'downloading'
+      loadingProgress.value = 0
+
+      const blobUrl = await new Promise<string>((resolve, reject) => {
+        const xhr = new XMLHttpRequest()
+        xhr.open('GET', audioUrl, true)
+        xhr.responseType = 'blob'
+        
+        xhr.onprogress = (event) => {
+          if (event.lengthComputable) {
+            loadingProgress.value = Math.floor((event.loaded / event.total) * 100)
+          }
+        }
+        
+        xhr.onload = () => {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            loadingPhase.value = 'decoding'
+            resolve(URL.createObjectURL(xhr.response))
+          } else {
+            reject(new Error(`Failed to load audio: ${xhr.status}`))
+          }
+        }
+        
+        xhr.onerror = () => reject(new Error('Network error'))
+        xhr.send()
+      })
+
+      sound = new Howl({
+        src: [blobUrl],
+        html5: false, // Using Web Audio API for precise sprite seeking
+        format: ['m4a', 'aac', 'mp3'],
+        sprite: sprites,
+        onload: () => {
+          loadingPhase.value = 'ready'
+          isAudioLoaded.value = true
+        },
+        onloaderror: (_id, err) => {
+          console.error('Audio load error:', err)
+          audioLoadError.value = true
+        }
+      })
+
+      // If already loaded from cache
+      if (sound.state() === 'loaded') {
+        loadingPhase.value = 'ready'
+        isAudioLoaded.value = true
+      }
+    } catch (err) {
+      console.error('Audio fetch error:', err)
       audioLoadError.value = true
     }
   })
-
-  // If already loaded from cache
-  if (sound.state() === 'loaded') {
-    isAudioLoaded.value = true
-  }
-})
 
 const handleStartGame = () => {
   showStartOverlay.value = false
