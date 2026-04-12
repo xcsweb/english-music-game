@@ -49,6 +49,22 @@ const displayedMusics = computed(() => {
   return result
 })
 
+const getHighResCoverUrl = (url: string) => {
+  if (!url) return url
+  // Meting API often redirects to NetEase with a size parameter like ?param=300y300
+  // By appending our own parameter, we can sometimes override it, or at least try to request a larger size
+  // If it's a direct NetEase URL, we can replace the param.
+  // Since it's a 302 redirect from injahow.cn, we can't easily manipulate the final URL here without fetching it first.
+  // However, we can try appending &pic_size=800 (if the API supports it) or just use it as is if we can't change it.
+  // Another trick: some APIs support &size=800
+  if (url.includes('api.injahow.cn/meting')) {
+    return url + '&size=800'
+  }
+  if (url.includes('?param=')) {
+    return url.replace(/\?param=\d+[yx]\d+/, '?param=800y800')
+  }
+  return url
+}
 const getDifficultyLabel = (difficulty: string) => {
   switch (difficulty) {
     case 'easy': return '简单'
@@ -183,12 +199,12 @@ const playMusic = (id: string) => {
           >
             <div class="aspect-[4/5] sm:aspect-square relative w-full h-full">
               <img
-                v-if="music.coverUrl"
-                :src="music.coverUrl"
-                :alt="music.title"
-                @error="handleImageError"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+                  v-if="music.coverUrl"
+                  :src="getHighResCoverUrl(music.coverUrl)"
+                  :alt="music.title"
+                  @error="handleImageError"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
               <div v-else class="w-full h-full flex items-center justify-center text-gray-500 bg-gray-800">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
