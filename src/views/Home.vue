@@ -1,0 +1,247 @@
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+import { useMusicStore } from '../stores/music'
+import { useProgressStore } from '../stores/progress'
+import { useRouter } from 'vue-router'
+import SettingsModal from '../components/SettingsModal.vue'
+
+const musicStore = useMusicStore()
+const progressStore = useProgressStore()
+const router = useRouter()
+
+const isSettingsOpen = ref(false)
+const difficultyFilter = ref('all') // 'all', 'easy', 'medium', 'hard'
+const sortOption = ref('recently_played') // 'recently_played', 'title_az', 'difficulty'
+
+const displayedMusics = computed(() => {
+  let result = [...musicStore.musics]
+
+  // Filter
+  if (difficultyFilter.value !== 'all') {
+    result = result.filter(m => m.difficulty === difficultyFilter.value)
+  }
+
+  // Sort
+  result.sort((a, b) => {
+    if (sortOption.value === 'recently_played') {
+      const pA = progressStore.getProgress(a.id)?.lastPlayed || 0
+      const pB = progressStore.getProgress(b.id)?.lastPlayed || 0
+      return pB - pA // Descending
+    } else if (sortOption.value === 'title_az') {
+      return a.title.localeCompare(b.title)
+    } else if (sortOption.value === 'difficulty') {
+      const diffOrder: Record<string, number> = { 'easy': 1, 'medium': 2, 'hard': 3 }
+      const diffA = diffOrder[a.difficulty] || 99
+      const diffB = diffOrder[b.difficulty] || 99
+      return diffA - diffB
+    }
+    return 0
+  })
+
+  return result
+})
+
+const getDifficultyColor = (difficulty: string) => {
+  switch (difficulty) {
+    case 'easy':
+      return 'bg-green-500/20 text-green-400 border-green-500/30'
+    case 'medium':
+      return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
+    case 'hard':
+      return 'bg-red-500/20 text-red-400 border-red-500/30'
+    default:
+      return 'bg-gray-500/20 text-gray-400 border-gray-500/30'
+  }
+}
+
+const getDifficultyLabel = (difficulty: string) => {
+  switch (difficulty) {
+    case 'easy': return '简单'
+    case 'medium': return '中等'
+    case 'hard': return '困难'
+    default: return '未知'
+  }
+}
+
+const playMusic = (id: string) => {
+  router.push(`/game/${id}`)
+}
+</script>
+
+<template>
+  <div class="min-h-screen bg-gray-900 text-gray-100 p-4 sm:p-6 flex flex-col">
+    <div class="w-full mx-auto">
+      <header class="mb-8 flex justify-between items-center relative">
+          <div class="absolute -top-10 -left-10 w-32 h-32 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute top-0 right-0 w-32 h-32 bg-fuchsia-500/20 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="relative z-10">
+            <h1 class="text-3xl font-extrabold bg-gradient-to-r from-cyan-400 to-fuchsia-500 bg-clip-text text-transparent mb-1 drop-shadow-[0_0_15px_rgba(34,211,238,0.3)]">
+              Neon English
+            </h1>
+            <p class="text-gray-400 text-xs sm:text-sm">Tap a song to start the challenge</p>
+          </div>
+          
+          <div class="flex items-center gap-3 relative z-10">
+            <router-link
+              to="/demo-alignment"
+              class="p-2 rounded-xl bg-gradient-to-r from-purple-600/80 to-pink-600/80 border border-pink-500/50 hover:from-purple-500 hover:to-pink-500 transition-all text-sm shadow-[0_0_10px_rgba(236,72,153,0.5)] backdrop-blur-sm group flex items-center gap-2"
+              title="Test Alignment Demo"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>
+              <span class="text-white font-medium hidden sm:inline">Demo</span>
+            </router-link>
+
+            <router-link
+              to="/admin"
+              class="p-2 rounded-xl bg-gray-800/80 border border-gray-700/50 hover:bg-gray-700 hover:border-cyan-500/50 transition-all text-sm shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-sm group"
+              title="Admin"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-hover:text-cyan-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h-8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </router-link>
+
+            <button
+              @click="isSettingsOpen = true"
+              class="p-2 rounded-xl bg-gray-800/80 border border-gray-700/50 hover:bg-gray-700 hover:border-cyan-500/50 transition-all text-sm shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-sm group"
+              title="Settings"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-hover:text-cyan-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </button>
+          </div>
+        </header>
+
+      <div v-if="musicStore.musics.length === 0" class="text-center py-20 bg-gray-800/40 rounded-3xl border border-gray-700/50 backdrop-blur-md relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-fuchsia-500/5 pointer-events-none"></div>
+        <div class="text-gray-400 mb-6 text-lg relative z-10">暂无音乐数据</div>
+        <router-link 
+          to="/admin" 
+          class="relative z-10 inline-block px-8 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-medium transition-all shadow-[0_0_20px_rgba(8,145,178,0.4)] hover:shadow-[0_0_30px_rgba(8,145,178,0.6)]"
+        >
+          前往管理后台添加
+        </router-link>
+      </div>
+
+      <div v-else class="flex flex-col gap-6">
+        <div class="flex flex-col sm:flex-row gap-4 justify-between items-center z-10 relative">
+          <!-- Difficulty Filter -->
+          <div class="flex items-center gap-2 bg-gray-800/80 p-1.5 rounded-xl border border-gray-700/50 backdrop-blur-sm shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+            <button 
+              @click="difficultyFilter = 'all'"
+              class="px-3 py-1.5 text-xs sm:text-sm rounded-lg font-medium transition-all"
+              :class="difficultyFilter === 'all' ? 'bg-gray-700 text-white shadow-md' : 'text-gray-400 hover:text-gray-200 hover:bg-gray-700/50'"
+            >
+              All
+            </button>
+            <button 
+              @click="difficultyFilter = 'easy'"
+              class="px-3 py-1.5 text-xs sm:text-sm rounded-lg font-medium transition-all"
+              :class="difficultyFilter === 'easy' ? 'bg-green-500/20 text-green-400 shadow-md border border-green-500/30' : 'text-gray-400 hover:text-green-400 hover:bg-green-500/10'"
+            >
+              Easy
+            </button>
+            <button 
+              @click="difficultyFilter = 'medium'"
+              class="px-3 py-1.5 text-xs sm:text-sm rounded-lg font-medium transition-all"
+              :class="difficultyFilter === 'medium' ? 'bg-yellow-500/20 text-yellow-400 shadow-md border border-yellow-500/30' : 'text-gray-400 hover:text-yellow-400 hover:bg-yellow-500/10'"
+            >
+              Medium
+            </button>
+            <button 
+              @click="difficultyFilter = 'hard'"
+              class="px-3 py-1.5 text-xs sm:text-sm rounded-lg font-medium transition-all"
+              :class="difficultyFilter === 'hard' ? 'bg-red-500/20 text-red-400 shadow-md border border-red-500/30' : 'text-gray-400 hover:text-red-400 hover:bg-red-500/10'"
+            >
+              Hard
+            </button>
+          </div>
+
+          <!-- Sort Dropdown -->
+          <div class="relative w-full sm:w-auto">
+            <select 
+              v-model="sortOption"
+              class="w-full sm:w-48 appearance-none bg-gray-800/80 border border-gray-700/50 text-gray-200 text-sm rounded-xl px-4 py-2.5 pr-8 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 backdrop-blur-sm shadow-[0_0_10px_rgba(0,0,0,0.5)] cursor-pointer"
+            >
+              <option value="recently_played">Recently Played</option>
+              <option value="title_az">Title A-Z</option>
+              <option value="difficulty">Difficulty</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 relative z-10">
+          <div 
+            v-for="music in displayedMusics" 
+          :key="music.id"
+          @click="playMusic(music.id)"
+          class="group cursor-pointer relative bg-gray-800/60 rounded-2xl overflow-hidden border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:-translate-y-1 backdrop-blur-sm"
+        >
+          <div class="aspect-square relative overflow-hidden bg-gray-900">
+            <img 
+              v-if="music.coverUrl" 
+              :src="music.coverUrl" 
+              :alt="music.title"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+            />
+            <div v-else class="w-full h-full flex items-center justify-center text-gray-600 bg-gradient-to-br from-gray-800 to-gray-900">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+              </svg>
+            </div>
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80"></div>
+            
+            <div class="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+              <div class="w-10 h-10 rounded-full bg-cyan-500 text-white flex items-center justify-center shadow-[0_0_15px_rgba(34,211,238,0.6)]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <div class="flex flex-col gap-1 mb-1">
+              <h3 class="text-sm font-bold text-gray-100 truncate pr-2 group-hover:text-cyan-400 transition-colors" :title="music.title">
+                {{ music.title }}
+              </h3>
+              <div class="flex items-center gap-2">
+                <span 
+                  class="inline-block self-start px-2 py-0.5 rounded text-[10px] font-medium border"
+                  :class="getDifficultyColor(music.difficulty)"
+                >
+                  {{ getDifficultyLabel(music.difficulty) }}
+                </span>
+                <span v-if="progressStore.getProgress(music.id)" class="text-[10px] text-cyan-400/80 font-medium">
+                  Progress: {{ progressStore.getProgress(music.id)?.currentIndex }} / {{ progressStore.getProgress(music.id)?.total }}
+                </span>
+              </div>
+            </div>
+            <div class="flex justify-between items-center mt-2">
+              <p class="text-xs text-gray-500 truncate" :title="music.artist">
+                {{ music.artist }}
+              </p>
+              <span class="text-[11px] font-bold px-2 py-1 rounded-md"
+                    :class="progressStore.getProgress(music.id) ? 'bg-cyan-500/20 text-cyan-400' : 'bg-fuchsia-500/20 text-fuchsia-400'">
+                {{ progressStore.getProgress(music.id) ? 'RESUME' : 'START' }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    
+    <SettingsModal :is-open="isSettingsOpen" @close="isSettingsOpen = false" />
+  </div>
+</template>

@@ -1,0 +1,8 @@
+- [x] `useProgressStore` 成功创建并正确使用了持久化插件保存到了 LocalStorage。
+- [x] `Game.vue` 能够在重新进入某首歌时准确恢复到上一次离开的歌词位置。
+- [x] `Game.vue` 在歌曲学习全部完成（Victory）时，成功清除了该歌曲的学习进度。
+- [x] `Home.vue` 成功添加了“难度筛选”组件（All, Easy, Medium, Hard），并能够准确过滤歌曲。
+- [x] `Home.vue` 成功添加了“排序方式”组件（Recently Played, Title, Difficulty），并支持动态调整列表。
+- [x] `Home.vue` 歌曲卡片能够正确读取并显示该歌曲当前的进度数值（如 "5 / 40"），并将按钮替换为 "Resume" 或者 "Start"。
+- [x] `npm run build` 和 `vue-tsc --noEmit` 均无 TypeScript 类型报错。
+- [x] 所有单元测试和 Playwright E2E 测试全部顺利通过。
