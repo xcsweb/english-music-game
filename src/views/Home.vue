@@ -9,6 +9,14 @@ const musicStore = useMusicStore()
 const progressStore = useProgressStore()
 const router = useRouter()
 
+const handleImageError = (e: Event) => {
+  const target = e.target as HTMLImageElement
+  // If the image fails to load, simply hide it. The background color and icon from v-else will NOT magically show up,
+  // but hiding the broken image is better than showing a broken icon. A better approach is to change its src to a transparent pixel
+  // or a local fallback image, but for now we just hide the broken <img> element to reveal the dark background.
+  target.style.display = 'none'
+}
+
 const isSettingsOpen = ref(false)
 const difficultyFilter = ref('all') // 'all', 'easy', 'medium', 'hard'
 const sortOption = ref('recently_played') // 'recently_played', 'title_az', 'difficulty'
@@ -179,62 +187,59 @@ const playMusic = (id: string) => {
           </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 relative z-10">
-          <div 
-            v-for="music in displayedMusics" 
-          :key="music.id"
-          @click="playMusic(music.id)"
-          class="group cursor-pointer relative bg-gray-800/60 rounded-2xl overflow-hidden border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:-translate-y-1 backdrop-blur-sm"
-        >
-          <div class="aspect-square relative overflow-hidden bg-gray-900">
-            <img 
-              v-if="music.coverUrl" 
-              :src="music.coverUrl" 
-              :alt="music.title"
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100"
-            />
-            <div v-else class="w-full h-full flex items-center justify-center text-gray-600 bg-gradient-to-br from-gray-800 to-gray-900">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
-              </svg>
-            </div>
-            
-            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-80"></div>
-            
-            <div class="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-              <div class="w-10 h-10 rounded-full bg-cyan-500 text-white flex items-center justify-center shadow-[0_0_15px_rgba(34,211,238,0.6)]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 relative z-10">
+          <div
+            v-for="music in displayedMusics"
+            :key="music.id"
+            @click="playMusic(music.id)"
+            class="group cursor-pointer relative rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.25)] hover:-translate-y-2 transition-all duration-500 bg-gray-900"
+          >
+            <div class="aspect-[4/5] sm:aspect-square relative w-full h-full">
+              <img
+                v-if="music.coverUrl"
+                :src="music.coverUrl"
+                :alt="music.title"
+                @error="handleImageError"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div v-else class="w-full h-full flex items-center justify-center text-gray-500 bg-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                </svg>
+              </div>
+              
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 flex flex-col justify-end z-10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                <div class="flex items-center gap-2 mb-2 flex-wrap">
+                  <span 
+                    class="px-2 py-0.5 rounded-full text-[10px] font-semibold backdrop-blur-md border uppercase tracking-wider"
+                    :class="{
+                      'bg-green-500/20 text-green-300 border-green-500/30': music.difficulty === 'easy',
+                      'bg-yellow-500/20 text-yellow-300 border-yellow-500/30': music.difficulty === 'medium',
+                      'bg-red-500/20 text-red-300 border-red-500/30': music.difficulty === 'hard'
+                    }"
+                  >
+                    {{ getDifficultyLabel(music.difficulty) }}
+                  </span>
+                  <span v-if="progressStore.getProgress(music.id)" class="text-[10px] text-white/90 font-medium bg-black/40 px-2 py-0.5 rounded-full backdrop-blur-md border border-white/10">
+                    {{ progressStore.getProgress(music.id)?.currentIndex }} / {{ progressStore.getProgress(music.id)?.total }}
+                  </span>
+                </div>
+
+                <h3 class="text-base sm:text-xl font-bold text-white tracking-tight leading-tight mb-0.5 line-clamp-2 drop-shadow-md">
+                  {{ music.title }}
+                </h3>
+                <p class="text-xs sm:text-sm text-gray-300 truncate drop-shadow-md">
+                  {{ music.artist }}
+                </p>
+              </div>
+
+              <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100 shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-0.5" viewBox="0 0 20 20" fill="currentColor">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
                 </svg>
               </div>
-            </div>
-          </div>
-
-          <div class="p-3">
-            <div class="flex flex-col gap-1 mb-1">
-              <h3 class="text-sm font-bold text-gray-100 truncate pr-2 group-hover:text-cyan-400 transition-colors" :title="music.title">
-                {{ music.title }}
-              </h3>
-              <div class="flex items-center gap-2">
-                <span 
-                  class="inline-block self-start px-2 py-0.5 rounded text-[10px] font-medium border"
-                  :class="getDifficultyColor(music.difficulty)"
-                >
-                  {{ getDifficultyLabel(music.difficulty) }}
-                </span>
-                <span v-if="progressStore.getProgress(music.id)" class="text-[10px] text-cyan-400/80 font-medium">
-                  进度: {{ progressStore.getProgress(music.id)?.currentIndex }} / {{ progressStore.getProgress(music.id)?.total }}
-                </span>
-              </div>
-            </div>
-            <div class="flex justify-between items-center mt-2">
-              <p class="text-xs text-gray-500 truncate" :title="music.artist">
-                {{ music.artist }}
-              </p>
-              <span class="text-[11px] font-bold px-2 py-1 rounded-md"
-                    :class="progressStore.getProgress(music.id) ? 'bg-cyan-500/20 text-cyan-400' : 'bg-fuchsia-500/20 text-fuchsia-400'">
-                {{ progressStore.getProgress(music.id) ? '继续' : '开始' }}
-              </span>
             </div>
           </div>
         </div>
