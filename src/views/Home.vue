@@ -131,45 +131,45 @@ const playMusic = (id: string) => {
         <div class="flex flex-col sm:flex-row gap-4 justify-between items-center z-10 relative">
           <!-- Difficulty Filter -->
           <div class="flex items-center gap-2 bg-gray-800/80 p-1.5 rounded-xl border border-gray-700/50 backdrop-blur-sm shadow-[0_0_10px_rgba(0,0,0,0.5)]">
-            <button 
+            <button
               @click="difficultyFilter = 'all'"
               class="px-3 py-1.5 text-xs sm:text-sm rounded-lg font-medium transition-all"
               :class="difficultyFilter === 'all' ? 'bg-gray-700 text-white shadow-md' : 'text-gray-400 hover:text-gray-200 hover:bg-gray-700/50'"
             >
-              All
+              全部
             </button>
-            <button 
+            <button
               @click="difficultyFilter = 'easy'"
               class="px-3 py-1.5 text-xs sm:text-sm rounded-lg font-medium transition-all"
               :class="difficultyFilter === 'easy' ? 'bg-green-500/20 text-green-400 shadow-md border border-green-500/30' : 'text-gray-400 hover:text-green-400 hover:bg-green-500/10'"
             >
-              Easy
+              简单
             </button>
-            <button 
+            <button
               @click="difficultyFilter = 'medium'"
               class="px-3 py-1.5 text-xs sm:text-sm rounded-lg font-medium transition-all"
               :class="difficultyFilter === 'medium' ? 'bg-yellow-500/20 text-yellow-400 shadow-md border border-yellow-500/30' : 'text-gray-400 hover:text-yellow-400 hover:bg-yellow-500/10'"
             >
-              Medium
+              中等
             </button>
-            <button 
+            <button
               @click="difficultyFilter = 'hard'"
               class="px-3 py-1.5 text-xs sm:text-sm rounded-lg font-medium transition-all"
               :class="difficultyFilter === 'hard' ? 'bg-red-500/20 text-red-400 shadow-md border border-red-500/30' : 'text-gray-400 hover:text-red-400 hover:bg-red-500/10'"
             >
-              Hard
+              困难
             </button>
           </div>
 
           <!-- Sort Dropdown -->
           <div class="relative w-full sm:w-auto">
-            <select 
+            <select
               v-model="sortOption"
               class="w-full sm:w-48 appearance-none bg-gray-800/80 border border-gray-700/50 text-gray-200 text-sm rounded-xl px-4 py-2.5 pr-8 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 backdrop-blur-sm shadow-[0_0_10px_rgba(0,0,0,0.5)] cursor-pointer"
             >
-              <option value="recently_played">Recently Played</option>
-              <option value="title_az">Title A-Z</option>
-              <option value="difficulty">Difficulty</option>
+              <option value="recently_played">最近学习</option>
+              <option value="title_az">歌名 (A-Z)</option>
+              <option value="difficulty">难度系数</option>
             </select>
             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
               <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -223,7 +223,7 @@ const playMusic = (id: string) => {
                   {{ getDifficultyLabel(music.difficulty) }}
                 </span>
                 <span v-if="progressStore.getProgress(music.id)" class="text-[10px] text-cyan-400/80 font-medium">
-                  Progress: {{ progressStore.getProgress(music.id)?.currentIndex }} / {{ progressStore.getProgress(music.id)?.total }}
+                  进度: {{ progressStore.getProgress(music.id)?.currentIndex }} / {{ progressStore.getProgress(music.id)?.total }}
                 </span>
               </div>
             </div>
@@ -233,7 +233,7 @@ const playMusic = (id: string) => {
               </p>
               <span class="text-[11px] font-bold px-2 py-1 rounded-md"
                     :class="progressStore.getProgress(music.id) ? 'bg-cyan-500/20 text-cyan-400' : 'bg-fuchsia-500/20 text-fuchsia-400'">
-                {{ progressStore.getProgress(music.id) ? 'RESUME' : 'START' }}
+                {{ progressStore.getProgress(music.id) ? '继续' : '开始' }}
               </span>
             </div>
           </div>
