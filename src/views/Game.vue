@@ -176,6 +176,8 @@ import { useSettingsStore } from '../stores/settings'
 import { useProgressStore } from '../stores/progress'
 import SettingsModal from '../components/SettingsModal.vue'
 
+let fadeOutTimer: number | null = null;
+
 const route = useRoute()
 const router = useRouter()
 const musicStore = useMusicStore()
@@ -324,24 +326,58 @@ const playAudioSegment = (): Promise<void> => {
       resolve()
       return
     }
-    
+
     sound.stop()
-    
+    if (fadeOutTimer) {
+      clearTimeout(fadeOutTimer)
+      fadeOutTimer = null
+    }
+
     const spriteId = `segment_${currentIndex.value}`
-    
     isPlaying.value = true
     console.log(`playAudioSegment: playing sprite ${spriteId} from ${currentSentence.value.startTime} to ${currentSentence.value.endTime}`)
-    const id = sound.play(spriteId)
     
+    // 计算当前片段的总时长 (毫秒)
+    const duration = (currentSentence.value.endTime - currentSentence.value.startTime) * 1000
+    // 定义淡入和淡出的持续时间
+    const fadeDuration = 300 
+    
+    const id = sound.play(spriteId)
+
+    // 淡入逻辑：如果片段足够长，则执行淡入
+    if (duration > fadeDuration) {
+      sound.fade(0, 1, fadeDuration, id)
+    } else {
+      sound.volume(1, id) // 片段太短直接满音量
+    }
+
+    // 淡出逻辑：计算接近结束的时间触发淡出
+    if (duration > fadeDuration * 2) {
+      const timeToFadeOut = duration - fadeDuration
+      fadeOutTimer = window.setTimeout(() => {
+        if (isPlaying.value) {
+          sound?.fade(1, 0, fadeDuration, id)
+        }
+      }, timeToFadeOut)
+    }
+
     sound.once('end', () => {
       console.log(`playAudioSegment: ended ${spriteId}`)
       isPlaying.value = false
+      if (fadeOutTimer) {
+        clearTimeout(fadeOutTimer)
+        fadeOutTimer = null
+      }
       resolve()
     }, id)
-    
+
     sound.once('stop', () => {
       console.log(`playAudioSegment: stopped ${spriteId}`)
       isPlaying.value = false
+      if (fadeOutTimer) {
+        clearTimeout(fadeOutTimer)
+        fadeOutTimer = null
+      }
       resolve()
     }, id)
   })
