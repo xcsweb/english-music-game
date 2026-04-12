@@ -721,6 +721,30 @@ export const defaultMusics: Music[] = [
     "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951172763985199",
     "audioUrl": "/audio/m100.mp3",
     "difficulty": "hard"
+  },
+  {
+    "id": "m101",
+    "title": "The Wheels on the Bus",
+    "artist": "Super Simple Songs",
+    "coverUrl": "https://p1.music.126.net/Lw9T9rR7y6ZgqB5c0z3B9Q==/109951163335541604.jpg",
+    "audioUrl": "/audio/m101.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m102",
+    "title": "Old MacDonald Had a Farm",
+    "artist": "Children's Song",
+    "coverUrl": "https://p1.music.126.net/pZ-z6X6b_X6X6b_X6X6b_Q==/109951163335541604.jpg",
+    "audioUrl": "/audio/m102.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m103",
+    "title": "Twinkle Twinkle Little Star",
+    "artist": "Jane Taylor",
+    "coverUrl": "https://p1.music.126.net/Lw9T9rR7y6ZgqB5c0z3B9Q==/109951163335541604.jpg",
+    "audioUrl": "/audio/m103.mp3",
+    "difficulty": "easy"
   }
 ]
 
@@ -37021,5 +37045,140 @@ export const defaultSentences: Sentence[] = [
     "distractors": "",
     "startTime": 181.478,
     "endTime": 186.478
+  },
+  {
+    "id": "s4609",
+    "musicId": "m101",
+    "text": "The wheels on the bus go round and round,",
+    "translation": "公共汽车的轮子转呀转，",
+    "distractors": "",
+    "startTime": 0,
+    "endTime": 3
+  },
+  {
+    "id": "s4610",
+    "musicId": "m101",
+    "text": "Round and round, round and round.",
+    "translation": "转呀转，转呀转。",
+    "distractors": "",
+    "startTime": 3,
+    "endTime": 6
+  },
+  {
+    "id": "s4611",
+    "musicId": "m101",
+    "text": "The wheels on the bus go round and round,",
+    "translation": "公共汽车的轮子转呀转，",
+    "distractors": "",
+    "startTime": 6,
+    "endTime": 9
+  },
+  {
+    "id": "s4612",
+    "musicId": "m101",
+    "text": "All through the town!",
+    "translation": "穿过整个小镇！",
+    "distractors": "",
+    "startTime": 9,
+    "endTime": 12
+  },
+  {
+    "id": "s4613",
+    "musicId": "m102",
+    "text": "Old MacDonald had a farm, E-I-E-I-O!",
+    "translation": "老麦克唐纳有个农场，咿呀咿呀哟！",
+    "distractors": "",
+    "startTime": 0,
+    "endTime": 4
+  },
+  {
+    "id": "s4614",
+    "musicId": "m102",
+    "text": "And on his farm he had a cow, E-I-E-I-O!",
+    "translation": "在他的农场里他有一头牛，咿呀咿呀哟！",
+    "distractors": "",
+    "startTime": 4,
+    "endTime": 8
+  },
+  {
+    "id": "s4615",
+    "musicId": "m102",
+    "text": "With a moo-moo here and a moo-moo there,",
+    "translation": "这里哞哞，那里哞哞，",
+    "distractors": "",
+    "startTime": 8,
+    "endTime": 12
+  },
+  {
+    "id": "s4616",
+    "musicId": "m102",
+    "text": "Here a moo, there a moo, everywhere a moo-moo,",
+    "translation": "这里哞，那里哞，到处都是哞哞，",
+    "distractors": "",
+    "startTime": 12,
+    "endTime": 16
+  },
+  {
+    "id": "s4617",
+    "musicId": "m102",
+    "text": "Old MacDonald had a farm, E-I-E-I-O!",
+    "translation": "老麦克唐纳有个农场，咿呀咿呀哟！",
+    "distractors": "",
+    "startTime": 16,
+    "endTime": 20
+  },
+  {
+    "id": "s4618",
+    "musicId": "m103",
+    "text": "Twinkle, twinkle, little star,",
+    "translation": "一闪一闪小星星，",
+    "distractors": "",
+    "startTime": 0,
+    "endTime": 4
+  },
+  {
+    "id": "s4619",
+    "musicId": "m103",
+    "text": "How I wonder what you are!",
+    "translation": "我是多么想知道你是什么！",
+    "distractors": "",
+    "startTime": 4,
+    "endTime": 8
+  },
+  {
+    "id": "s4620",
+    "musicId": "m103",
+    "text": "Up above the world so high,",
+    "translation": "高高挂在世界上空，",
+    "distractors": "",
+    "startTime": 8,
+    "endTime": 12
+  },
+  {
+    "id": "s4621",
+    "musicId": "m103",
+    "text": "Like a diamond in the sky.",
+    "translation": "就像天空中的钻石。",
+    "distractors": "",
+    "startTime": 12,
+    "endTime": 16
+  },
+  {
+    "id": "s4622",
+    "musicId": "m103",
+    "text": "Twinkle, twinkle, little star,",
+    "translation": "一闪一闪小星星，",
+    "distractors": "",
+    "startTime": 16,
+    "endTime": 20
+  },
+  {
+    "id": "s4623",
+    "musicId": "m103",
+    "text": "How I wonder what you are!",
+    "translation": "我是多么想知道你是什么！",
+    "distractors": "",
+    "startTime": 20,
+    "endTime": 24
   }
 ]
