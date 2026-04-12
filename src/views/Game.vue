@@ -30,9 +30,12 @@
         <p class="text-cyan-400 font-medium mb-2 text-sm sm:text-base">
           {{ loadingPhase === 'decoding' ? '音频解压中...' : `正在下载高质量音频 (${loadingProgress}%)...` }}
         </p>
-        <p class="text-gray-400 text-xs sm:text-sm text-center">
-          为了保证游戏时能实现无缝的切词播放与绝对零延迟，需要将音频一次性载入内存，请耐心等待。
-        </p>
+        <div class="text-gray-400 text-xs sm:text-sm text-center flex flex-col gap-2">
+          <p>为了保证游戏时能实现无缝的切词播放与绝对零延迟，需要将音频一次性载入内存，请耐心等待。</p>
+          <p v-if="loadingPhase === 'downloading'" class="text-amber-500/80 animate-pulse mt-1">
+            💡 提示：如果下载速度较慢，建议切换至 5G 网络（注意流量消耗）或更快的 Wi-Fi。
+          </p>
+        </div>
       </div>
 
       <button type="button" v-else @click="handleStartGame" 
