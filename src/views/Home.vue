@@ -231,9 +231,8 @@ const playMusic = (id: string) => {
           </div>
         </div>
       </div>
-      </div>
     </div>
-    
+
     <SettingsModal :is-open="isSettingsOpen" @close="isSettingsOpen = false" />
   </div>
 </template>
