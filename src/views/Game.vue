@@ -342,27 +342,34 @@ const clearBuildTimer = () => {
 }
 
 const startSentence = () => {
-  gameState.value = 'memorize'
-  selectedWords.value = []
-  isWrong.value = false
-  isSuccess.value = false
-  isTimeoutHandling.value = false
-  countdown.value = 5
-  
-  progressStore.saveProgress(musicId, currentIndex.value, sentences.value.length)
-
-  playAudioSegment()
-
-  clearTimer()
-  clearBuildTimer()
-  countdownTimer = window.setInterval(() => {
-    countdown.value--
-    if (countdown.value <= 0) {
-      clearTimer()
-      startBuildPhase()
+    gameState.value = 'memorize'
+    selectedWords.value = []
+    isWrong.value = false
+    isSuccess.value = false
+    isTimeoutHandling.value = false
+    
+    // Calculate audio duration in seconds (ceiling) and bound between 5 and 15 seconds
+    if (currentSentence.value) {
+      const audioDuration = Math.ceil(currentSentence.value.endTime - currentSentence.value.startTime)
+      countdown.value = Math.min(Math.max(audioDuration, 5), 15)
+    } else {
+      countdown.value = 5
     }
-  }, 1000)
-}
+
+    progressStore.saveProgress(musicId, currentIndex.value, sentences.value.length)
+
+    playAudioSegment()
+
+    clearTimer()
+    clearBuildTimer()
+    countdownTimer = window.setInterval(() => {
+      countdown.value--
+      if (countdown.value <= 0) {
+        clearTimer()
+        startBuildPhase()
+      }
+    }, 1000)
+  }
 
 const playAudioSegment = (): Promise<void> => {
   return new Promise((resolve) => {
