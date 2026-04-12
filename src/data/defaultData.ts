@@ -745,6 +745,166 @@ export const defaultMusics: Music[] = [
     "coverUrl": "https://p1.music.126.net/Lw9T9rR7y6ZgqB5c0z3B9Q==/109951163335541604.jpg",
     "audioUrl": "/audio/m103.mp3",
     "difficulty": "easy"
+  },
+  {
+    "id": "m104",
+    "title": "送亲歌",
+    "artist": "乌兰图雅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=709184999951567",
+    "audioUrl": "/audio/m104.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m105",
+    "title": "阿爸的草原(父亲节版)",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=2908208257685178",
+    "audioUrl": "/audio/m105.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m106",
+    "title": "火红的萨日朗",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=97856534889298",
+    "audioUrl": "/audio/m106.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m107",
+    "title": "新套马杆",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=573945069738293",
+    "audioUrl": "/audio/m107.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m108",
+    "title": "敖包再相会",
+    "artist": "乌兰托娅/蒙克",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=58274116289188",
+    "audioUrl": "/audio/m108.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m109",
+    "title": "天边的爱人",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=3245758328334031",
+    "audioUrl": "/audio/m109.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m110",
+    "title": "天马",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=573945069738293",
+    "audioUrl": "/audio/m110.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m111",
+    "title": "爱从草原来",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=6031920790257392",
+    "audioUrl": "/audio/m111.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m112",
+    "title": "放歌大草原",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=573945069738293",
+    "audioUrl": "/audio/m112.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m113",
+    "title": "草原之恋",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=26388279083433",
+    "audioUrl": "/audio/m113.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m114",
+    "title": "玫瑰送给有情人",
+    "artist": "乌兰托娅/高进",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=2521180162551324",
+    "audioUrl": "/audio/m114.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m115",
+    "title": "牧人恋歌",
+    "artist": "乌兰托娅/雨禾",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=2521180162551324",
+    "audioUrl": "/audio/m115.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m116",
+    "title": "桃花开满三月天",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=2521180162551324",
+    "audioUrl": "/audio/m116.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m117",
+    "title": "天边",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=126443837212172",
+    "audioUrl": "/audio/m117.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m118",
+    "title": "黑骏马",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=573945069738293",
+    "audioUrl": "/audio/m118.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m119",
+    "title": "草原夜色美",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=126443837212172",
+    "audioUrl": "/audio/m119.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m120",
+    "title": "草原之夜",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=126443837212172",
+    "audioUrl": "/audio/m120.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m121",
+    "title": "蒙古包",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=6644348767855544",
+    "audioUrl": "/audio/m121.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m122",
+    "title": "草原上升起不落的太阳",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=100055558144908",
+    "audioUrl": "/audio/m122.mp3",
+    "difficulty": "easy"
+  },
+  {
+    "id": "m123",
+    "title": "情歌唱到老",
+    "artist": "乌兰托娅",
+    "coverUrl": "https://api.injahow.cn/meting/?server=netease&type=pic&id=2521180162551324",
+    "audioUrl": "/audio/m123.mp3",
+    "difficulty": "easy"
   }
 ]
 
@@ -37180,5 +37340,5999 @@ export const defaultSentences: Sentence[] = [
     "distractors": "",
     "startTime": 20,
     "endTime": 24
+  },
+  {
+    "id": "s4624",
+    "musicId": "m104",
+    "text": "鸿雁展翅飞向南方",
+    "translation": "",
+    "distractors": "",
+    "startTime": 40.85,
+    "endTime": 48.77
+  },
+  {
+    "id": "s4625",
+    "musicId": "m104",
+    "text": "芳草低头躲秋凉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 48.77,
+    "endTime": 56.95
+  },
+  {
+    "id": "s4626",
+    "musicId": "m104",
+    "text": "含泪告别阿爸阿妈",
+    "translation": "",
+    "distractors": "",
+    "startTime": 56.95,
+    "endTime": 65.12
+  },
+  {
+    "id": "s4627",
+    "musicId": "m104",
+    "text": "孩儿出嫁到远方",
+    "translation": "",
+    "distractors": "",
+    "startTime": 65.12,
+    "endTime": 73.24
+  },
+  {
+    "id": "s4628",
+    "musicId": "m104",
+    "text": "云雾缭绕在草原上",
+    "translation": "",
+    "distractors": "",
+    "startTime": 73.24,
+    "endTime": 81.35
+  },
+  {
+    "id": "s4629",
+    "musicId": "m104",
+    "text": "秋风吹来花凄凉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 81.35,
+    "endTime": 89.46
+  },
+  {
+    "id": "s4630",
+    "musicId": "m104",
+    "text": "含泪告别众乡亲",
+    "translation": "",
+    "distractors": "",
+    "startTime": 89.46,
+    "endTime": 97.64
+  },
+  {
+    "id": "s4631",
+    "musicId": "m104",
+    "text": "今日出嫁到他乡",
+    "translation": "",
+    "distractors": "",
+    "startTime": 97.64,
+    "endTime": 138.4
+  },
+  {
+    "id": "s4632",
+    "musicId": "m104",
+    "text": "当年放羊在西山岗",
+    "translation": "",
+    "distractors": "",
+    "startTime": 138.4,
+    "endTime": 146.45
+  },
+  {
+    "id": "s4633",
+    "musicId": "m104",
+    "text": "东暖草场花最香",
+    "translation": "",
+    "distractors": "",
+    "startTime": 146.45,
+    "endTime": 154.56
+  },
+  {
+    "id": "s4634",
+    "musicId": "m104",
+    "text": "家里的奶茶常常醉人",
+    "translation": "",
+    "distractors": "",
+    "startTime": 154.56,
+    "endTime": 162.74
+  },
+  {
+    "id": "s4635",
+    "musicId": "m104",
+    "text": "阿爸阿妈情意长",
+    "translation": "",
+    "distractors": "",
+    "startTime": 162.74,
+    "endTime": 170.91
+  },
+  {
+    "id": "s4636",
+    "musicId": "m104",
+    "text": "男儿送我到远方",
+    "translation": "",
+    "distractors": "",
+    "startTime": 170.91,
+    "endTime": 178.96
+  },
+  {
+    "id": "s4637",
+    "musicId": "m104",
+    "text": "阿爸阿妈保安康",
+    "translation": "",
+    "distractors": "",
+    "startTime": 178.96,
+    "endTime": 187.14
+  },
+  {
+    "id": "s4638",
+    "musicId": "m104",
+    "text": "来世脱生男子汉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 187.14,
+    "endTime": 195.25
+  },
+  {
+    "id": "s4639",
+    "musicId": "m104",
+    "text": "终身陪伴在父老身旁",
+    "translation": "",
+    "distractors": "",
+    "startTime": 195.25,
+    "endTime": 203.49
+  },
+  {
+    "id": "s4640",
+    "musicId": "m104",
+    "text": "男儿送我到远方",
+    "translation": "",
+    "distractors": "",
+    "startTime": 203.49,
+    "endTime": 211.66
+  },
+  {
+    "id": "s4641",
+    "musicId": "m104",
+    "text": "阿爸阿妈保安康",
+    "translation": "",
+    "distractors": "",
+    "startTime": 211.66,
+    "endTime": 219.65
+  },
+  {
+    "id": "s4642",
+    "musicId": "m104",
+    "text": "来世脱生男子汉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 219.65,
+    "endTime": 227.77
+  },
+  {
+    "id": "s4643",
+    "musicId": "m104",
+    "text": "终身陪伴在父老身旁",
+    "translation": "",
+    "distractors": "",
+    "startTime": 227.77,
+    "endTime": 232.77
+  },
+  {
+    "id": "s4644",
+    "musicId": "m105",
+    "text": "（独白：爸爸 如果天堂有电话 请打一个回家）",
+    "translation": "",
+    "distractors": "",
+    "startTime": 0,
+    "endTime": 42.88
+  },
+  {
+    "id": "s4645",
+    "musicId": "m105",
+    "text": "阿爸知道有天边",
+    "translation": "",
+    "distractors": "",
+    "startTime": 42.88,
+    "endTime": 50.92
+  },
+  {
+    "id": "s4646",
+    "musicId": "m105",
+    "text": "他很早离开了草原",
+    "translation": "",
+    "distractors": "",
+    "startTime": 50.92,
+    "endTime": 58.27
+  },
+  {
+    "id": "s4647",
+    "musicId": "m105",
+    "text": "勒勒车的梦想我的童年",
+    "translation": "",
+    "distractors": "",
+    "startTime": 58.27,
+    "endTime": 65.94
+  },
+  {
+    "id": "s4648",
+    "musicId": "m105",
+    "text": "就这样过去了许多年",
+    "translation": "",
+    "distractors": "",
+    "startTime": 65.94,
+    "endTime": 74.84
+  },
+  {
+    "id": "s4649",
+    "musicId": "m105",
+    "text": "我不想回到从前",
+    "translation": "",
+    "distractors": "",
+    "startTime": 74.84,
+    "endTime": 84.51
+  },
+  {
+    "id": "s4650",
+    "musicId": "m105",
+    "text": "阿爸的草原不新鲜",
+    "translation": "",
+    "distractors": "",
+    "startTime": 84.51,
+    "endTime": 93.81
+  },
+  {
+    "id": "s4651",
+    "musicId": "m105",
+    "text": "外面的世界总多变",
+    "translation": "",
+    "distractors": "",
+    "startTime": 93.81,
+    "endTime": 103.04
+  },
+  {
+    "id": "s4652",
+    "musicId": "m105",
+    "text": "就这样过去了许多年",
+    "translation": "",
+    "distractors": "",
+    "startTime": 103.04,
+    "endTime": 113.68
+  },
+  {
+    "id": "s4653",
+    "musicId": "m105",
+    "text": "古老的牧歌天天唱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 113.68,
+    "endTime": 121.91
+  },
+  {
+    "id": "s4654",
+    "musicId": "m105",
+    "text": "唱哑了嗓子话从前",
+    "translation": "",
+    "distractors": "",
+    "startTime": 121.91,
+    "endTime": 129.21
+  },
+  {
+    "id": "s4655",
+    "musicId": "m105",
+    "text": "都市的霓虹少香甜",
+    "translation": "",
+    "distractors": "",
+    "startTime": 129.21,
+    "endTime": 136.63
+  },
+  {
+    "id": "s4656",
+    "musicId": "m105",
+    "text": "走来走去还是阿爸的草原",
+    "translation": "",
+    "distractors": "",
+    "startTime": 136.63,
+    "endTime": 145.55
+  },
+  {
+    "id": "s4657",
+    "musicId": "m105",
+    "text": "~~~~~",
+    "translation": "",
+    "distractors": "",
+    "startTime": 145.55,
+    "endTime": 162.71
+  },
+  {
+    "id": "s4658",
+    "musicId": "m105",
+    "text": "阿爸知道有天边",
+    "translation": "",
+    "distractors": "",
+    "startTime": 162.71,
+    "endTime": 170.15
+  },
+  {
+    "id": "s4659",
+    "musicId": "m105",
+    "text": "他很早离开了草原",
+    "translation": "",
+    "distractors": "",
+    "startTime": 170.15,
+    "endTime": 177.5
+  },
+  {
+    "id": "s4660",
+    "musicId": "m105",
+    "text": "勒勒车的梦想我的童年",
+    "translation": "",
+    "distractors": "",
+    "startTime": 177.5,
+    "endTime": 185.22
+  },
+  {
+    "id": "s4661",
+    "musicId": "m105",
+    "text": "就这样过去了许多年",
+    "translation": "",
+    "distractors": "",
+    "startTime": 185.22,
+    "endTime": 194.32
+  },
+  {
+    "id": "s4662",
+    "musicId": "m105",
+    "text": "自从离开阿爸的草原",
+    "translation": "",
+    "distractors": "",
+    "startTime": 194.32,
+    "endTime": 203.6
+  },
+  {
+    "id": "s4663",
+    "musicId": "m105",
+    "text": "见不到碧水和蓝天",
+    "translation": "",
+    "distractors": "",
+    "startTime": 203.6,
+    "endTime": 212.97
+  },
+  {
+    "id": "s4664",
+    "musicId": "m105",
+    "text": "外面的世界总多变",
+    "translation": "",
+    "distractors": "",
+    "startTime": 212.97,
+    "endTime": 222.06
+  },
+  {
+    "id": "s4665",
+    "musicId": "m105",
+    "text": "就这样过去了许多年",
+    "translation": "",
+    "distractors": "",
+    "startTime": 222.06,
+    "endTime": 231.59
+  },
+  {
+    "id": "s4666",
+    "musicId": "m105",
+    "text": "古老的牧歌天天唱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 231.59,
+    "endTime": 239.02
+  },
+  {
+    "id": "s4667",
+    "musicId": "m105",
+    "text": "唱哑了嗓子话从前",
+    "translation": "",
+    "distractors": "",
+    "startTime": 239.02,
+    "endTime": 246.36
+  },
+  {
+    "id": "s4668",
+    "musicId": "m105",
+    "text": "都市的霓虹少香甜",
+    "translation": "",
+    "distractors": "",
+    "startTime": 246.36,
+    "endTime": 253.81
+  },
+  {
+    "id": "s4669",
+    "musicId": "m105",
+    "text": "走来走去还是阿爸的草原",
+    "translation": "",
+    "distractors": "",
+    "startTime": 253.81,
+    "endTime": 263.7
+  },
+  {
+    "id": "s4670",
+    "musicId": "m105",
+    "text": "草原的绿色映蓝天",
+    "translation": "",
+    "distractors": "",
+    "startTime": 263.7,
+    "endTime": 270.99
+  },
+  {
+    "id": "s4671",
+    "musicId": "m105",
+    "text": "洁白的云朵飘草原",
+    "translation": "",
+    "distractors": "",
+    "startTime": 270.99,
+    "endTime": 278.12
+  },
+  {
+    "id": "s4672",
+    "musicId": "m105",
+    "text": "都市的霓虹少香甜",
+    "translation": "",
+    "distractors": "",
+    "startTime": 278.12,
+    "endTime": 285.66
+  },
+  {
+    "id": "s4673",
+    "musicId": "m105",
+    "text": "走来走去还是阿爸的草原",
+    "translation": "",
+    "distractors": "",
+    "startTime": 285.66,
+    "endTime": 292.9
+  },
+  {
+    "id": "s4674",
+    "musicId": "m105",
+    "text": "走来走去还是阿爸的草原",
+    "translation": "",
+    "distractors": "",
+    "startTime": 292.9,
+    "endTime": 297.9
+  },
+  {
+    "id": "s4675",
+    "musicId": "m106",
+    "text": "天下有多大 随它去宽广",
+    "translation": "",
+    "distractors": "",
+    "startTime": 31.61,
+    "endTime": 36.16
+  },
+  {
+    "id": "s4676",
+    "musicId": "m106",
+    "text": "大路有多远 幸福有多长",
+    "translation": "",
+    "distractors": "",
+    "startTime": 36.16,
+    "endTime": 40.71
+  },
+  {
+    "id": "s4677",
+    "musicId": "m106",
+    "text": "听惯了牧马人悠扬的琴声",
+    "translation": "",
+    "distractors": "",
+    "startTime": 40.71,
+    "endTime": 45.33
+  },
+  {
+    "id": "s4678",
+    "musicId": "m106",
+    "text": "爱上这水草丰美的牧场",
+    "translation": "",
+    "distractors": "",
+    "startTime": 45.33,
+    "endTime": 50.23
+  },
+  {
+    "id": "s4679",
+    "musicId": "m106",
+    "text": "花开一抹红 尽情的怒放",
+    "translation": "",
+    "distractors": "",
+    "startTime": 50.23,
+    "endTime": 54.48
+  },
+  {
+    "id": "s4680",
+    "musicId": "m106",
+    "text": "河流有多远 幸福有多长",
+    "translation": "",
+    "distractors": "",
+    "startTime": 54.48,
+    "endTime": 58.82
+  },
+  {
+    "id": "s4681",
+    "musicId": "m106",
+    "text": "习惯了游牧人自由的生活",
+    "translation": "",
+    "distractors": "",
+    "startTime": 58.82,
+    "endTime": 63.49
+  },
+  {
+    "id": "s4682",
+    "musicId": "m106",
+    "text": "爱人在身边随处是天堂",
+    "translation": "",
+    "distractors": "",
+    "startTime": 63.49,
+    "endTime": 68.25
+  },
+  {
+    "id": "s4683",
+    "musicId": "m106",
+    "text": "草原最美的花 火红的萨日朗",
+    "translation": "",
+    "distractors": "",
+    "startTime": 68.25,
+    "endTime": 72.99
+  },
+  {
+    "id": "s4684",
+    "musicId": "m106",
+    "text": "一梦到天涯遍地是花香",
+    "translation": "",
+    "distractors": "",
+    "startTime": 72.99,
+    "endTime": 77.18
+  },
+  {
+    "id": "s4685",
+    "musicId": "m106",
+    "text": "流浪的人啊心上有了她",
+    "translation": "",
+    "distractors": "",
+    "startTime": 77.18,
+    "endTime": 82.1
+  },
+  {
+    "id": "s4686",
+    "musicId": "m106",
+    "text": "千里万里也会 回头望",
+    "translation": "",
+    "distractors": "",
+    "startTime": 82.1,
+    "endTime": 86.29
+  },
+  {
+    "id": "s4687",
+    "musicId": "m106",
+    "text": "草原最美的花 火红的萨日朗",
+    "translation": "",
+    "distractors": "",
+    "startTime": 86.29,
+    "endTime": 90.75
+  },
+  {
+    "id": "s4688",
+    "musicId": "m106",
+    "text": "火一样热烈 火一样奔放",
+    "translation": "",
+    "distractors": "",
+    "startTime": 90.75,
+    "endTime": 95.53
+  },
+  {
+    "id": "s4689",
+    "musicId": "m106",
+    "text": "痴情的人啊心上有了她",
+    "translation": "",
+    "distractors": "",
+    "startTime": 95.53,
+    "endTime": 99.75
+  },
+  {
+    "id": "s4690",
+    "musicId": "m106",
+    "text": "有种幸福叫地久天长",
+    "translation": "",
+    "distractors": "",
+    "startTime": 99.75,
+    "endTime": 113.78
+  },
+  {
+    "id": "s4691",
+    "musicId": "m106",
+    "text": "天下有多大 随它去宽广",
+    "translation": "",
+    "distractors": "",
+    "startTime": 113.78,
+    "endTime": 117.829
+  },
+  {
+    "id": "s4692",
+    "musicId": "m106",
+    "text": "大路有多远 幸福有多长",
+    "translation": "",
+    "distractors": "",
+    "startTime": 117.829,
+    "endTime": 122.86
+  },
+  {
+    "id": "s4693",
+    "musicId": "m106",
+    "text": "听惯了牧马人悠扬的琴声",
+    "translation": "",
+    "distractors": "",
+    "startTime": 122.86,
+    "endTime": 127.35
+  },
+  {
+    "id": "s4694",
+    "musicId": "m106",
+    "text": "爱上这水草丰美的牧场",
+    "translation": "",
+    "distractors": "",
+    "startTime": 127.35,
+    "endTime": 132.39
+  },
+  {
+    "id": "s4695",
+    "musicId": "m106",
+    "text": "花开一抹红 尽情的怒放",
+    "translation": "",
+    "distractors": "",
+    "startTime": 132.39,
+    "endTime": 136.6
+  },
+  {
+    "id": "s4696",
+    "musicId": "m106",
+    "text": "河流有多远 幸福有多长",
+    "translation": "",
+    "distractors": "",
+    "startTime": 136.6,
+    "endTime": 141.02
+  },
+  {
+    "id": "s4697",
+    "musicId": "m106",
+    "text": "习惯了游牧人自由的生活",
+    "translation": "",
+    "distractors": "",
+    "startTime": 141.02,
+    "endTime": 145.529
+  },
+  {
+    "id": "s4698",
+    "musicId": "m106",
+    "text": "爱人在身边随处是天堂",
+    "translation": "",
+    "distractors": "",
+    "startTime": 145.529,
+    "endTime": 150.95
+  },
+  {
+    "id": "s4699",
+    "musicId": "m106",
+    "text": "草原最美的花 火红的萨日朗",
+    "translation": "",
+    "distractors": "",
+    "startTime": 150.95,
+    "endTime": 155.25
+  },
+  {
+    "id": "s4700",
+    "musicId": "m106",
+    "text": "一梦到天涯遍地是花香",
+    "translation": "",
+    "distractors": "",
+    "startTime": 155.25,
+    "endTime": 160.04
+  },
+  {
+    "id": "s4701",
+    "musicId": "m106",
+    "text": "流浪的人啊心上有了她",
+    "translation": "",
+    "distractors": "",
+    "startTime": 160.04,
+    "endTime": 164.26
+  },
+  {
+    "id": "s4702",
+    "musicId": "m106",
+    "text": "千里万里也会 回头望",
+    "translation": "",
+    "distractors": "",
+    "startTime": 164.26,
+    "endTime": 169.12
+  },
+  {
+    "id": "s4703",
+    "musicId": "m106",
+    "text": "草原最美的花 火红的萨日朗",
+    "translation": "",
+    "distractors": "",
+    "startTime": 169.12,
+    "endTime": 173.42
+  },
+  {
+    "id": "s4704",
+    "musicId": "m106",
+    "text": "火一样热烈 火一样奔放",
+    "translation": "",
+    "distractors": "",
+    "startTime": 173.42,
+    "endTime": 178.11
+  },
+  {
+    "id": "s4705",
+    "musicId": "m106",
+    "text": "痴情的人啊心上有了她",
+    "translation": "",
+    "distractors": "",
+    "startTime": 178.11,
+    "endTime": 182.34
+  },
+  {
+    "id": "s4706",
+    "musicId": "m106",
+    "text": "有种幸福叫地久天长",
+    "translation": "",
+    "distractors": "",
+    "startTime": 182.34,
+    "endTime": 187.82
+  },
+  {
+    "id": "s4707",
+    "musicId": "m106",
+    "text": "草原最美的花 火红的萨日朗",
+    "translation": "",
+    "distractors": "",
+    "startTime": 187.82,
+    "endTime": 192.18
+  },
+  {
+    "id": "s4708",
+    "musicId": "m106",
+    "text": "一梦到天涯遍地是花香",
+    "translation": "",
+    "distractors": "",
+    "startTime": 192.18,
+    "endTime": 196.91
+  },
+  {
+    "id": "s4709",
+    "musicId": "m106",
+    "text": "流浪的人啊心上有了她",
+    "translation": "",
+    "distractors": "",
+    "startTime": 196.91,
+    "endTime": 201.2
+  },
+  {
+    "id": "s4710",
+    "musicId": "m106",
+    "text": "千里万里也会 回头望",
+    "translation": "",
+    "distractors": "",
+    "startTime": 201.2,
+    "endTime": 206.04
+  },
+  {
+    "id": "s4711",
+    "musicId": "m106",
+    "text": "草原最美的花 火红的萨日朗",
+    "translation": "",
+    "distractors": "",
+    "startTime": 206.04,
+    "endTime": 210.31
+  },
+  {
+    "id": "s4712",
+    "musicId": "m106",
+    "text": "火一样热烈 火一样奔放",
+    "translation": "",
+    "distractors": "",
+    "startTime": 210.31,
+    "endTime": 215.1
+  },
+  {
+    "id": "s4713",
+    "musicId": "m106",
+    "text": "痴情的人啊心上有了她",
+    "translation": "",
+    "distractors": "",
+    "startTime": 215.1,
+    "endTime": 219.32
+  },
+  {
+    "id": "s4714",
+    "musicId": "m106",
+    "text": "有种幸福叫地久天长",
+    "translation": "",
+    "distractors": "",
+    "startTime": 219.32,
+    "endTime": 223.71
+  },
+  {
+    "id": "s4715",
+    "musicId": "m106",
+    "text": "有种幸福叫地久天长",
+    "translation": "",
+    "distractors": "",
+    "startTime": 223.71,
+    "endTime": 228.71
+  },
+  {
+    "id": "s4716",
+    "musicId": "m107",
+    "text": "给我一片蔚蓝一个相遇的方向",
+    "translation": "",
+    "distractors": "",
+    "startTime": 33.299,
+    "endTime": 38.979
+  },
+  {
+    "id": "s4717",
+    "musicId": "m107",
+    "text": "给我一片辽阔碧绿的牧场",
+    "translation": "",
+    "distractors": "",
+    "startTime": 38.979,
+    "endTime": 44.529
+  },
+  {
+    "id": "s4718",
+    "musicId": "m107",
+    "text": "给我一匹烈马一种狂野的飞翔",
+    "translation": "",
+    "distractors": "",
+    "startTime": 44.529,
+    "endTime": 49.879
+  },
+  {
+    "id": "s4719",
+    "musicId": "m107",
+    "text": "给我一弯清澈像泉水流淌",
+    "translation": "",
+    "distractors": "",
+    "startTime": 49.879,
+    "endTime": 55.649
+  },
+  {
+    "id": "s4720",
+    "musicId": "m107",
+    "text": "给我一朵鲜花一朵惊艳的芬芳",
+    "translation": "",
+    "distractors": "",
+    "startTime": 55.649,
+    "endTime": 61.119
+  },
+  {
+    "id": "s4721",
+    "musicId": "m107",
+    "text": "给我一种勇敢像套马一样",
+    "translation": "",
+    "distractors": "",
+    "startTime": 61.119,
+    "endTime": 66.809
+  },
+  {
+    "id": "s4722",
+    "musicId": "m107",
+    "text": "给我一次热烈火辣的拥抱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 66.809,
+    "endTime": 72.269
+  },
+  {
+    "id": "s4723",
+    "musicId": "m107",
+    "text": "给我一份感动地久天长",
+    "translation": "",
+    "distractors": "",
+    "startTime": 72.269,
+    "endTime": 78.069
+  },
+  {
+    "id": "s4724",
+    "musicId": "m107",
+    "text": "套马的汉子飞驰在原野上",
+    "translation": "",
+    "distractors": "",
+    "startTime": 78.069,
+    "endTime": 83.579
+  },
+  {
+    "id": "s4725",
+    "musicId": "m107",
+    "text": "带上我的爱恋一起向远方",
+    "translation": "",
+    "distractors": "",
+    "startTime": 83.579,
+    "endTime": 87.579
+  },
+  {
+    "id": "s4726",
+    "musicId": "m107",
+    "text": "明天有多远爱有多宽广",
+    "translation": "",
+    "distractors": "",
+    "startTime": 87.579,
+    "endTime": 92.299
+  },
+  {
+    "id": "s4727",
+    "musicId": "m107",
+    "text": "你为我插上雄鹰的翅膀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 92.299,
+    "endTime": 97.869
+  },
+  {
+    "id": "s4728",
+    "musicId": "m107",
+    "text": "套马的汉子飞驰在我心上",
+    "translation": "",
+    "distractors": "",
+    "startTime": 97.869,
+    "endTime": 103.528
+  },
+  {
+    "id": "s4729",
+    "musicId": "m107",
+    "text": "我愿和你一起四处去流浪",
+    "translation": "",
+    "distractors": "",
+    "startTime": 103.528,
+    "endTime": 109.89
+  },
+  {
+    "id": "s4730",
+    "musicId": "m107",
+    "text": "走过天涯海角春暖花又开",
+    "translation": "",
+    "distractors": "",
+    "startTime": 109.89,
+    "endTime": 114.589
+  },
+  {
+    "id": "s4731",
+    "musicId": "m107",
+    "text": "无论多远我都在你的身旁",
+    "translation": "",
+    "distractors": "",
+    "startTime": 114.589,
+    "endTime": 142.49
+  },
+  {
+    "id": "s4732",
+    "musicId": "m107",
+    "text": "给我一朵鲜花一朵惊艳的芬芳",
+    "translation": "",
+    "distractors": "",
+    "startTime": 142.49,
+    "endTime": 148.06
+  },
+  {
+    "id": "s4733",
+    "musicId": "m107",
+    "text": "给我一种勇敢像套马一样",
+    "translation": "",
+    "distractors": "",
+    "startTime": 148.06,
+    "endTime": 153.72
+  },
+  {
+    "id": "s4734",
+    "musicId": "m107",
+    "text": "给我一次热烈火辣的拥抱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 153.72,
+    "endTime": 159.76
+  },
+  {
+    "id": "s4735",
+    "musicId": "m107",
+    "text": "给我一份感动地久天长",
+    "translation": "",
+    "distractors": "",
+    "startTime": 159.76,
+    "endTime": 165.62
+  },
+  {
+    "id": "s4736",
+    "musicId": "m107",
+    "text": "套马的汉子飞驰在原野上",
+    "translation": "",
+    "distractors": "",
+    "startTime": 165.62,
+    "endTime": 171.079
+  },
+  {
+    "id": "s4737",
+    "musicId": "m107",
+    "text": "带上我的爱恋一起向远方",
+    "translation": "",
+    "distractors": "",
+    "startTime": 171.079,
+    "endTime": 176.61
+  },
+  {
+    "id": "s4738",
+    "musicId": "m107",
+    "text": "明天有多远爱有多宽广",
+    "translation": "",
+    "distractors": "",
+    "startTime": 176.61,
+    "endTime": 182.13
+  },
+  {
+    "id": "s4739",
+    "musicId": "m107",
+    "text": "你为我插上雄鹰的翅膀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 182.13,
+    "endTime": 187.76
+  },
+  {
+    "id": "s4740",
+    "musicId": "m107",
+    "text": "套马的汉子飞驰在我心上",
+    "translation": "",
+    "distractors": "",
+    "startTime": 187.76,
+    "endTime": 193.43
+  },
+  {
+    "id": "s4741",
+    "musicId": "m107",
+    "text": "我愿和你一起四处去流浪",
+    "translation": "",
+    "distractors": "",
+    "startTime": 193.43,
+    "endTime": 198.98
+  },
+  {
+    "id": "s4742",
+    "musicId": "m107",
+    "text": "走过天涯海角春暖花又开",
+    "translation": "",
+    "distractors": "",
+    "startTime": 198.98,
+    "endTime": 204.4
+  },
+  {
+    "id": "s4743",
+    "musicId": "m107",
+    "text": "无论多远我都在你的身旁",
+    "translation": "",
+    "distractors": "",
+    "startTime": 204.4,
+    "endTime": 210.17
+  },
+  {
+    "id": "s4744",
+    "musicId": "m107",
+    "text": "套马的汉子飞驰在原野上",
+    "translation": "",
+    "distractors": "",
+    "startTime": 210.17,
+    "endTime": 215.75
+  },
+  {
+    "id": "s4745",
+    "musicId": "m107",
+    "text": "带上我的爱恋一起向远方",
+    "translation": "",
+    "distractors": "",
+    "startTime": 215.75,
+    "endTime": 221.27
+  },
+  {
+    "id": "s4746",
+    "musicId": "m107",
+    "text": "明天有多远爱有多宽广",
+    "translation": "",
+    "distractors": "",
+    "startTime": 221.27,
+    "endTime": 226.81
+  },
+  {
+    "id": "s4747",
+    "musicId": "m107",
+    "text": "你为我插上雄鹰的翅膀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 226.81,
+    "endTime": 233.35
+  },
+  {
+    "id": "s4748",
+    "musicId": "m107",
+    "text": "套马的汉子飞驰在我心上",
+    "translation": "",
+    "distractors": "",
+    "startTime": 233.35,
+    "endTime": 238.979
+  },
+  {
+    "id": "s4749",
+    "musicId": "m107",
+    "text": "我愿和你一起四处去流浪",
+    "translation": "",
+    "distractors": "",
+    "startTime": 238.979,
+    "endTime": 244.51
+  },
+  {
+    "id": "s4750",
+    "musicId": "m107",
+    "text": "走过天涯海角春暖花又开",
+    "translation": "",
+    "distractors": "",
+    "startTime": 244.51,
+    "endTime": 249.97
+  },
+  {
+    "id": "s4751",
+    "musicId": "m107",
+    "text": "无论多远我都在你的身旁",
+    "translation": "",
+    "distractors": "",
+    "startTime": 249.97,
+    "endTime": 254.97
+  },
+  {
+    "id": "s4752",
+    "musicId": "m108",
+    "text": "（男）",
+    "translation": "",
+    "distractors": "",
+    "startTime": 30.409,
+    "endTime": 30.679
+  },
+  {
+    "id": "s4753",
+    "musicId": "m108",
+    "text": "琴声悠扬 笛声清脆",
+    "translation": "",
+    "distractors": "",
+    "startTime": 30.679,
+    "endTime": 39
+  },
+  {
+    "id": "s4754",
+    "musicId": "m108",
+    "text": "我约乌兰妹妹敖包再相会",
+    "translation": "",
+    "distractors": "",
+    "startTime": 39,
+    "endTime": 45.99
+  },
+  {
+    "id": "s4755",
+    "musicId": "m108",
+    "text": "妹妹就像一轮多情的明月",
+    "translation": "",
+    "distractors": "",
+    "startTime": 45.99,
+    "endTime": 52.249
+  },
+  {
+    "id": "s4756",
+    "musicId": "m108",
+    "text": "温柔了草原 温柔了我梦寐",
+    "translation": "",
+    "distractors": "",
+    "startTime": 52.249,
+    "endTime": 59.269
+  },
+  {
+    "id": "s4757",
+    "musicId": "m108",
+    "text": "（女）",
+    "translation": "",
+    "distractors": "",
+    "startTime": 59.269,
+    "endTime": 59.619
+  },
+  {
+    "id": "s4758",
+    "musicId": "m108",
+    "text": "绿草滴翠 红花吐蕊",
+    "translation": "",
+    "distractors": "",
+    "startTime": 59.619,
+    "endTime": 66.589
+  },
+  {
+    "id": "s4759",
+    "musicId": "m108",
+    "text": "我等牧仁哥哥敖包再相会",
+    "translation": "",
+    "distractors": "",
+    "startTime": 66.589,
+    "endTime": 73.849
+  },
+  {
+    "id": "s4760",
+    "musicId": "m108",
+    "text": "哥哥就像一缕和煦的春风",
+    "translation": "",
+    "distractors": "",
+    "startTime": 73.849,
+    "endTime": 80.908
+  },
+  {
+    "id": "s4761",
+    "musicId": "m108",
+    "text": "吹开了花朵 吹开了我心扉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 80.908,
+    "endTime": 89.929
+  },
+  {
+    "id": "s4762",
+    "musicId": "m108",
+    "text": "（男）",
+    "translation": "",
+    "distractors": "",
+    "startTime": 89.929,
+    "endTime": 90.39
+  },
+  {
+    "id": "s4763",
+    "musicId": "m108",
+    "text": "乌兰妹妹 乌兰妹妹",
+    "translation": "",
+    "distractors": "",
+    "startTime": 90.39,
+    "endTime": 97.39
+  },
+  {
+    "id": "s4764",
+    "musicId": "m108",
+    "text": "草原上的姑娘数你最妩媚",
+    "translation": "",
+    "distractors": "",
+    "startTime": 97.39,
+    "endTime": 104.269
+  },
+  {
+    "id": "s4765",
+    "musicId": "m108",
+    "text": "心中有爱 爱像蝴蝶飞",
+    "translation": "",
+    "distractors": "",
+    "startTime": 104.269,
+    "endTime": 111.529
+  },
+  {
+    "id": "s4766",
+    "musicId": "m108",
+    "text": "怎叫哥哥不为你陶醉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 111.529,
+    "endTime": 118.549
+  },
+  {
+    "id": "s4767",
+    "musicId": "m108",
+    "text": "（女）",
+    "translation": "",
+    "distractors": "",
+    "startTime": 118.549,
+    "endTime": 118.859
+  },
+  {
+    "id": "s4768",
+    "musicId": "m108",
+    "text": "牧仁哥哥 牧仁哥哥",
+    "translation": "",
+    "distractors": "",
+    "startTime": 118.859,
+    "endTime": 125.799
+  },
+  {
+    "id": "s4769",
+    "musicId": "m108",
+    "text": "草原上的小伙数你最俊伟",
+    "translation": "",
+    "distractors": "",
+    "startTime": 125.799,
+    "endTime": 132.978
+  },
+  {
+    "id": "s4770",
+    "musicId": "m108",
+    "text": "心中有情 情向小溪水",
+    "translation": "",
+    "distractors": "",
+    "startTime": 132.978,
+    "endTime": 140.299
+  },
+  {
+    "id": "s4771",
+    "musicId": "m108",
+    "text": "怎让妹妹不把你追随",
+    "translation": "",
+    "distractors": "",
+    "startTime": 140.299,
+    "endTime": 177.309
+  },
+  {
+    "id": "s4772",
+    "musicId": "m108",
+    "text": "（女）",
+    "translation": "",
+    "distractors": "",
+    "startTime": 177.309,
+    "endTime": 178.299
+  },
+  {
+    "id": "s4773",
+    "musicId": "m108",
+    "text": "绿草滴翠 红花吐蕊",
+    "translation": "",
+    "distractors": "",
+    "startTime": 178.299,
+    "endTime": 184.989
+  },
+  {
+    "id": "s4774",
+    "musicId": "m108",
+    "text": "我等牧仁哥哥敖包再相会",
+    "translation": "",
+    "distractors": "",
+    "startTime": 184.989,
+    "endTime": 192.799
+  },
+  {
+    "id": "s4775",
+    "musicId": "m108",
+    "text": "哥哥就像一缕和煦的春风",
+    "translation": "",
+    "distractors": "",
+    "startTime": 192.799,
+    "endTime": 199.299
+  },
+  {
+    "id": "s4776",
+    "musicId": "m108",
+    "text": "吹开了花朵 吹开了我心扉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 199.299,
+    "endTime": 207.549
+  },
+  {
+    "id": "s4777",
+    "musicId": "m108",
+    "text": "（男）",
+    "translation": "",
+    "distractors": "",
+    "startTime": 207.549,
+    "endTime": 207.889
+  },
+  {
+    "id": "s4778",
+    "musicId": "m108",
+    "text": "乌兰妹妹 乌兰妹妹",
+    "translation": "",
+    "distractors": "",
+    "startTime": 207.889,
+    "endTime": 215.309
+  },
+  {
+    "id": "s4779",
+    "musicId": "m108",
+    "text": "草原上的姑娘数你最妩媚",
+    "translation": "",
+    "distractors": "",
+    "startTime": 215.309,
+    "endTime": 222.509
+  },
+  {
+    "id": "s4780",
+    "musicId": "m108",
+    "text": "心中有爱 爱像蝴蝶飞",
+    "translation": "",
+    "distractors": "",
+    "startTime": 222.509,
+    "endTime": 229.689
+  },
+  {
+    "id": "s4781",
+    "musicId": "m108",
+    "text": "怎叫哥哥不为你陶醉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 229.689,
+    "endTime": 236.828
+  },
+  {
+    "id": "s4782",
+    "musicId": "m108",
+    "text": "（女）",
+    "translation": "",
+    "distractors": "",
+    "startTime": 236.828,
+    "endTime": 237.599
+  },
+  {
+    "id": "s4783",
+    "musicId": "m108",
+    "text": "牧仁哥哥 牧仁哥哥",
+    "translation": "",
+    "distractors": "",
+    "startTime": 237.599,
+    "endTime": 243.919
+  },
+  {
+    "id": "s4784",
+    "musicId": "m108",
+    "text": "草原上的小伙数你最俊伟",
+    "translation": "",
+    "distractors": "",
+    "startTime": 243.919,
+    "endTime": 251.499
+  },
+  {
+    "id": "s4785",
+    "musicId": "m108",
+    "text": "心中有情 情向小溪水",
+    "translation": "",
+    "distractors": "",
+    "startTime": 251.499,
+    "endTime": 258.219
+  },
+  {
+    "id": "s4786",
+    "musicId": "m108",
+    "text": "怎让妹妹不把你追随",
+    "translation": "",
+    "distractors": "",
+    "startTime": 258.219,
+    "endTime": 267.279
+  },
+  {
+    "id": "s4787",
+    "musicId": "m108",
+    "text": "妹妹爱哥哥 哥哥爱妹妹",
+    "translation": "",
+    "distractors": "",
+    "startTime": 267.279,
+    "endTime": 267.699
+  },
+  {
+    "id": "s4788",
+    "musicId": "m108",
+    "text": "（合）",
+    "translation": "",
+    "distractors": "",
+    "startTime": 267.699,
+    "endTime": 274.349
+  },
+  {
+    "id": "s4789",
+    "musicId": "m108",
+    "text": "人生的路再远也无所谓",
+    "translation": "",
+    "distractors": "",
+    "startTime": 274.349,
+    "endTime": 281.609
+  },
+  {
+    "id": "s4790",
+    "musicId": "m108",
+    "text": "你我相伴 心来作陪",
+    "translation": "",
+    "distractors": "",
+    "startTime": 281.609,
+    "endTime": 288.729
+  },
+  {
+    "id": "s4791",
+    "musicId": "m108",
+    "text": "所有的季节都盛开美",
+    "translation": "",
+    "distractors": "",
+    "startTime": 288.729,
+    "endTime": 296.399
+  },
+  {
+    "id": "s4792",
+    "musicId": "m108",
+    "text": "所有的季节都盛开美",
+    "translation": "",
+    "distractors": "",
+    "startTime": 296.399,
+    "endTime": 301.399
+  },
+  {
+    "id": "s4793",
+    "musicId": "m109",
+    "text": "是骏马我给你地阔和天高",
+    "translation": "",
+    "distractors": "",
+    "startTime": 34.09,
+    "endTime": 39.34
+  },
+  {
+    "id": "s4794",
+    "musicId": "m109",
+    "text": "是雄鹰我给你苍茫和浩淼",
+    "translation": "",
+    "distractors": "",
+    "startTime": 39.34,
+    "endTime": 44.53
+  },
+  {
+    "id": "s4795",
+    "musicId": "m109",
+    "text": "我知道你梦中有一片草原",
+    "translation": "",
+    "distractors": "",
+    "startTime": 44.53,
+    "endTime": 50.02
+  },
+  {
+    "id": "s4796",
+    "musicId": "m109",
+    "text": "风儿吹花儿开是我的微笑",
+    "translation": "",
+    "distractors": "",
+    "startTime": 50.02,
+    "endTime": 55.49
+  },
+  {
+    "id": "s4797",
+    "musicId": "m109",
+    "text": "闭上眼能感觉彼此的拥抱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 55.49,
+    "endTime": 60.71
+  },
+  {
+    "id": "s4798",
+    "musicId": "m109",
+    "text": "每一刻都听见热烈的心跳",
+    "translation": "",
+    "distractors": "",
+    "startTime": 60.71,
+    "endTime": 65.89
+  },
+  {
+    "id": "s4799",
+    "musicId": "m109",
+    "text": "如果是心与心相互有感应",
+    "translation": "",
+    "distractors": "",
+    "startTime": 65.89,
+    "endTime": 71.19
+  },
+  {
+    "id": "s4800",
+    "musicId": "m109",
+    "text": "从此我会珍惜每一分一秒",
+    "translation": "",
+    "distractors": "",
+    "startTime": 71.19,
+    "endTime": 77.01
+  },
+  {
+    "id": "s4801",
+    "musicId": "m109",
+    "text": "天边的爱人啊 你知道不知道",
+    "translation": "",
+    "distractors": "",
+    "startTime": 77.01,
+    "endTime": 81.86
+  },
+  {
+    "id": "s4802",
+    "musicId": "m109",
+    "text": "有种爱一瞬间天荒地老",
+    "translation": "",
+    "distractors": "",
+    "startTime": 81.86,
+    "endTime": 87.42
+  },
+  {
+    "id": "s4803",
+    "musicId": "m109",
+    "text": "哪怕你有一天越飞越远",
+    "translation": "",
+    "distractors": "",
+    "startTime": 87.42,
+    "endTime": 92.57
+  },
+  {
+    "id": "s4804",
+    "musicId": "m109",
+    "text": "别忘了我为你在祈祷",
+    "translation": "",
+    "distractors": "",
+    "startTime": 92.57,
+    "endTime": 98.35
+  },
+  {
+    "id": "s4805",
+    "musicId": "m109",
+    "text": "天边的爱人啊 你知道不知道",
+    "translation": "",
+    "distractors": "",
+    "startTime": 98.35,
+    "endTime": 103.17
+  },
+  {
+    "id": "s4806",
+    "musicId": "m109",
+    "text": "我的泪我的笑为你明了",
+    "translation": "",
+    "distractors": "",
+    "startTime": 103.17,
+    "endTime": 108.8
+  },
+  {
+    "id": "s4807",
+    "musicId": "m109",
+    "text": "不管你有多少欢喜失落",
+    "translation": "",
+    "distractors": "",
+    "startTime": 108.8,
+    "endTime": 113.92
+  },
+  {
+    "id": "s4808",
+    "musicId": "m109",
+    "text": "你永远都是我的骄傲",
+    "translation": "",
+    "distractors": "",
+    "startTime": 113.92,
+    "endTime": 129.73
+  },
+  {
+    "id": "s4809",
+    "musicId": "m109",
+    "text": "闭上眼能感觉彼此的拥抱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 129.73,
+    "endTime": 135.47
+  },
+  {
+    "id": "s4810",
+    "musicId": "m109",
+    "text": "每一刻都听见热烈的心跳",
+    "translation": "",
+    "distractors": "",
+    "startTime": 135.47,
+    "endTime": 140.74
+  },
+  {
+    "id": "s4811",
+    "musicId": "m109",
+    "text": "如果是心与心相互有感应",
+    "translation": "",
+    "distractors": "",
+    "startTime": 140.74,
+    "endTime": 145.93
+  },
+  {
+    "id": "s4812",
+    "musicId": "m109",
+    "text": "从此我会珍惜每一分一秒",
+    "translation": "",
+    "distractors": "",
+    "startTime": 145.93,
+    "endTime": 151.57
+  },
+  {
+    "id": "s4813",
+    "musicId": "m109",
+    "text": "天边的爱人啊 你知道不知道",
+    "translation": "",
+    "distractors": "",
+    "startTime": 151.57,
+    "endTime": 156.45
+  },
+  {
+    "id": "s4814",
+    "musicId": "m109",
+    "text": "有种爱一瞬间天荒地老",
+    "translation": "",
+    "distractors": "",
+    "startTime": 156.45,
+    "endTime": 162.14
+  },
+  {
+    "id": "s4815",
+    "musicId": "m109",
+    "text": "哪怕你有一天越飞越远",
+    "translation": "",
+    "distractors": "",
+    "startTime": 162.14,
+    "endTime": 167.35
+  },
+  {
+    "id": "s4816",
+    "musicId": "m109",
+    "text": "别忘了我为你在祈祷",
+    "translation": "",
+    "distractors": "",
+    "startTime": 167.35,
+    "endTime": 172.87
+  },
+  {
+    "id": "s4817",
+    "musicId": "m109",
+    "text": "天边的爱人啊 你知道不知道",
+    "translation": "",
+    "distractors": "",
+    "startTime": 172.87,
+    "endTime": 177.88
+  },
+  {
+    "id": "s4818",
+    "musicId": "m109",
+    "text": "我的泪我的笑为你明了",
+    "translation": "",
+    "distractors": "",
+    "startTime": 177.88,
+    "endTime": 183.52
+  },
+  {
+    "id": "s4819",
+    "musicId": "m109",
+    "text": "不管你有多少欢喜失落",
+    "translation": "",
+    "distractors": "",
+    "startTime": 183.52,
+    "endTime": 188.6
+  },
+  {
+    "id": "s4820",
+    "musicId": "m109",
+    "text": "你永远都是我的骄傲",
+    "translation": "",
+    "distractors": "",
+    "startTime": 188.6,
+    "endTime": 194.39
+  },
+  {
+    "id": "s4821",
+    "musicId": "m109",
+    "text": "天边的爱人啊 你知道不知道",
+    "translation": "",
+    "distractors": "",
+    "startTime": 194.39,
+    "endTime": 199.14
+  },
+  {
+    "id": "s4822",
+    "musicId": "m109",
+    "text": "我的泪我的笑为你明了",
+    "translation": "",
+    "distractors": "",
+    "startTime": 199.14,
+    "endTime": 204.95
+  },
+  {
+    "id": "s4823",
+    "musicId": "m109",
+    "text": "不管你有多少欢喜失落",
+    "translation": "",
+    "distractors": "",
+    "startTime": 204.95,
+    "endTime": 209.94
+  },
+  {
+    "id": "s4824",
+    "musicId": "m109",
+    "text": "你永远都是我的骄傲",
+    "translation": "",
+    "distractors": "",
+    "startTime": 209.94,
+    "endTime": 215.32
+  },
+  {
+    "id": "s4825",
+    "musicId": "m109",
+    "text": "你永远都是我的骄傲",
+    "translation": "",
+    "distractors": "",
+    "startTime": 215.32,
+    "endTime": 220.32
+  },
+  {
+    "id": "s4826",
+    "musicId": "m110",
+    "text": "如果草原给我一双翅膀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 21.34,
+    "endTime": 25.96
+  },
+  {
+    "id": "s4827",
+    "musicId": "m110",
+    "text": "我要化作天马飞向云天上",
+    "translation": "",
+    "distractors": "",
+    "startTime": 25.96,
+    "endTime": 30.65
+  },
+  {
+    "id": "s4828",
+    "musicId": "m110",
+    "text": "日月星辰就是我随身的行囊",
+    "translation": "",
+    "distractors": "",
+    "startTime": 30.65,
+    "endTime": 35.29
+  },
+  {
+    "id": "s4829",
+    "musicId": "m110",
+    "text": "追寻千年的梦想星马游江",
+    "translation": "",
+    "distractors": "",
+    "startTime": 35.29,
+    "endTime": 39.91
+  },
+  {
+    "id": "s4830",
+    "musicId": "m110",
+    "text": "如果草原给我一双翅膀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 39.91,
+    "endTime": 44.7
+  },
+  {
+    "id": "s4831",
+    "musicId": "m110",
+    "text": "我要化作天马自由地翱翔",
+    "translation": "",
+    "distractors": "",
+    "startTime": 44.7,
+    "endTime": 49.39
+  },
+  {
+    "id": "s4832",
+    "musicId": "m110",
+    "text": "天地多宽都是我驰骋的疆场",
+    "translation": "",
+    "distractors": "",
+    "startTime": 49.39,
+    "endTime": 53.95
+  },
+  {
+    "id": "s4833",
+    "musicId": "m110",
+    "text": "奔腾不息的河流为我歌唱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 53.95,
+    "endTime": 67.97
+  },
+  {
+    "id": "s4834",
+    "musicId": "m110",
+    "text": "天蓝蓝水长长 我用弯弓射月亮",
+    "translation": "",
+    "distractors": "",
+    "startTime": 67.97,
+    "endTime": 72.71
+  },
+  {
+    "id": "s4835",
+    "musicId": "m110",
+    "text": "草青青花香香 梦的尽头有家乡",
+    "translation": "",
+    "distractors": "",
+    "startTime": 72.71,
+    "endTime": 77.39
+  },
+  {
+    "id": "s4836",
+    "musicId": "m110",
+    "text": "天蓝蓝水长长 我用酒杯饮月光",
+    "translation": "",
+    "distractors": "",
+    "startTime": 77.39,
+    "endTime": 82.07
+  },
+  {
+    "id": "s4837",
+    "musicId": "m110",
+    "text": "草青青花香香 哼着长调 到天光",
+    "translation": "",
+    "distractors": "",
+    "startTime": 82.07,
+    "endTime": 89.3
+  },
+  {
+    "id": "s4838",
+    "musicId": "m110",
+    "text": "天蓝蓝水长长 我用弯弓射月亮",
+    "translation": "",
+    "distractors": "",
+    "startTime": 89.3,
+    "endTime": 93.82
+  },
+  {
+    "id": "s4839",
+    "musicId": "m110",
+    "text": "草青青花香香 哼着长调 到天光",
+    "translation": "",
+    "distractors": "",
+    "startTime": 93.82,
+    "endTime": 98.4
+  },
+  {
+    "id": "s4840",
+    "musicId": "m110",
+    "text": "如果草原给我一双翅膀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 98.4,
+    "endTime": 103.03
+  },
+  {
+    "id": "s4841",
+    "musicId": "m110",
+    "text": "我要化作天马自由地翱翔",
+    "translation": "",
+    "distractors": "",
+    "startTime": 103.03,
+    "endTime": 107.71
+  },
+  {
+    "id": "s4842",
+    "musicId": "m110",
+    "text": "天地多宽都是我驰骋的疆场",
+    "translation": "",
+    "distractors": "",
+    "startTime": 107.71,
+    "endTime": 112.4
+  },
+  {
+    "id": "s4843",
+    "musicId": "m110",
+    "text": "奔腾不息的河流为我歌唱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 112.4,
+    "endTime": 126.39
+  },
+  {
+    "id": "s4844",
+    "musicId": "m110",
+    "text": "天蓝蓝水长长 我用弯弓射月亮",
+    "translation": "",
+    "distractors": "",
+    "startTime": 126.39,
+    "endTime": 131.15
+  },
+  {
+    "id": "s4845",
+    "musicId": "m110",
+    "text": "草青青花香香 梦的尽头有家乡",
+    "translation": "",
+    "distractors": "",
+    "startTime": 131.15,
+    "endTime": 135.99
+  },
+  {
+    "id": "s4846",
+    "musicId": "m110",
+    "text": "天蓝蓝水长长 我用酒杯饮月光",
+    "translation": "",
+    "distractors": "",
+    "startTime": 135.99,
+    "endTime": 140.43
+  },
+  {
+    "id": "s4847",
+    "musicId": "m110",
+    "text": "草青青花香香 哼着长调 到天光",
+    "translation": "",
+    "distractors": "",
+    "startTime": 140.43,
+    "endTime": 145.18
+  },
+  {
+    "id": "s4848",
+    "musicId": "m110",
+    "text": "天蓝蓝水长长 我用弯弓射月亮",
+    "translation": "",
+    "distractors": "",
+    "startTime": 145.18,
+    "endTime": 149.81
+  },
+  {
+    "id": "s4849",
+    "musicId": "m110",
+    "text": "草青青花香香 梦的尽头有家乡",
+    "translation": "",
+    "distractors": "",
+    "startTime": 149.81,
+    "endTime": 154.49
+  },
+  {
+    "id": "s4850",
+    "musicId": "m110",
+    "text": "天蓝蓝水长长 我用酒杯饮月光",
+    "translation": "",
+    "distractors": "",
+    "startTime": 154.49,
+    "endTime": 159.14
+  },
+  {
+    "id": "s4851",
+    "musicId": "m110",
+    "text": "草青青花香香 哼着长调",
+    "translation": "",
+    "distractors": "",
+    "startTime": 159.14,
+    "endTime": 166.2
+  },
+  {
+    "id": "s4852",
+    "musicId": "m110",
+    "text": "天蓝蓝水长长 我用弯弓射月亮",
+    "translation": "",
+    "distractors": "",
+    "startTime": 166.2,
+    "endTime": 171.1
+  },
+  {
+    "id": "s4853",
+    "musicId": "m110",
+    "text": "草青青花香香 梦的尽头有家乡",
+    "translation": "",
+    "distractors": "",
+    "startTime": 171.1,
+    "endTime": 175.44
+  },
+  {
+    "id": "s4854",
+    "musicId": "m110",
+    "text": "天蓝蓝水长长 我用酒杯饮月光",
+    "translation": "",
+    "distractors": "",
+    "startTime": 175.44,
+    "endTime": 180.18
+  },
+  {
+    "id": "s4855",
+    "musicId": "m110",
+    "text": "草青青花香香 哼着长调 到天光",
+    "translation": "",
+    "distractors": "",
+    "startTime": 180.18,
+    "endTime": 185.18
+  },
+  {
+    "id": "s4856",
+    "musicId": "m111",
+    "text": "爱从草原来情随花儿开",
+    "translation": "",
+    "distractors": "",
+    "startTime": 24.309,
+    "endTime": 29.71
+  },
+  {
+    "id": "s4857",
+    "musicId": "m111",
+    "text": "梦中的汉子闯进我心怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 29.71,
+    "endTime": 35.115
+  },
+  {
+    "id": "s4858",
+    "musicId": "m111",
+    "text": "热切的目光是无声的表白",
+    "translation": "",
+    "distractors": "",
+    "startTime": 35.115,
+    "endTime": 40.37
+  },
+  {
+    "id": "s4859",
+    "musicId": "m111",
+    "text": "他扬鞭甩出那动听的天籁",
+    "translation": "",
+    "distractors": "",
+    "startTime": 40.37,
+    "endTime": 45.875
+  },
+  {
+    "id": "s4860",
+    "musicId": "m111",
+    "text": "初恋的心跳沸腾的心海",
+    "translation": "",
+    "distractors": "",
+    "startTime": 45.875,
+    "endTime": 51.278
+  },
+  {
+    "id": "s4861",
+    "musicId": "m111",
+    "text": "辽阔的牧场甜蜜的舞台",
+    "translation": "",
+    "distractors": "",
+    "startTime": 51.278,
+    "endTime": 56.651
+  },
+  {
+    "id": "s4862",
+    "musicId": "m111",
+    "text": "痴情的话语我难以说出来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 56.651,
+    "endTime": 61.984
+  },
+  {
+    "id": "s4863",
+    "musicId": "m111",
+    "text": "我多想悄悄的对他说声爱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 61.984,
+    "endTime": 68.885
+  },
+  {
+    "id": "s4864",
+    "musicId": "m111",
+    "text": "爱从草原来情随花儿开",
+    "translation": "",
+    "distractors": "",
+    "startTime": 68.885,
+    "endTime": 74.19
+  },
+  {
+    "id": "s4865",
+    "musicId": "m111",
+    "text": "梦中的汉子闯进我心怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 74.19,
+    "endTime": 79.641
+  },
+  {
+    "id": "s4866",
+    "musicId": "m111",
+    "text": "深情的拥抱我永远的期待",
+    "translation": "",
+    "distractors": "",
+    "startTime": 79.641,
+    "endTime": 84.965
+  },
+  {
+    "id": "s4867",
+    "musicId": "m111",
+    "text": "他宽厚的胸膛温暖我的爱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 84.965,
+    "endTime": 113.287
+  },
+  {
+    "id": "s4868",
+    "musicId": "m111",
+    "text": "初恋的心跳沸腾的心海",
+    "translation": "",
+    "distractors": "",
+    "startTime": 113.287,
+    "endTime": 118.687
+  },
+  {
+    "id": "s4869",
+    "musicId": "m111",
+    "text": "辽阔的牧场甜蜜的舞台",
+    "translation": "",
+    "distractors": "",
+    "startTime": 118.687,
+    "endTime": 124.37
+  },
+  {
+    "id": "s4870",
+    "musicId": "m111",
+    "text": "痴情的话语我难以说出来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 124.37,
+    "endTime": 129.43
+  },
+  {
+    "id": "s4871",
+    "musicId": "m111",
+    "text": "我多想悄悄的对他说声爱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 129.43,
+    "endTime": 136.251
+  },
+  {
+    "id": "s4872",
+    "musicId": "m111",
+    "text": "爱从草原来情随花儿开",
+    "translation": "",
+    "distractors": "",
+    "startTime": 136.251,
+    "endTime": 141.595
+  },
+  {
+    "id": "s4873",
+    "musicId": "m111",
+    "text": "梦中的汉子闯进我心怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 141.595,
+    "endTime": 147.79
+  },
+  {
+    "id": "s4874",
+    "musicId": "m111",
+    "text": "深情的拥抱我永远的期待",
+    "translation": "",
+    "distractors": "",
+    "startTime": 147.79,
+    "endTime": 152.329
+  },
+  {
+    "id": "s4875",
+    "musicId": "m111",
+    "text": "他宽厚的胸膛温暖我的爱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 152.329,
+    "endTime": 157.83
+  },
+  {
+    "id": "s4876",
+    "musicId": "m111",
+    "text": "爱从草原来情随花儿开",
+    "translation": "",
+    "distractors": "",
+    "startTime": 157.83,
+    "endTime": 163.118
+  },
+  {
+    "id": "s4877",
+    "musicId": "m111",
+    "text": "梦中的汉子闯进我心怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 163.118,
+    "endTime": 168.533
+  },
+  {
+    "id": "s4878",
+    "musicId": "m111",
+    "text": "深情的拥抱我永远的期待",
+    "translation": "",
+    "distractors": "",
+    "startTime": 168.533,
+    "endTime": 173.922
+  },
+  {
+    "id": "s4879",
+    "musicId": "m111",
+    "text": "他宽厚的胸膛温暖我的爱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 173.922,
+    "endTime": 180.861
+  },
+  {
+    "id": "s4880",
+    "musicId": "m111",
+    "text": "爱从草原来情随花儿开",
+    "translation": "",
+    "distractors": "",
+    "startTime": 180.861,
+    "endTime": 186.69
+  },
+  {
+    "id": "s4881",
+    "musicId": "m111",
+    "text": "梦中的汉子闯进我心怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 186.69,
+    "endTime": 191.428
+  },
+  {
+    "id": "s4882",
+    "musicId": "m111",
+    "text": "深情的拥抱我永远的期待",
+    "translation": "",
+    "distractors": "",
+    "startTime": 191.428,
+    "endTime": 196.882
+  },
+  {
+    "id": "s4883",
+    "musicId": "m111",
+    "text": "他宽厚的胸膛温暖我的爱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 196.882,
+    "endTime": 203.679
+  },
+  {
+    "id": "s4884",
+    "musicId": "m111",
+    "text": "爱从草原来爱从草原来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 203.679,
+    "endTime": 214.388
+  },
+  {
+    "id": "s4885",
+    "musicId": "m111",
+    "text": "火红的萨日朗在为我盛开",
+    "translation": "",
+    "distractors": "",
+    "startTime": 214.388,
+    "endTime": 219.388
+  },
+  {
+    "id": "s4886",
+    "musicId": "m112",
+    "text": "美丽大草原 风吹百花开",
+    "translation": "",
+    "distractors": "",
+    "startTime": 0.9,
+    "endTime": 4.52
+  },
+  {
+    "id": "s4887",
+    "musicId": "m112",
+    "text": "每一朵都是你 火热的情怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 4.52,
+    "endTime": 9.03
+  },
+  {
+    "id": "s4888",
+    "musicId": "m112",
+    "text": "牧羊的姑娘 长鞭一甩",
+    "translation": "",
+    "distractors": "",
+    "startTime": 9.03,
+    "endTime": 13.53
+  },
+  {
+    "id": "s4889",
+    "musicId": "m112",
+    "text": "呼啦啦的青草地 和你到天外",
+    "translation": "",
+    "distractors": "",
+    "startTime": 13.53,
+    "endTime": 19.09
+  },
+  {
+    "id": "s4890",
+    "musicId": "m112",
+    "text": "美丽大草原 歌声如天籁",
+    "translation": "",
+    "distractors": "",
+    "startTime": 19.09,
+    "endTime": 23.54
+  },
+  {
+    "id": "s4891",
+    "musicId": "m112",
+    "text": "落在了我心上 给了我豪迈",
+    "translation": "",
+    "distractors": "",
+    "startTime": 23.54,
+    "endTime": 28.03
+  },
+  {
+    "id": "s4892",
+    "musicId": "m112",
+    "text": "马背上小伙 打马要快",
+    "translation": "",
+    "distractors": "",
+    "startTime": 28.03,
+    "endTime": 32.6
+  },
+  {
+    "id": "s4893",
+    "musicId": "m112",
+    "text": "呼啦啦的青草地 不要你等待",
+    "translation": "",
+    "distractors": "",
+    "startTime": 32.6,
+    "endTime": 39.38
+  },
+  {
+    "id": "s4894",
+    "musicId": "m112",
+    "text": "是你的白云 牵动了我的爱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 39.38,
+    "endTime": 43.94
+  },
+  {
+    "id": "s4895",
+    "musicId": "m112",
+    "text": "是你的绿色 把我心澎湃",
+    "translation": "",
+    "distractors": "",
+    "startTime": 43.94,
+    "endTime": 48.44
+  },
+  {
+    "id": "s4896",
+    "musicId": "m112",
+    "text": "千万里风尘 来到你身边",
+    "translation": "",
+    "distractors": "",
+    "startTime": 48.44,
+    "endTime": 52.79
+  },
+  {
+    "id": "s4897",
+    "musicId": "m112",
+    "text": "放开歌喉就把情歌痛快唱出来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 52.79,
+    "endTime": 57.55
+  },
+  {
+    "id": "s4898",
+    "musicId": "m112",
+    "text": "是你的蓝天 让我梦飞起来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 57.55,
+    "endTime": 61.98
+  },
+  {
+    "id": "s4899",
+    "musicId": "m112",
+    "text": "是你的辽阔 让我思念如海",
+    "translation": "",
+    "distractors": "",
+    "startTime": 61.98,
+    "endTime": 66.54
+  },
+  {
+    "id": "s4900",
+    "musicId": "m112",
+    "text": "接天的哈达 滚烫的奶酒",
+    "translation": "",
+    "distractors": "",
+    "startTime": 66.54,
+    "endTime": 70.8
+  },
+  {
+    "id": "s4901",
+    "musicId": "m112",
+    "text": "你的热情 你的豪放你淳朴的大爱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 70.8,
+    "endTime": 77.99
+  },
+  {
+    "id": "s4902",
+    "musicId": "m112",
+    "text": "美丽大草原 风吹百花开",
+    "translation": "",
+    "distractors": "",
+    "startTime": 77.99,
+    "endTime": 82.49
+  },
+  {
+    "id": "s4903",
+    "musicId": "m112",
+    "text": "每一朵都是你 火热的情怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 82.49,
+    "endTime": 86.93
+  },
+  {
+    "id": "s4904",
+    "musicId": "m112",
+    "text": "牧羊的姑娘 长鞭一甩",
+    "translation": "",
+    "distractors": "",
+    "startTime": 86.93,
+    "endTime": 91.62
+  },
+  {
+    "id": "s4905",
+    "musicId": "m112",
+    "text": "呼啦啦的青草地 和你到天外",
+    "translation": "",
+    "distractors": "",
+    "startTime": 91.62,
+    "endTime": 96.06
+  },
+  {
+    "id": "s4906",
+    "musicId": "m112",
+    "text": "美丽大草原 歌声如天籁",
+    "translation": "",
+    "distractors": "",
+    "startTime": 96.06,
+    "endTime": 100.56
+  },
+  {
+    "id": "s4907",
+    "musicId": "m112",
+    "text": "落在了我心上 给了我豪迈",
+    "translation": "",
+    "distractors": "",
+    "startTime": 100.56,
+    "endTime": 105.02
+  },
+  {
+    "id": "s4908",
+    "musicId": "m112",
+    "text": "马背上小伙 打马要快",
+    "translation": "",
+    "distractors": "",
+    "startTime": 105.02,
+    "endTime": 109.64
+  },
+  {
+    "id": "s4909",
+    "musicId": "m112",
+    "text": "呼啦啦的青草地 不要你等待",
+    "translation": "",
+    "distractors": "",
+    "startTime": 109.64,
+    "endTime": 132.23
+  },
+  {
+    "id": "s4910",
+    "musicId": "m112",
+    "text": "是你的白云 牵动了我的爱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 132.23,
+    "endTime": 136.73
+  },
+  {
+    "id": "s4911",
+    "musicId": "m112",
+    "text": "是你的绿色 把我心澎湃",
+    "translation": "",
+    "distractors": "",
+    "startTime": 136.73,
+    "endTime": 141.17
+  },
+  {
+    "id": "s4912",
+    "musicId": "m112",
+    "text": "千万里风尘 来到你身边",
+    "translation": "",
+    "distractors": "",
+    "startTime": 141.17,
+    "endTime": 145.61
+  },
+  {
+    "id": "s4913",
+    "musicId": "m112",
+    "text": "放开歌喉就把情歌痛快唱出来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 145.61,
+    "endTime": 150.32
+  },
+  {
+    "id": "s4914",
+    "musicId": "m112",
+    "text": "是你的蓝天 让我梦飞起来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 150.32,
+    "endTime": 154.76
+  },
+  {
+    "id": "s4915",
+    "musicId": "m112",
+    "text": "是你的辽阔 让我思念如海",
+    "translation": "",
+    "distractors": "",
+    "startTime": 154.76,
+    "endTime": 159.27
+  },
+  {
+    "id": "s4916",
+    "musicId": "m112",
+    "text": "接天的哈达 滚烫的奶酒",
+    "translation": "",
+    "distractors": "",
+    "startTime": 159.27,
+    "endTime": 163.61
+  },
+  {
+    "id": "s4917",
+    "musicId": "m112",
+    "text": "你的热情 你的豪放你淳朴的大爱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 163.61,
+    "endTime": 170.76
+  },
+  {
+    "id": "s4918",
+    "musicId": "m112",
+    "text": "美丽大草原 风吹百花开",
+    "translation": "",
+    "distractors": "",
+    "startTime": 170.76,
+    "endTime": 175.32
+  },
+  {
+    "id": "s4919",
+    "musicId": "m112",
+    "text": "每一朵都是你 火热的情怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 175.32,
+    "endTime": 179.71
+  },
+  {
+    "id": "s4920",
+    "musicId": "m112",
+    "text": "牧羊的姑娘 长鞭一甩",
+    "translation": "",
+    "distractors": "",
+    "startTime": 179.71,
+    "endTime": 184.25
+  },
+  {
+    "id": "s4921",
+    "musicId": "m112",
+    "text": "呼啦啦的青草地 和你到天外",
+    "translation": "",
+    "distractors": "",
+    "startTime": 184.25,
+    "endTime": 188.81
+  },
+  {
+    "id": "s4922",
+    "musicId": "m112",
+    "text": "美丽大草原 歌声如天籁",
+    "translation": "",
+    "distractors": "",
+    "startTime": 188.81,
+    "endTime": 193.38
+  },
+  {
+    "id": "s4923",
+    "musicId": "m112",
+    "text": "落在了我心上 给了我豪迈",
+    "translation": "",
+    "distractors": "",
+    "startTime": 193.38,
+    "endTime": 197.81
+  },
+  {
+    "id": "s4924",
+    "musicId": "m112",
+    "text": "马背上小伙 打马要快",
+    "translation": "",
+    "distractors": "",
+    "startTime": 197.81,
+    "endTime": 202.31
+  },
+  {
+    "id": "s4925",
+    "musicId": "m112",
+    "text": "呼啦啦的青草地 不要你等待",
+    "translation": "",
+    "distractors": "",
+    "startTime": 202.31,
+    "endTime": 206.9
+  },
+  {
+    "id": "s4926",
+    "musicId": "m112",
+    "text": "美丽大草原 风吹百花开",
+    "translation": "",
+    "distractors": "",
+    "startTime": 206.9,
+    "endTime": 211.52
+  },
+  {
+    "id": "s4927",
+    "musicId": "m112",
+    "text": "每一朵都是你 火热的情怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 211.52,
+    "endTime": 216.03
+  },
+  {
+    "id": "s4928",
+    "musicId": "m112",
+    "text": "牧羊的姑娘 长鞭一甩",
+    "translation": "",
+    "distractors": "",
+    "startTime": 216.03,
+    "endTime": 220.53
+  },
+  {
+    "id": "s4929",
+    "musicId": "m112",
+    "text": "呼啦啦的青草地 和你到天外",
+    "translation": "",
+    "distractors": "",
+    "startTime": 220.53,
+    "endTime": 225.09
+  },
+  {
+    "id": "s4930",
+    "musicId": "m112",
+    "text": "美丽大草原 歌声如天籁",
+    "translation": "",
+    "distractors": "",
+    "startTime": 225.09,
+    "endTime": 229.53
+  },
+  {
+    "id": "s4931",
+    "musicId": "m112",
+    "text": "落在了我心上 给了我豪迈",
+    "translation": "",
+    "distractors": "",
+    "startTime": 229.53,
+    "endTime": 234.04
+  },
+  {
+    "id": "s4932",
+    "musicId": "m112",
+    "text": "马背上小伙 打马要快",
+    "translation": "",
+    "distractors": "",
+    "startTime": 234.04,
+    "endTime": 238.46
+  },
+  {
+    "id": "s4933",
+    "musicId": "m112",
+    "text": "呼啦啦的青草地 不要你等待",
+    "translation": "",
+    "distractors": "",
+    "startTime": 238.46,
+    "endTime": 244.01
+  },
+  {
+    "id": "s4934",
+    "musicId": "m112",
+    "text": "呼啦啦的青草地 不要你等待",
+    "translation": "",
+    "distractors": "",
+    "startTime": 244.01,
+    "endTime": 249.01
+  },
+  {
+    "id": "s4935",
+    "musicId": "m113",
+    "text": "这里的星星最亮 这里的月亮最圆",
+    "translation": "",
+    "distractors": "",
+    "startTime": 26.59,
+    "endTime": 31.57
+  },
+  {
+    "id": "s4936",
+    "musicId": "m113",
+    "text": "顺着马奶酒的香醇",
+    "translation": "",
+    "distractors": "",
+    "startTime": 31.57,
+    "endTime": 34.22
+  },
+  {
+    "id": "s4937",
+    "musicId": "m113",
+    "text": "我找到最初的依恋",
+    "translation": "",
+    "distractors": "",
+    "startTime": 34.22,
+    "endTime": 36.54
+  },
+  {
+    "id": "s4938",
+    "musicId": "m113",
+    "text": "这里的草儿最绿 这里的花朵最艳",
+    "translation": "",
+    "distractors": "",
+    "startTime": 36.54,
+    "endTime": 41.63
+  },
+  {
+    "id": "s4939",
+    "musicId": "m113",
+    "text": "沿着马头琴的悠扬",
+    "translation": "",
+    "distractors": "",
+    "startTime": 41.63,
+    "endTime": 44.49
+  },
+  {
+    "id": "s4940",
+    "musicId": "m113",
+    "text": "我听到深情的呼唤",
+    "translation": "",
+    "distractors": "",
+    "startTime": 44.49,
+    "endTime": 52.12
+  },
+  {
+    "id": "s4941",
+    "musicId": "m113",
+    "text": "恋你这如画的纯净蓝天",
+    "translation": "",
+    "distractors": "",
+    "startTime": 52.12,
+    "endTime": 57.2
+  },
+  {
+    "id": "s4942",
+    "musicId": "m113",
+    "text": "如果我是天边那朵白云",
+    "translation": "",
+    "distractors": "",
+    "startTime": 57.2,
+    "endTime": 62.13
+  },
+  {
+    "id": "s4943",
+    "musicId": "m113",
+    "text": "草尖儿上的露珠是我滴落的思念",
+    "translation": "",
+    "distractors": "",
+    "startTime": 62.13,
+    "endTime": 67.56
+  },
+  {
+    "id": "s4944",
+    "musicId": "m113",
+    "text": "恋你心坦荡 恋你山连绵",
+    "translation": "",
+    "distractors": "",
+    "startTime": 67.56,
+    "endTime": 72.53
+  },
+  {
+    "id": "s4945",
+    "musicId": "m113",
+    "text": "恋你这如诗的灯火炊烟",
+    "translation": "",
+    "distractors": "",
+    "startTime": 72.53,
+    "endTime": 77.39
+  },
+  {
+    "id": "s4946",
+    "musicId": "m113",
+    "text": "如果我是 天边那只孤雁",
+    "translation": "",
+    "distractors": "",
+    "startTime": 77.39,
+    "endTime": 82.59
+  },
+  {
+    "id": "s4947",
+    "musicId": "m113",
+    "text": "下一个春暖花开我 回到你身边",
+    "translation": "",
+    "distractors": "",
+    "startTime": 82.59,
+    "endTime": 108.86
+  },
+  {
+    "id": "s4948",
+    "musicId": "m113",
+    "text": "这里的星星最亮 这里的月亮最圆",
+    "translation": "",
+    "distractors": "",
+    "startTime": 108.86,
+    "endTime": 113.21
+  },
+  {
+    "id": "s4949",
+    "musicId": "m113",
+    "text": "顺着马奶酒的香醇",
+    "translation": "",
+    "distractors": "",
+    "startTime": 113.21,
+    "endTime": 115.97
+  },
+  {
+    "id": "s4950",
+    "musicId": "m113",
+    "text": "我找到最初的依恋",
+    "translation": "",
+    "distractors": "",
+    "startTime": 115.97,
+    "endTime": 118.34
+  },
+  {
+    "id": "s4951",
+    "musicId": "m113",
+    "text": "这里的草儿最绿 这里的花朵最艳",
+    "translation": "",
+    "distractors": "",
+    "startTime": 118.34,
+    "endTime": 123.61
+  },
+  {
+    "id": "s4952",
+    "musicId": "m113",
+    "text": "沿着马头琴的悠扬",
+    "translation": "",
+    "distractors": "",
+    "startTime": 123.61,
+    "endTime": 126.14
+  },
+  {
+    "id": "s4953",
+    "musicId": "m113",
+    "text": "我听到深情的呼唤",
+    "translation": "",
+    "distractors": "",
+    "startTime": 126.14,
+    "endTime": 128.639
+  },
+  {
+    "id": "s4954",
+    "musicId": "m113",
+    "text": "恋你眼清澈 恋你水蜿蜒",
+    "translation": "",
+    "distractors": "",
+    "startTime": 128.639,
+    "endTime": 133.77
+  },
+  {
+    "id": "s4955",
+    "musicId": "m113",
+    "text": "恋你这如画的纯净蓝天",
+    "translation": "",
+    "distractors": "",
+    "startTime": 133.77,
+    "endTime": 138.95
+  },
+  {
+    "id": "s4956",
+    "musicId": "m113",
+    "text": "如果我是天边那朵白云",
+    "translation": "",
+    "distractors": "",
+    "startTime": 138.95,
+    "endTime": 143.81
+  },
+  {
+    "id": "s4957",
+    "musicId": "m113",
+    "text": "草尖儿上的露珠是我滴落的思念",
+    "translation": "",
+    "distractors": "",
+    "startTime": 143.81,
+    "endTime": 149.5
+  },
+  {
+    "id": "s4958",
+    "musicId": "m113",
+    "text": "恋你心坦荡 恋你山连绵",
+    "translation": "",
+    "distractors": "",
+    "startTime": 149.5,
+    "endTime": 154.24
+  },
+  {
+    "id": "s4959",
+    "musicId": "m113",
+    "text": "恋你这如诗的灯火炊烟",
+    "translation": "",
+    "distractors": "",
+    "startTime": 154.24,
+    "endTime": 159.19
+  },
+  {
+    "id": "s4960",
+    "musicId": "m113",
+    "text": "如果我是 天边那只孤雁",
+    "translation": "",
+    "distractors": "",
+    "startTime": 159.19,
+    "endTime": 164.31
+  },
+  {
+    "id": "s4961",
+    "musicId": "m113",
+    "text": "下一个春暖花开我 回到你身边",
+    "translation": "",
+    "distractors": "",
+    "startTime": 164.31,
+    "endTime": 172.13
+  },
+  {
+    "id": "s4962",
+    "musicId": "m113",
+    "text": "恋你眼清澈 恋你水蜿蜒",
+    "translation": "",
+    "distractors": "",
+    "startTime": 172.13,
+    "endTime": 177.1
+  },
+  {
+    "id": "s4963",
+    "musicId": "m113",
+    "text": "恋你这如画的纯净蓝天",
+    "translation": "",
+    "distractors": "",
+    "startTime": 177.1,
+    "endTime": 182.11
+  },
+  {
+    "id": "s4964",
+    "musicId": "m113",
+    "text": "如果我是天边那朵白云",
+    "translation": "",
+    "distractors": "",
+    "startTime": 182.11,
+    "endTime": 187.49
+  },
+  {
+    "id": "s4965",
+    "musicId": "m113",
+    "text": "草尖儿上的露珠是我滴落的思念",
+    "translation": "",
+    "distractors": "",
+    "startTime": 187.49,
+    "endTime": 192.67
+  },
+  {
+    "id": "s4966",
+    "musicId": "m113",
+    "text": "恋你心坦荡 恋你山连绵",
+    "translation": "",
+    "distractors": "",
+    "startTime": 192.67,
+    "endTime": 197.45
+  },
+  {
+    "id": "s4967",
+    "musicId": "m113",
+    "text": "恋你这如诗的灯火炊烟",
+    "translation": "",
+    "distractors": "",
+    "startTime": 197.45,
+    "endTime": 202.46
+  },
+  {
+    "id": "s4968",
+    "musicId": "m113",
+    "text": "如果我是 天边那只孤雁",
+    "translation": "",
+    "distractors": "",
+    "startTime": 202.46,
+    "endTime": 207.63
+  },
+  {
+    "id": "s4969",
+    "musicId": "m113",
+    "text": "下一个春暖花开我 回到你身边",
+    "translation": "",
+    "distractors": "",
+    "startTime": 207.63,
+    "endTime": 212.79
+  },
+  {
+    "id": "s4970",
+    "musicId": "m113",
+    "text": "下一个春暖花开我",
+    "translation": "",
+    "distractors": "",
+    "startTime": 212.79,
+    "endTime": 215.829
+  },
+  {
+    "id": "s4971",
+    "musicId": "m113",
+    "text": "回到 回到你身边",
+    "translation": "",
+    "distractors": "",
+    "startTime": 215.829,
+    "endTime": 220.829
+  },
+  {
+    "id": "s4972",
+    "musicId": "m114",
+    "text": "遇上你真开心",
+    "translation": "",
+    "distractors": "",
+    "startTime": 20.03,
+    "endTime": 24.29
+  },
+  {
+    "id": "s4973",
+    "musicId": "m114",
+    "text": "你的样子太迷人",
+    "translation": "",
+    "distractors": "",
+    "startTime": 24.29,
+    "endTime": 28.73
+  },
+  {
+    "id": "s4974",
+    "musicId": "m114",
+    "text": "你的眼你的唇",
+    "translation": "",
+    "distractors": "",
+    "startTime": 28.73,
+    "endTime": 33.3
+  },
+  {
+    "id": "s4975",
+    "musicId": "m114",
+    "text": "你的呼吸牵动我的心",
+    "translation": "",
+    "distractors": "",
+    "startTime": 33.3,
+    "endTime": 38.01
+  },
+  {
+    "id": "s4976",
+    "musicId": "m114",
+    "text": "不是我太天真",
+    "translation": "",
+    "distractors": "",
+    "startTime": 38.01,
+    "endTime": 42.17
+  },
+  {
+    "id": "s4977",
+    "musicId": "m114",
+    "text": "总怕自己慢吞吞",
+    "translation": "",
+    "distractors": "",
+    "startTime": 42.17,
+    "endTime": 46.67
+  },
+  {
+    "id": "s4978",
+    "musicId": "m114",
+    "text": "你的笑你的吻",
+    "translation": "",
+    "distractors": "",
+    "startTime": 46.67,
+    "endTime": 51.06
+  },
+  {
+    "id": "s4979",
+    "musicId": "m114",
+    "text": "你的眼泪让我乱分寸",
+    "translation": "",
+    "distractors": "",
+    "startTime": 51.06,
+    "endTime": 55.6
+  },
+  {
+    "id": "s4980",
+    "musicId": "m114",
+    "text": "为爱做足一百分",
+    "translation": "",
+    "distractors": "",
+    "startTime": 55.6,
+    "endTime": 59.97
+  },
+  {
+    "id": "s4981",
+    "musicId": "m114",
+    "text": "玫瑰送给有情人",
+    "translation": "",
+    "distractors": "",
+    "startTime": 59.97,
+    "endTime": 64.38
+  },
+  {
+    "id": "s4982",
+    "musicId": "m114",
+    "text": "为了你要努力",
+    "translation": "",
+    "distractors": "",
+    "startTime": 64.38,
+    "endTime": 69.14
+  },
+  {
+    "id": "s4983",
+    "musicId": "m114",
+    "text": "不怕伤骨动了筋",
+    "translation": "",
+    "distractors": "",
+    "startTime": 69.14,
+    "endTime": 73.33
+  },
+  {
+    "id": "s4984",
+    "musicId": "m114",
+    "text": "为爱做足一百分",
+    "translation": "",
+    "distractors": "",
+    "startTime": 73.33,
+    "endTime": 77.75
+  },
+  {
+    "id": "s4985",
+    "musicId": "m114",
+    "text": "不怕刀山火海深",
+    "translation": "",
+    "distractors": "",
+    "startTime": 77.75,
+    "endTime": 82.09
+  },
+  {
+    "id": "s4986",
+    "musicId": "m114",
+    "text": "为了你不放弃",
+    "translation": "",
+    "distractors": "",
+    "startTime": 82.09,
+    "endTime": 86.49
+  },
+  {
+    "id": "s4987",
+    "musicId": "m114",
+    "text": "希望你明白我的心",
+    "translation": "",
+    "distractors": "",
+    "startTime": 86.49,
+    "endTime": 90.7
+  },
+  {
+    "id": "s4988",
+    "musicId": "m114",
+    "text": "……",
+    "translation": "",
+    "distractors": "",
+    "startTime": 90.7,
+    "endTime": 108.76
+  },
+  {
+    "id": "s4989",
+    "musicId": "m114",
+    "text": "遇上你真开心",
+    "translation": "",
+    "distractors": "",
+    "startTime": 108.76,
+    "endTime": 113.13
+  },
+  {
+    "id": "s4990",
+    "musicId": "m114",
+    "text": "你的样子太迷人",
+    "translation": "",
+    "distractors": "",
+    "startTime": 113.13,
+    "endTime": 117.64
+  },
+  {
+    "id": "s4991",
+    "musicId": "m114",
+    "text": "你的眼你的唇",
+    "translation": "",
+    "distractors": "",
+    "startTime": 117.64,
+    "endTime": 122.07
+  },
+  {
+    "id": "s4992",
+    "musicId": "m114",
+    "text": "你的呼吸牵动我的心",
+    "translation": "",
+    "distractors": "",
+    "startTime": 122.07,
+    "endTime": 126.61
+  },
+  {
+    "id": "s4993",
+    "musicId": "m114",
+    "text": "不是我太天真",
+    "translation": "",
+    "distractors": "",
+    "startTime": 126.61,
+    "endTime": 131.01
+  },
+  {
+    "id": "s4994",
+    "musicId": "m114",
+    "text": "总怕自己慢吞吞",
+    "translation": "",
+    "distractors": "",
+    "startTime": 131.01,
+    "endTime": 135.44
+  },
+  {
+    "id": "s4995",
+    "musicId": "m114",
+    "text": "你的笑你的吻",
+    "translation": "",
+    "distractors": "",
+    "startTime": 135.44,
+    "endTime": 139.91
+  },
+  {
+    "id": "s4996",
+    "musicId": "m114",
+    "text": "你的眼泪让我乱分寸",
+    "translation": "",
+    "distractors": "",
+    "startTime": 139.91,
+    "endTime": 144.43
+  },
+  {
+    "id": "s4997",
+    "musicId": "m114",
+    "text": "为爱做足一百分",
+    "translation": "",
+    "distractors": "",
+    "startTime": 144.43,
+    "endTime": 148.74
+  },
+  {
+    "id": "s4998",
+    "musicId": "m114",
+    "text": "玫瑰送给有情人",
+    "translation": "",
+    "distractors": "",
+    "startTime": 148.74,
+    "endTime": 153.24
+  },
+  {
+    "id": "s4999",
+    "musicId": "m114",
+    "text": "为了你要努力",
+    "translation": "",
+    "distractors": "",
+    "startTime": 153.24,
+    "endTime": 157.71
+  },
+  {
+    "id": "s5000",
+    "musicId": "m114",
+    "text": "不怕伤骨动了筋",
+    "translation": "",
+    "distractors": "",
+    "startTime": 157.71,
+    "endTime": 162.16
+  },
+  {
+    "id": "s5001",
+    "musicId": "m114",
+    "text": "为爱做足一百分",
+    "translation": "",
+    "distractors": "",
+    "startTime": 162.16,
+    "endTime": 166.5
+  },
+  {
+    "id": "s5002",
+    "musicId": "m114",
+    "text": "不怕刀山火海深",
+    "translation": "",
+    "distractors": "",
+    "startTime": 166.5,
+    "endTime": 171.03
+  },
+  {
+    "id": "s5003",
+    "musicId": "m114",
+    "text": "为了你不放弃",
+    "translation": "",
+    "distractors": "",
+    "startTime": 171.03,
+    "endTime": 175.34
+  },
+  {
+    "id": "s5004",
+    "musicId": "m114",
+    "text": "希望你明白我的心",
+    "translation": "",
+    "distractors": "",
+    "startTime": 175.34,
+    "endTime": 179.7
+  },
+  {
+    "id": "s5005",
+    "musicId": "m114",
+    "text": "为爱做足一百分",
+    "translation": "",
+    "distractors": "",
+    "startTime": 179.7,
+    "endTime": 184.4
+  },
+  {
+    "id": "s5006",
+    "musicId": "m114",
+    "text": "玫瑰送给有情人",
+    "translation": "",
+    "distractors": "",
+    "startTime": 184.4,
+    "endTime": 188.56
+  },
+  {
+    "id": "s5007",
+    "musicId": "m114",
+    "text": "为了你要努力",
+    "translation": "",
+    "distractors": "",
+    "startTime": 188.56,
+    "endTime": 193.2
+  },
+  {
+    "id": "s5008",
+    "musicId": "m114",
+    "text": "不怕伤骨动了筋",
+    "translation": "",
+    "distractors": "",
+    "startTime": 193.2,
+    "endTime": 197.8
+  },
+  {
+    "id": "s5009",
+    "musicId": "m114",
+    "text": "为爱做足一百分",
+    "translation": "",
+    "distractors": "",
+    "startTime": 197.8,
+    "endTime": 202.12
+  },
+  {
+    "id": "s5010",
+    "musicId": "m114",
+    "text": "不怕刀山火海深",
+    "translation": "",
+    "distractors": "",
+    "startTime": 202.12,
+    "endTime": 206.54
+  },
+  {
+    "id": "s5011",
+    "musicId": "m114",
+    "text": "为了你不放弃",
+    "translation": "",
+    "distractors": "",
+    "startTime": 206.54,
+    "endTime": 211.01
+  },
+  {
+    "id": "s5012",
+    "musicId": "m114",
+    "text": "希望你明白我的心",
+    "translation": "",
+    "distractors": "",
+    "startTime": 211.01,
+    "endTime": 215.57
+  },
+  {
+    "id": "s5013",
+    "musicId": "m114",
+    "text": "希望你明白我的心",
+    "translation": "",
+    "distractors": "",
+    "startTime": 215.57,
+    "endTime": 220.57
+  },
+  {
+    "id": "s5014",
+    "musicId": "m115",
+    "text": "[t_time:(04:29)]  牧人恋歌",
+    "translation": "",
+    "distractors": "",
+    "startTime": 0.1,
+    "endTime": 12.1
+  },
+  {
+    "id": "s5015",
+    "musicId": "m115",
+    "text": "演唱：乌兰托娅 雨禾",
+    "translation": "",
+    "distractors": "",
+    "startTime": 12.1,
+    "endTime": 17.1
+  },
+  {
+    "id": "s5016",
+    "musicId": "m115",
+    "text": "录音：冯丹",
+    "translation": "",
+    "distractors": "",
+    "startTime": 17.1,
+    "endTime": 19.1
+  },
+  {
+    "id": "s5017",
+    "musicId": "m115",
+    "text": "混音：周晓明",
+    "translation": "",
+    "distractors": "",
+    "startTime": 19.1,
+    "endTime": 29.91
+  },
+  {
+    "id": "s5018",
+    "musicId": "m115",
+    "text": "男：我从高原来 听见你天籁",
+    "translation": "",
+    "distractors": "",
+    "startTime": 29.91,
+    "endTime": 34.95
+  },
+  {
+    "id": "s5019",
+    "musicId": "m115",
+    "text": "飞跃喜马拉雅山乘风而来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 34.95,
+    "endTime": 39.98
+  },
+  {
+    "id": "s5020",
+    "musicId": "m115",
+    "text": "肩披布拉达宫圣洁的光彩",
+    "translation": "",
+    "distractors": "",
+    "startTime": 39.98,
+    "endTime": 44.88
+  },
+  {
+    "id": "s5021",
+    "musicId": "m115",
+    "text": "只为种一朵雪莲在你心海",
+    "translation": "",
+    "distractors": "",
+    "startTime": 44.88,
+    "endTime": 50.11
+  },
+  {
+    "id": "s5022",
+    "musicId": "m115",
+    "text": "女：我从草原来 寻找你的爱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 50.11,
+    "endTime": 54.94
+  },
+  {
+    "id": "s5023",
+    "musicId": "m115",
+    "text": "踏上我的黑骏马纵横而来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 54.94,
+    "endTime": 59.75
+  },
+  {
+    "id": "s5024",
+    "musicId": "m115",
+    "text": "畅饮马奶酒见识你的豪迈",
+    "translation": "",
+    "distractors": "",
+    "startTime": 59.75,
+    "endTime": 64.86
+  },
+  {
+    "id": "s5025",
+    "musicId": "m115",
+    "text": "一起驰骋草原上自由自在",
+    "translation": "",
+    "distractors": "",
+    "startTime": 64.86,
+    "endTime": 74.92
+  },
+  {
+    "id": "s5026",
+    "musicId": "m115",
+    "text": "女：我爱你就像绵绵的山脉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 74.92,
+    "endTime": 79.89
+  },
+  {
+    "id": "s5027",
+    "musicId": "m115",
+    "text": "合：是你把牵挂寄到我心怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 79.89,
+    "endTime": 89.99
+  },
+  {
+    "id": "s5028",
+    "musicId": "m115",
+    "text": "男：我爱你就像雪域的情怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 89.99,
+    "endTime": 94.91
+  },
+  {
+    "id": "s5029",
+    "musicId": "m115",
+    "text": "女：我爱你就像草原的血脉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 94.91,
+    "endTime": 99.92
+  },
+  {
+    "id": "s5030",
+    "musicId": "m115",
+    "text": "合：是你让眷恋落在我心怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 99.92,
+    "endTime": 104.92
+  },
+  {
+    "id": "s5031",
+    "musicId": "m115",
+    "text": "纵然明月千里 有你同在",
+    "translation": "",
+    "distractors": "",
+    "startTime": 104.92,
+    "endTime": 132.4
+  },
+  {
+    "id": "s5032",
+    "musicId": "m115",
+    "text": "男：我从高原来 听见你天籁",
+    "translation": "",
+    "distractors": "",
+    "startTime": 132.4,
+    "endTime": 137.39
+  },
+  {
+    "id": "s5033",
+    "musicId": "m115",
+    "text": "飞跃喜马拉雅山乘风而来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 137.39,
+    "endTime": 142.44
+  },
+  {
+    "id": "s5034",
+    "musicId": "m115",
+    "text": "肩披布拉达宫圣洁的光彩",
+    "translation": "",
+    "distractors": "",
+    "startTime": 142.44,
+    "endTime": 147.39
+  },
+  {
+    "id": "s5035",
+    "musicId": "m115",
+    "text": "只为种一朵雪莲在你心海",
+    "translation": "",
+    "distractors": "",
+    "startTime": 147.39,
+    "endTime": 152.6
+  },
+  {
+    "id": "s5036",
+    "musicId": "m115",
+    "text": "女：我从草原来 寻找你的爱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 152.6,
+    "endTime": 157.41
+  },
+  {
+    "id": "s5037",
+    "musicId": "m115",
+    "text": "踏上我的黑骏马纵横而来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 157.41,
+    "endTime": 162.26
+  },
+  {
+    "id": "s5038",
+    "musicId": "m115",
+    "text": "畅饮马奶酒见识你的豪迈",
+    "translation": "",
+    "distractors": "",
+    "startTime": 162.26,
+    "endTime": 167.35
+  },
+  {
+    "id": "s5039",
+    "musicId": "m115",
+    "text": "一起驰骋草原上自由自在",
+    "translation": "",
+    "distractors": "",
+    "startTime": 167.35,
+    "endTime": 172.54
+  },
+  {
+    "id": "s5040",
+    "musicId": "m115",
+    "text": "男：我爱你就像天上的云彩",
+    "translation": "",
+    "distractors": "",
+    "startTime": 172.54,
+    "endTime": 177.48
+  },
+  {
+    "id": "s5041",
+    "musicId": "m115",
+    "text": "女：我爱你就像绵绵的山脉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 177.48,
+    "endTime": 182.39
+  },
+  {
+    "id": "s5042",
+    "musicId": "m115",
+    "text": "合：是你把牵挂寄到我心怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 182.39,
+    "endTime": 187.45
+  },
+  {
+    "id": "s5043",
+    "musicId": "m115",
+    "text": "从此魂牵梦绕不愿离开",
+    "translation": "",
+    "distractors": "",
+    "startTime": 187.45,
+    "endTime": 192.5
+  },
+  {
+    "id": "s5044",
+    "musicId": "m115",
+    "text": "男：我爱你就像雪域的情怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 192.5,
+    "endTime": 197.47
+  },
+  {
+    "id": "s5045",
+    "musicId": "m115",
+    "text": "女：我爱你就像草原的血脉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 197.47,
+    "endTime": 202.37
+  },
+  {
+    "id": "s5046",
+    "musicId": "m115",
+    "text": "合：是你让眷恋落在我心怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 202.37,
+    "endTime": 207.48
+  },
+  {
+    "id": "s5047",
+    "musicId": "m115",
+    "text": "纵然明月千里 有你同在",
+    "translation": "",
+    "distractors": "",
+    "startTime": 207.48,
+    "endTime": 212.69
+  },
+  {
+    "id": "s5048",
+    "musicId": "m115",
+    "text": "男：我爱你就像天上的云彩",
+    "translation": "",
+    "distractors": "",
+    "startTime": 212.69,
+    "endTime": 217.41
+  },
+  {
+    "id": "s5049",
+    "musicId": "m115",
+    "text": "女：我爱你就像绵绵的山脉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 217.41,
+    "endTime": 222.38
+  },
+  {
+    "id": "s5050",
+    "musicId": "m115",
+    "text": "合：是你把牵挂寄到我心怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 222.38,
+    "endTime": 227.5
+  },
+  {
+    "id": "s5051",
+    "musicId": "m115",
+    "text": "从此魂牵梦绕不愿离开",
+    "translation": "",
+    "distractors": "",
+    "startTime": 227.5,
+    "endTime": 232.51
+  },
+  {
+    "id": "s5052",
+    "musicId": "m115",
+    "text": "男：我爱你就像雪域的情怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 232.51,
+    "endTime": 237.48
+  },
+  {
+    "id": "s5053",
+    "musicId": "m115",
+    "text": "女：我爱你就像草原的血脉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 237.48,
+    "endTime": 242.36
+  },
+  {
+    "id": "s5054",
+    "musicId": "m115",
+    "text": "合：是你让眷恋落在我心怀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 242.36,
+    "endTime": 247.48
+  },
+  {
+    "id": "s5055",
+    "musicId": "m115",
+    "text": "纵然明月千里 有你同在",
+    "translation": "",
+    "distractors": "",
+    "startTime": 247.48,
+    "endTime": 252.43
+  },
+  {
+    "id": "s5056",
+    "musicId": "m115",
+    "text": "纵然明月千里 有你同在",
+    "translation": "",
+    "distractors": "",
+    "startTime": 252.43,
+    "endTime": 257.43
+  },
+  {
+    "id": "s5057",
+    "musicId": "m116",
+    "text": "春风轻轻摇动着梦幻",
+    "translation": "",
+    "distractors": "",
+    "startTime": 32.79,
+    "endTime": 36.87
+  },
+  {
+    "id": "s5058",
+    "musicId": "m116",
+    "text": "细雨柔柔滴落着思念",
+    "translation": "",
+    "distractors": "",
+    "startTime": 36.87,
+    "endTime": 41.5
+  },
+  {
+    "id": "s5059",
+    "musicId": "m116",
+    "text": "我的爱像池中荡漾的春水",
+    "translation": "",
+    "distractors": "",
+    "startTime": 41.5,
+    "endTime": 45.2
+  },
+  {
+    "id": "s5060",
+    "musicId": "m116",
+    "text": "每缕心香都是甜蜜的呢喃",
+    "translation": "",
+    "distractors": "",
+    "startTime": 45.2,
+    "endTime": 49.38
+  },
+  {
+    "id": "s5061",
+    "musicId": "m116",
+    "text": "春风轻轻摇动着梦幻",
+    "translation": "",
+    "distractors": "",
+    "startTime": 49.38,
+    "endTime": 53.46
+  },
+  {
+    "id": "s5062",
+    "musicId": "m116",
+    "text": "细雨柔柔滴落着思念",
+    "translation": "",
+    "distractors": "",
+    "startTime": 53.46,
+    "endTime": 57.6
+  },
+  {
+    "id": "s5063",
+    "musicId": "m116",
+    "text": "我的心像桃花绽放在春天",
+    "translation": "",
+    "distractors": "",
+    "startTime": 57.6,
+    "endTime": 61.71
+  },
+  {
+    "id": "s5064",
+    "musicId": "m116",
+    "text": "每束花瓣都是对你的缠绵",
+    "translation": "",
+    "distractors": "",
+    "startTime": 61.71,
+    "endTime": 65.96
+  },
+  {
+    "id": "s5065",
+    "musicId": "m116",
+    "text": "桃花开满三月天",
+    "translation": "",
+    "distractors": "",
+    "startTime": 65.96,
+    "endTime": 69.98
+  },
+  {
+    "id": "s5066",
+    "musicId": "m116",
+    "text": "情人成双舞翩翩",
+    "translation": "",
+    "distractors": "",
+    "startTime": 69.98,
+    "endTime": 74.14
+  },
+  {
+    "id": "s5067",
+    "musicId": "m116",
+    "text": "一路桃花一路歌",
+    "translation": "",
+    "distractors": "",
+    "startTime": 74.14,
+    "endTime": 78.289
+  },
+  {
+    "id": "s5068",
+    "musicId": "m116",
+    "text": "你我相爱到百年",
+    "translation": "",
+    "distractors": "",
+    "startTime": 78.289,
+    "endTime": 82.44
+  },
+  {
+    "id": "s5069",
+    "musicId": "m116",
+    "text": "桃花开满三月天",
+    "translation": "",
+    "distractors": "",
+    "startTime": 82.44,
+    "endTime": 86.59
+  },
+  {
+    "id": "s5070",
+    "musicId": "m116",
+    "text": "情人成双舞翩翩",
+    "translation": "",
+    "distractors": "",
+    "startTime": 86.59,
+    "endTime": 90.789
+  },
+  {
+    "id": "s5071",
+    "musicId": "m116",
+    "text": "一路桃花一路歌",
+    "translation": "",
+    "distractors": "",
+    "startTime": 90.789,
+    "endTime": 94.87
+  },
+  {
+    "id": "s5072",
+    "musicId": "m116",
+    "text": "你我相爱到百年",
+    "translation": "",
+    "distractors": "",
+    "startTime": 94.87,
+    "endTime": 115.55
+  },
+  {
+    "id": "s5073",
+    "musicId": "m116",
+    "text": "春风轻轻摇动着梦幻",
+    "translation": "",
+    "distractors": "",
+    "startTime": 115.55,
+    "endTime": 119.65
+  },
+  {
+    "id": "s5074",
+    "musicId": "m116",
+    "text": "细雨柔柔滴落着思念",
+    "translation": "",
+    "distractors": "",
+    "startTime": 119.65,
+    "endTime": 123.81
+  },
+  {
+    "id": "s5075",
+    "musicId": "m116",
+    "text": "我的心像桃花绽放在春天",
+    "translation": "",
+    "distractors": "",
+    "startTime": 123.81,
+    "endTime": 127.87
+  },
+  {
+    "id": "s5076",
+    "musicId": "m116",
+    "text": "每束花瓣都是对你的缠绵",
+    "translation": "",
+    "distractors": "",
+    "startTime": 127.87,
+    "endTime": 132.13
+  },
+  {
+    "id": "s5077",
+    "musicId": "m116",
+    "text": "桃花开满三月天",
+    "translation": "",
+    "distractors": "",
+    "startTime": 132.13,
+    "endTime": 136.17
+  },
+  {
+    "id": "s5078",
+    "musicId": "m116",
+    "text": "情人成双舞翩翩",
+    "translation": "",
+    "distractors": "",
+    "startTime": 136.17,
+    "endTime": 140.35
+  },
+  {
+    "id": "s5079",
+    "musicId": "m116",
+    "text": "一路桃花一路歌",
+    "translation": "",
+    "distractors": "",
+    "startTime": 140.35,
+    "endTime": 144.51
+  },
+  {
+    "id": "s5080",
+    "musicId": "m116",
+    "text": "你我相爱到百年",
+    "translation": "",
+    "distractors": "",
+    "startTime": 144.51,
+    "endTime": 148.53
+  },
+  {
+    "id": "s5081",
+    "musicId": "m116",
+    "text": "桃花开满三月天",
+    "translation": "",
+    "distractors": "",
+    "startTime": 148.53,
+    "endTime": 152.78
+  },
+  {
+    "id": "s5082",
+    "musicId": "m116",
+    "text": "情人成双舞翩翩",
+    "translation": "",
+    "distractors": "",
+    "startTime": 152.78,
+    "endTime": 156.86
+  },
+  {
+    "id": "s5083",
+    "musicId": "m116",
+    "text": "一路桃花一路歌",
+    "translation": "",
+    "distractors": "",
+    "startTime": 156.86,
+    "endTime": 161.5
+  },
+  {
+    "id": "s5084",
+    "musicId": "m116",
+    "text": "你我相爱到百年",
+    "translation": "",
+    "distractors": "",
+    "startTime": 161.5,
+    "endTime": 167.3
+  },
+  {
+    "id": "s5085",
+    "musicId": "m116",
+    "text": "桃花里藏着我滚烫的情感",
+    "translation": "",
+    "distractors": "",
+    "startTime": 167.3,
+    "endTime": 173.55
+  },
+  {
+    "id": "s5086",
+    "musicId": "m116",
+    "text": "桃花倒影着我真挚的爱恋",
+    "translation": "",
+    "distractors": "",
+    "startTime": 173.55,
+    "endTime": 179.69
+  },
+  {
+    "id": "s5087",
+    "musicId": "m116",
+    "text": "期盼你呵护这美丽的红颜",
+    "translation": "",
+    "distractors": "",
+    "startTime": 179.69,
+    "endTime": 185.9
+  },
+  {
+    "id": "s5088",
+    "musicId": "m116",
+    "text": "我会爱你一辈子永不改变",
+    "translation": "",
+    "distractors": "",
+    "startTime": 185.9,
+    "endTime": 194.16
+  },
+  {
+    "id": "s5089",
+    "musicId": "m116",
+    "text": "桃花开满三月天",
+    "translation": "",
+    "distractors": "",
+    "startTime": 194.16,
+    "endTime": 198.24
+  },
+  {
+    "id": "s5090",
+    "musicId": "m116",
+    "text": "情人成双舞翩翩",
+    "translation": "",
+    "distractors": "",
+    "startTime": 198.24,
+    "endTime": 202.46
+  },
+  {
+    "id": "s5091",
+    "musicId": "m116",
+    "text": "一路桃花一路歌",
+    "translation": "",
+    "distractors": "",
+    "startTime": 202.46,
+    "endTime": 206.56
+  },
+  {
+    "id": "s5092",
+    "musicId": "m116",
+    "text": "你我相爱到百年",
+    "translation": "",
+    "distractors": "",
+    "startTime": 206.56,
+    "endTime": 210.69
+  },
+  {
+    "id": "s5093",
+    "musicId": "m116",
+    "text": "桃花开满三月天",
+    "translation": "",
+    "distractors": "",
+    "startTime": 210.69,
+    "endTime": 214.86
+  },
+  {
+    "id": "s5094",
+    "musicId": "m116",
+    "text": "情人成双舞翩翩",
+    "translation": "",
+    "distractors": "",
+    "startTime": 214.86,
+    "endTime": 219.4
+  },
+  {
+    "id": "s5095",
+    "musicId": "m116",
+    "text": "一路桃花一路歌",
+    "translation": "",
+    "distractors": "",
+    "startTime": 219.4,
+    "endTime": 223.21
+  },
+  {
+    "id": "s5096",
+    "musicId": "m116",
+    "text": "你我相爱到百年",
+    "translation": "",
+    "distractors": "",
+    "startTime": 223.21,
+    "endTime": 227.25
+  },
+  {
+    "id": "s5097",
+    "musicId": "m116",
+    "text": "我俩相爱到百年",
+    "translation": "",
+    "distractors": "",
+    "startTime": 227.25,
+    "endTime": 232.25
+  },
+  {
+    "id": "s5098",
+    "musicId": "m117",
+    "text": "天边有一对双星",
+    "translation": "",
+    "distractors": "",
+    "startTime": 43.4,
+    "endTime": 50.75
+  },
+  {
+    "id": "s5099",
+    "musicId": "m117",
+    "text": "那是我梦中的眼睛....",
+    "translation": "",
+    "distractors": "",
+    "startTime": 50.75,
+    "endTime": 58.77
+  },
+  {
+    "id": "s5100",
+    "musicId": "m117",
+    "text": "山中 有 一片 晨雾  那是你昨夜的柔情...",
+    "translation": "",
+    "distractors": "",
+    "startTime": 58.77,
+    "endTime": 74.82
+  },
+  {
+    "id": "s5101",
+    "musicId": "m117",
+    "text": "我要登上  登上山顶",
+    "translation": "",
+    "distractors": "",
+    "startTime": 74.82,
+    "endTime": 82.82
+  },
+  {
+    "id": "s5102",
+    "musicId": "m117",
+    "text": "去寻觅雾中的身影  ......",
+    "translation": "",
+    "distractors": "",
+    "startTime": 82.82,
+    "endTime": 90.93
+  },
+  {
+    "id": "s5103",
+    "musicId": "m117",
+    "text": "我要跨上  跨上骏马.....",
+    "translation": "",
+    "distractors": "",
+    "startTime": 90.93,
+    "endTime": 99.34
+  },
+  {
+    "id": "s5104",
+    "musicId": "m117",
+    "text": "去追逐遥远的星星 ... 星星  ....",
+    "translation": "",
+    "distractors": "",
+    "startTime": 99.34,
+    "endTime": 117.31
+  },
+  {
+    "id": "s5105",
+    "musicId": "m117",
+    "text": "天边有  一棵大树 那是我心中的绿萌  ......",
+    "translation": "",
+    "distractors": "",
+    "startTime": 117.31,
+    "endTime": 132.84
+  },
+  {
+    "id": "s5106",
+    "musicId": "m117",
+    "text": "远方有  一座高山  那是你博大的胸襟 ....",
+    "translation": "",
+    "distractors": "",
+    "startTime": 132.84,
+    "endTime": 148.97
+  },
+  {
+    "id": "s5107",
+    "musicId": "m117",
+    "text": "我要树下  树下采拮",
+    "translation": "",
+    "distractors": "",
+    "startTime": 148.97,
+    "endTime": 157.38
+  },
+  {
+    "id": "s5108",
+    "musicId": "m117",
+    "text": "去编织美丽的憧憬 ....",
+    "translation": "",
+    "distractors": "",
+    "startTime": 157.38,
+    "endTime": 165.45
+  },
+  {
+    "id": "s5109",
+    "musicId": "m117",
+    "text": "我要山下  山下放牧",
+    "translation": "",
+    "distractors": "",
+    "startTime": 165.45,
+    "endTime": 172.76
+  },
+  {
+    "id": "s5110",
+    "musicId": "m117",
+    "text": "去追寻你的足印  足印....",
+    "translation": "",
+    "distractors": "",
+    "startTime": 172.76,
+    "endTime": 187.47
+  },
+  {
+    "id": "s5111",
+    "musicId": "m117",
+    "text": "...........",
+    "translation": "",
+    "distractors": "",
+    "startTime": 187.47,
+    "endTime": 219.62
+  },
+  {
+    "id": "s5112",
+    "musicId": "m117",
+    "text": "我愿与你 策马同行 奔驰在草原的深处   .....",
+    "translation": "",
+    "distractors": "",
+    "startTime": 219.62,
+    "endTime": 235.23
+  },
+  {
+    "id": "s5113",
+    "musicId": "m117",
+    "text": "我愿与你展翅飞翔  遨游在蓝天的穹谷  ......",
+    "translation": "",
+    "distractors": "",
+    "startTime": 235.23,
+    "endTime": 252.39
+  },
+  {
+    "id": "s5114",
+    "musicId": "m117",
+    "text": "穹 谷....",
+    "translation": "",
+    "distractors": "",
+    "startTime": 252.39,
+    "endTime": 257.39
+  },
+  {
+    "id": "s5115",
+    "musicId": "m118",
+    "text": "亲爱的人那你骑着黑骏马",
+    "translation": "",
+    "distractors": "",
+    "startTime": 13.11,
+    "endTime": 18.61
+  },
+  {
+    "id": "s5116",
+    "musicId": "m118",
+    "text": "啊",
+    "translation": "",
+    "distractors": "",
+    "startTime": 18.61,
+    "endTime": 23.79
+  },
+  {
+    "id": "s5117",
+    "musicId": "m118",
+    "text": "让我感受那么多的地老天荒",
+    "translation": "",
+    "distractors": "",
+    "startTime": 23.79,
+    "endTime": 29.16
+  },
+  {
+    "id": "s5118",
+    "musicId": "m118",
+    "text": "嘿",
+    "translation": "",
+    "distractors": "",
+    "startTime": 29.16,
+    "endTime": 33.87
+  },
+  {
+    "id": "s5119",
+    "musicId": "m118",
+    "text": "喜欢你的歌飘在蓝天下",
+    "translation": "",
+    "distractors": "",
+    "startTime": 33.87,
+    "endTime": 39.3
+  },
+  {
+    "id": "s5120",
+    "musicId": "m118",
+    "text": "长调像岁月悠悠的情话",
+    "translation": "",
+    "distractors": "",
+    "startTime": 39.3,
+    "endTime": 45.13
+  },
+  {
+    "id": "s5121",
+    "musicId": "m118",
+    "text": "一匹黑骏马草原上潇洒",
+    "translation": "",
+    "distractors": "",
+    "startTime": 45.13,
+    "endTime": 49.94
+  },
+  {
+    "id": "s5122",
+    "musicId": "m118",
+    "text": "目光追随你开成遍野鲜花",
+    "translation": "",
+    "distractors": "",
+    "startTime": 49.94,
+    "endTime": 55.17
+  },
+  {
+    "id": "s5123",
+    "musicId": "m118",
+    "text": "爱上你的笑真诚不掺假",
+    "translation": "",
+    "distractors": "",
+    "startTime": 55.17,
+    "endTime": 60.54
+  },
+  {
+    "id": "s5124",
+    "musicId": "m118",
+    "text": "透明像湖水清澈的脸颊",
+    "translation": "",
+    "distractors": "",
+    "startTime": 60.54,
+    "endTime": 66.54
+  },
+  {
+    "id": "s5125",
+    "musicId": "m118",
+    "text": "喝惯马奶酒风雪都不怕",
+    "translation": "",
+    "distractors": "",
+    "startTime": 66.54,
+    "endTime": 71.21
+  },
+  {
+    "id": "s5126",
+    "musicId": "m118",
+    "text": "有你在身边就是爱的神话",
+    "translation": "",
+    "distractors": "",
+    "startTime": 71.21,
+    "endTime": 77.33
+  },
+  {
+    "id": "s5127",
+    "musicId": "m118",
+    "text": "心爱的人啊你骑着黑骏马",
+    "translation": "",
+    "distractors": "",
+    "startTime": 77.33,
+    "endTime": 82.2
+  },
+  {
+    "id": "s5128",
+    "musicId": "m118",
+    "text": "幸福的感觉飘成了彩霞",
+    "translation": "",
+    "distractors": "",
+    "startTime": 82.2,
+    "endTime": 88.01
+  },
+  {
+    "id": "s5129",
+    "musicId": "m118",
+    "text": "让我感受那么多的地久天长",
+    "translation": "",
+    "distractors": "",
+    "startTime": 88.01,
+    "endTime": 92.76
+  },
+  {
+    "id": "s5130",
+    "musicId": "m118",
+    "text": "地久天长就是自由的刹那",
+    "translation": "",
+    "distractors": "",
+    "startTime": 92.76,
+    "endTime": 98.57
+  },
+  {
+    "id": "s5131",
+    "musicId": "m118",
+    "text": "心爱的人啊你骑着黑骏马",
+    "translation": "",
+    "distractors": "",
+    "startTime": 98.57,
+    "endTime": 103.53
+  },
+  {
+    "id": "s5132",
+    "musicId": "m118",
+    "text": "憨憨的笑脸把忧伤融化",
+    "translation": "",
+    "distractors": "",
+    "startTime": 103.53,
+    "endTime": 109.16
+  },
+  {
+    "id": "s5133",
+    "musicId": "m118",
+    "text": "让我感受那么多的地老天荒",
+    "translation": "",
+    "distractors": "",
+    "startTime": 109.16,
+    "endTime": 114.03
+  },
+  {
+    "id": "s5134",
+    "musicId": "m118",
+    "text": "地老天荒就是有你的牵挂",
+    "translation": "",
+    "distractors": "",
+    "startTime": 114.03,
+    "endTime": 151.29
+  },
+  {
+    "id": "s5135",
+    "musicId": "m118",
+    "text": "爱上你的笑真诚不掺假",
+    "translation": "",
+    "distractors": "",
+    "startTime": 151.29,
+    "endTime": 156.67
+  },
+  {
+    "id": "s5136",
+    "musicId": "m118",
+    "text": "透明像湖水清澈的脸颊",
+    "translation": "",
+    "distractors": "",
+    "startTime": 156.67,
+    "endTime": 162.55
+  },
+  {
+    "id": "s5137",
+    "musicId": "m118",
+    "text": "喝惯马奶酒风雪都不怕",
+    "translation": "",
+    "distractors": "",
+    "startTime": 162.55,
+    "endTime": 167.3
+  },
+  {
+    "id": "s5138",
+    "musicId": "m118",
+    "text": "有你在身边就是爱的神话",
+    "translation": "",
+    "distractors": "",
+    "startTime": 167.3,
+    "endTime": 173.22
+  },
+  {
+    "id": "s5139",
+    "musicId": "m118",
+    "text": "心爱的人啊你骑着黑骏马",
+    "translation": "",
+    "distractors": "",
+    "startTime": 173.22,
+    "endTime": 178.22
+  },
+  {
+    "id": "s5140",
+    "musicId": "m118",
+    "text": "幸福的感觉飘成了彩霞",
+    "translation": "",
+    "distractors": "",
+    "startTime": 178.22,
+    "endTime": 183.91
+  },
+  {
+    "id": "s5141",
+    "musicId": "m118",
+    "text": "让我感受那么多的地久天长",
+    "translation": "",
+    "distractors": "",
+    "startTime": 183.91,
+    "endTime": 188.72
+  },
+  {
+    "id": "s5142",
+    "musicId": "m118",
+    "text": "地久天长就是自由的刹那",
+    "translation": "",
+    "distractors": "",
+    "startTime": 188.72,
+    "endTime": 194.27
+  },
+  {
+    "id": "s5143",
+    "musicId": "m118",
+    "text": "心爱的人啊你骑着黑骏马",
+    "translation": "",
+    "distractors": "",
+    "startTime": 194.27,
+    "endTime": 199.52
+  },
+  {
+    "id": "s5144",
+    "musicId": "m118",
+    "text": "憨憨的笑脸把忧伤融化",
+    "translation": "",
+    "distractors": "",
+    "startTime": 199.52,
+    "endTime": 205.27
+  },
+  {
+    "id": "s5145",
+    "musicId": "m118",
+    "text": "让我感受那么多的地老天荒",
+    "translation": "",
+    "distractors": "",
+    "startTime": 205.27,
+    "endTime": 209.95
+  },
+  {
+    "id": "s5146",
+    "musicId": "m118",
+    "text": "地老天荒就是有你的牵挂",
+    "translation": "",
+    "distractors": "",
+    "startTime": 209.95,
+    "endTime": 215.76
+  },
+  {
+    "id": "s5147",
+    "musicId": "m118",
+    "text": "心爱的人啊你骑着黑骏马",
+    "translation": "",
+    "distractors": "",
+    "startTime": 215.76,
+    "endTime": 220.88
+  },
+  {
+    "id": "s5148",
+    "musicId": "m118",
+    "text": "憨憨的笑脸把忧伤融化",
+    "translation": "",
+    "distractors": "",
+    "startTime": 220.88,
+    "endTime": 226.51
+  },
+  {
+    "id": "s5149",
+    "musicId": "m118",
+    "text": "让我感受那么多的地老天荒",
+    "translation": "",
+    "distractors": "",
+    "startTime": 226.51,
+    "endTime": 231.24
+  },
+  {
+    "id": "s5150",
+    "musicId": "m118",
+    "text": "地老天荒就是有你的牵挂",
+    "translation": "",
+    "distractors": "",
+    "startTime": 231.24,
+    "endTime": 236.55
+  },
+  {
+    "id": "s5151",
+    "musicId": "m118",
+    "text": "地老天荒就是有你的牵挂",
+    "translation": "",
+    "distractors": "",
+    "startTime": 236.55,
+    "endTime": 241.55
+  },
+  {
+    "id": "s5152",
+    "musicId": "m119",
+    "text": "草原夜色美",
+    "translation": "",
+    "distractors": "",
+    "startTime": 0.19,
+    "endTime": 28.19
+  },
+  {
+    "id": "s5153",
+    "musicId": "m119",
+    "text": "草原夜色美",
+    "translation": "",
+    "distractors": "",
+    "startTime": 28.19,
+    "endTime": 34.67
+  },
+  {
+    "id": "s5154",
+    "musicId": "m119",
+    "text": "琴曲悠扬笛声脆",
+    "translation": "",
+    "distractors": "",
+    "startTime": 34.67,
+    "endTime": 41.55
+  },
+  {
+    "id": "s5155",
+    "musicId": "m119",
+    "text": "晚风吹送天河的星啊",
+    "translation": "",
+    "distractors": "",
+    "startTime": 41.55,
+    "endTime": 46.69
+  },
+  {
+    "id": "s5156",
+    "musicId": "m119",
+    "text": "汇入毡房闪银辉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 46.69,
+    "endTime": 53.53
+  },
+  {
+    "id": "s5157",
+    "musicId": "m119",
+    "text": "啊",
+    "translation": "",
+    "distractors": "",
+    "startTime": 53.53,
+    "endTime": 67.31
+  },
+  {
+    "id": "s5158",
+    "musicId": "m119",
+    "text": "晚风吹送天河的星啊",
+    "translation": "",
+    "distractors": "",
+    "startTime": 67.31,
+    "endTime": 72.41
+  },
+  {
+    "id": "s5159",
+    "musicId": "m119",
+    "text": "汇入毡房闪银辉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 72.41,
+    "endTime": 79.62
+  },
+  {
+    "id": "s5160",
+    "musicId": "m119",
+    "text": "草原夜色美",
+    "translation": "",
+    "distractors": "",
+    "startTime": 79.62,
+    "endTime": 86.16
+  },
+  {
+    "id": "s5161",
+    "musicId": "m119",
+    "text": "九天明月总相随",
+    "translation": "",
+    "distractors": "",
+    "startTime": 86.16,
+    "endTime": 92.92
+  },
+  {
+    "id": "s5162",
+    "musicId": "m119",
+    "text": "晚风轻拂绿色的梦啊",
+    "translation": "",
+    "distractors": "",
+    "startTime": 92.92,
+    "endTime": 98.16
+  },
+  {
+    "id": "s5163",
+    "musicId": "m119",
+    "text": "牛羊如云落边陲",
+    "translation": "",
+    "distractors": "",
+    "startTime": 98.16,
+    "endTime": 104.98
+  },
+  {
+    "id": "s5164",
+    "musicId": "m119",
+    "text": "啊",
+    "translation": "",
+    "distractors": "",
+    "startTime": 104.98,
+    "endTime": 118.72
+  },
+  {
+    "id": "s5165",
+    "musicId": "m119",
+    "text": "晚风轻拂绿色的梦啊",
+    "translation": "",
+    "distractors": "",
+    "startTime": 118.72,
+    "endTime": 123.81
+  },
+  {
+    "id": "s5166",
+    "musicId": "m119",
+    "text": "牛羊如云落边陲",
+    "translation": "",
+    "distractors": "",
+    "startTime": 123.81,
+    "endTime": 156.4
+  },
+  {
+    "id": "s5167",
+    "musicId": "m119",
+    "text": "草原夜色美",
+    "translation": "",
+    "distractors": "",
+    "startTime": 156.4,
+    "endTime": 163.23
+  },
+  {
+    "id": "s5168",
+    "musicId": "m119",
+    "text": "未举金杯人已醉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 163.23,
+    "endTime": 170.06
+  },
+  {
+    "id": "s5169",
+    "musicId": "m119",
+    "text": "晚风唱着甜蜜的歌啊",
+    "translation": "",
+    "distractors": "",
+    "startTime": 170.06,
+    "endTime": 175.24
+  },
+  {
+    "id": "s5170",
+    "musicId": "m119",
+    "text": "轻骑踏月不忍归",
+    "translation": "",
+    "distractors": "",
+    "startTime": 175.24,
+    "endTime": 182.17
+  },
+  {
+    "id": "s5171",
+    "musicId": "m119",
+    "text": "啊",
+    "translation": "",
+    "distractors": "",
+    "startTime": 182.17,
+    "endTime": 195.83
+  },
+  {
+    "id": "s5172",
+    "musicId": "m119",
+    "text": "晚风唱着甜蜜的歌啊",
+    "translation": "",
+    "distractors": "",
+    "startTime": 195.83,
+    "endTime": 200.98
+  },
+  {
+    "id": "s5173",
+    "musicId": "m119",
+    "text": "轻骑踏月不忍归",
+    "translation": "",
+    "distractors": "",
+    "startTime": 200.98,
+    "endTime": 207.83
+  },
+  {
+    "id": "s5174",
+    "musicId": "m119",
+    "text": "轻骑踏月不忍归",
+    "translation": "",
+    "distractors": "",
+    "startTime": 207.83,
+    "endTime": 214.74
+  },
+  {
+    "id": "s5175",
+    "musicId": "m119",
+    "text": "轻骑踏月不忍归",
+    "translation": "",
+    "distractors": "",
+    "startTime": 214.74,
+    "endTime": 219.74
+  },
+  {
+    "id": "s5176",
+    "musicId": "m120",
+    "text": "美丽的夜色多沉静",
+    "translation": "",
+    "distractors": "",
+    "startTime": 34.345,
+    "endTime": 45.391
+  },
+  {
+    "id": "s5177",
+    "musicId": "m120",
+    "text": "草原上只留下我的琴声",
+    "translation": "",
+    "distractors": "",
+    "startTime": 45.391,
+    "endTime": 58.749
+  },
+  {
+    "id": "s5178",
+    "musicId": "m120",
+    "text": "想给远方的姑娘写封信",
+    "translation": "",
+    "distractors": "",
+    "startTime": 58.749,
+    "endTime": 69.189
+  },
+  {
+    "id": "s5179",
+    "musicId": "m120",
+    "text": "耶。。。",
+    "translation": "",
+    "distractors": "",
+    "startTime": 69.189,
+    "endTime": 72.164
+  },
+  {
+    "id": "s5180",
+    "musicId": "m120",
+    "text": "可惜没有邮递员来传情",
+    "translation": "",
+    "distractors": "",
+    "startTime": 72.164,
+    "endTime": 95.06
+  },
+  {
+    "id": "s5181",
+    "musicId": "m120",
+    "text": "等到千里冰雪消融",
+    "translation": "",
+    "distractors": "",
+    "startTime": 95.06,
+    "endTime": 106.397
+  },
+  {
+    "id": "s5182",
+    "musicId": "m120",
+    "text": "等到草原上送来春风",
+    "translation": "",
+    "distractors": "",
+    "startTime": 106.397,
+    "endTime": 119.762
+  },
+  {
+    "id": "s5183",
+    "musicId": "m120",
+    "text": "可克达拉改变了模样",
+    "translation": "",
+    "distractors": "",
+    "startTime": 119.762,
+    "endTime": 130.148
+  },
+  {
+    "id": "s5184",
+    "musicId": "m120",
+    "text": "耶。。。",
+    "translation": "",
+    "distractors": "",
+    "startTime": 130.148,
+    "endTime": 133.72
+  },
+  {
+    "id": "s5185",
+    "musicId": "m120",
+    "text": "姑娘就会来伴我的琴声",
+    "translation": "",
+    "distractors": "",
+    "startTime": 133.72,
+    "endTime": 144.465
+  },
+  {
+    "id": "s5186",
+    "musicId": "m120",
+    "text": "来来来来来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 144.465,
+    "endTime": 146.329
+  },
+  {
+    "id": "s5187",
+    "musicId": "m120",
+    "text": "来来来来来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 146.329,
+    "endTime": 148.298
+  },
+  {
+    "id": "s5188",
+    "musicId": "m120",
+    "text": "来来来来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 148.298,
+    "endTime": 153.341
+  },
+  {
+    "id": "s5189",
+    "musicId": "m120",
+    "text": "来来来来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 153.341,
+    "endTime": 155.913
+  },
+  {
+    "id": "s5190",
+    "musicId": "m120",
+    "text": "姑娘就会来伴我的琴声",
+    "translation": "",
+    "distractors": "",
+    "startTime": 155.913,
+    "endTime": 167.358
+  },
+  {
+    "id": "s5191",
+    "musicId": "m120",
+    "text": "来来来来来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 167.358,
+    "endTime": 169.224
+  },
+  {
+    "id": "s5192",
+    "musicId": "m120",
+    "text": "来来来来来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 169.224,
+    "endTime": 171.139
+  },
+  {
+    "id": "s5193",
+    "musicId": "m120",
+    "text": "来来来来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 171.139,
+    "endTime": 175.826
+  },
+  {
+    "id": "s5194",
+    "musicId": "m120",
+    "text": "来来来来",
+    "translation": "",
+    "distractors": "",
+    "startTime": 175.826,
+    "endTime": 179.761
+  },
+  {
+    "id": "s5195",
+    "musicId": "m120",
+    "text": "姑娘就会来伴我的琴声",
+    "translation": "",
+    "distractors": "",
+    "startTime": 179.761,
+    "endTime": 184.761
+  },
+  {
+    "id": "s5196",
+    "musicId": "m121",
+    "text": "蒙古包",
+    "translation": "",
+    "distractors": "",
+    "startTime": 0.376,
+    "endTime": 6.586
+  },
+  {
+    "id": "s5197",
+    "musicId": "m121",
+    "text": "录混：周晓明",
+    "translation": "",
+    "distractors": "",
+    "startTime": 6.586,
+    "endTime": 30.761
+  },
+  {
+    "id": "s5198",
+    "musicId": "m121",
+    "text": "草原像大海有无边的浩淼",
+    "translation": "",
+    "distractors": "",
+    "startTime": 30.761,
+    "endTime": 35.365
+  },
+  {
+    "id": "s5199",
+    "musicId": "m121",
+    "text": "羊群是海上滚滚的波涛",
+    "translation": "",
+    "distractors": "",
+    "startTime": 35.365,
+    "endTime": 39.918
+  },
+  {
+    "id": "s5200",
+    "musicId": "m121",
+    "text": "太阳升起来快乐地照耀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 39.918,
+    "endTime": 44.421
+  },
+  {
+    "id": "s5201",
+    "musicId": "m121",
+    "text": "照进我梦里那一座蒙古包",
+    "translation": "",
+    "distractors": "",
+    "startTime": 44.421,
+    "endTime": 49.274
+  },
+  {
+    "id": "s5202",
+    "musicId": "m121",
+    "text": "牧歌唱起来是最爱的长调",
+    "translation": "",
+    "distractors": "",
+    "startTime": 49.274,
+    "endTime": 53.726
+  },
+  {
+    "id": "s5203",
+    "musicId": "m121",
+    "text": "天边的晚霞火火地燃烧",
+    "translation": "",
+    "distractors": "",
+    "startTime": 53.726,
+    "endTime": 58.326
+  },
+  {
+    "id": "s5204",
+    "musicId": "m121",
+    "text": "炊烟升起来在风中飘摇",
+    "translation": "",
+    "distractors": "",
+    "startTime": 58.326,
+    "endTime": 62.726
+  },
+  {
+    "id": "s5205",
+    "musicId": "m121",
+    "text": "飘进我心里那家乡的味道",
+    "translation": "",
+    "distractors": "",
+    "startTime": 62.726,
+    "endTime": 67.677
+  },
+  {
+    "id": "s5206",
+    "musicId": "m121",
+    "text": "洁白的蒙古包我一生的骄傲",
+    "translation": "",
+    "distractors": "",
+    "startTime": 67.677,
+    "endTime": 71.978
+  },
+  {
+    "id": "s5207",
+    "musicId": "m121",
+    "text": "我要做那雄鹰飞得远又高",
+    "translation": "",
+    "distractors": "",
+    "startTime": 71.978,
+    "endTime": 76.679
+  },
+  {
+    "id": "s5208",
+    "musicId": "m121",
+    "text": "美丽的蒙古包我思念的座标",
+    "translation": "",
+    "distractors": "",
+    "startTime": 76.679,
+    "endTime": 81.18
+  },
+  {
+    "id": "s5209",
+    "musicId": "m121",
+    "text": "我愿做那春风温暖你怀抱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 81.18,
+    "endTime": 86.187
+  },
+  {
+    "id": "s5210",
+    "musicId": "m121",
+    "text": "—、伤感、流行、音乐、",
+    "translation": "",
+    "distractors": "",
+    "startTime": 86.187,
+    "endTime": 104.555
+  },
+  {
+    "id": "s5211",
+    "musicId": "m121",
+    "text": "草原像大海有无边的浩淼",
+    "translation": "",
+    "distractors": "",
+    "startTime": 104.555,
+    "endTime": 109.157
+  },
+  {
+    "id": "s5212",
+    "musicId": "m121",
+    "text": "羊群是海上滚滚的波涛",
+    "translation": "",
+    "distractors": "",
+    "startTime": 109.157,
+    "endTime": 113.761
+  },
+  {
+    "id": "s5213",
+    "musicId": "m121",
+    "text": "太阳升起来快乐地照耀",
+    "translation": "",
+    "distractors": "",
+    "startTime": 113.761,
+    "endTime": 118.111
+  },
+  {
+    "id": "s5214",
+    "musicId": "m121",
+    "text": "照进我梦里那一座蒙古包",
+    "translation": "",
+    "distractors": "",
+    "startTime": 118.111,
+    "endTime": 123.18
+  },
+  {
+    "id": "s5215",
+    "musicId": "m121",
+    "text": "牧歌唱起来是最爱的长调",
+    "translation": "",
+    "distractors": "",
+    "startTime": 123.18,
+    "endTime": 127.523
+  },
+  {
+    "id": "s5216",
+    "musicId": "m121",
+    "text": "天边的晚霞火火地燃烧",
+    "translation": "",
+    "distractors": "",
+    "startTime": 127.523,
+    "endTime": 132.128
+  },
+  {
+    "id": "s5217",
+    "musicId": "m121",
+    "text": "炊烟升起来在风中飘摇",
+    "translation": "",
+    "distractors": "",
+    "startTime": 132.128,
+    "endTime": 136.584
+  },
+  {
+    "id": "s5218",
+    "musicId": "m121",
+    "text": "飘进我心里那家乡的味道",
+    "translation": "",
+    "distractors": "",
+    "startTime": 136.584,
+    "endTime": 141.489
+  },
+  {
+    "id": "s5219",
+    "musicId": "m121",
+    "text": "洁白的蒙古包我一生的骄傲",
+    "translation": "",
+    "distractors": "",
+    "startTime": 141.489,
+    "endTime": 145.792
+  },
+  {
+    "id": "s5220",
+    "musicId": "m121",
+    "text": "我要做那雄鹰飞得远又高",
+    "translation": "",
+    "distractors": "",
+    "startTime": 145.792,
+    "endTime": 150.595
+  },
+  {
+    "id": "s5221",
+    "musicId": "m121",
+    "text": "美丽的蒙古包我思念的座标",
+    "translation": "",
+    "distractors": "",
+    "startTime": 150.595,
+    "endTime": 155.55
+  },
+  {
+    "id": "s5222",
+    "musicId": "m121",
+    "text": "我愿做那春风温暖你怀抱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 155.55,
+    "endTime": 160.112
+  },
+  {
+    "id": "s5223",
+    "musicId": "m121",
+    "text": "啦啦啦啦啦啦",
+    "translation": "",
+    "distractors": "",
+    "startTime": 160.112,
+    "endTime": 178.427
+  },
+  {
+    "id": "s5224",
+    "musicId": "m121",
+    "text": "洁白的蒙古包我一生的骄傲",
+    "translation": "",
+    "distractors": "",
+    "startTime": 178.427,
+    "endTime": 182.77
+  },
+  {
+    "id": "s5225",
+    "musicId": "m121",
+    "text": "我要做那雄鹰飞得远又高",
+    "translation": "",
+    "distractors": "",
+    "startTime": 182.77,
+    "endTime": 187.472
+  },
+  {
+    "id": "s5226",
+    "musicId": "m121",
+    "text": "美丽的蒙古包我思念的座标",
+    "translation": "",
+    "distractors": "",
+    "startTime": 187.472,
+    "endTime": 191.924
+  },
+  {
+    "id": "s5227",
+    "musicId": "m121",
+    "text": "我愿做那春风温暖你怀抱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 191.924,
+    "endTime": 196.728
+  },
+  {
+    "id": "s5228",
+    "musicId": "m121",
+    "text": "洁白的蒙古包我一生的骄傲",
+    "translation": "",
+    "distractors": "",
+    "startTime": 196.728,
+    "endTime": 201.231
+  },
+  {
+    "id": "s5229",
+    "musicId": "m121",
+    "text": "我要做那雄鹰飞得远又高",
+    "translation": "",
+    "distractors": "",
+    "startTime": 201.231,
+    "endTime": 205.881
+  },
+  {
+    "id": "s5230",
+    "musicId": "m121",
+    "text": "美丽的蒙古包我思念的座标",
+    "translation": "",
+    "distractors": "",
+    "startTime": 205.881,
+    "endTime": 210.383
+  },
+  {
+    "id": "s5231",
+    "musicId": "m121",
+    "text": "我愿做那春风温暖你怀抱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 210.383,
+    "endTime": 215.102
+  },
+  {
+    "id": "s5232",
+    "musicId": "m121",
+    "text": "我愿做那春风温暖你怀抱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 215.102,
+    "endTime": 220.102
+  },
+  {
+    "id": "s5233",
+    "musicId": "m122",
+    "text": "蓝蓝的天上白云飘",
+    "translation": "",
+    "distractors": "",
+    "startTime": 72.38,
+    "endTime": 81.07
+  },
+  {
+    "id": "s5234",
+    "musicId": "m122",
+    "text": "白云下面马儿跑",
+    "translation": "",
+    "distractors": "",
+    "startTime": 81.07,
+    "endTime": 89.94
+  },
+  {
+    "id": "s5235",
+    "musicId": "m122",
+    "text": "挥动鞭儿响四方",
+    "translation": "",
+    "distractors": "",
+    "startTime": 89.94,
+    "endTime": 98.32
+  },
+  {
+    "id": "s5236",
+    "musicId": "m122",
+    "text": "赞歌更嘹亮",
+    "translation": "",
+    "distractors": "",
+    "startTime": 98.32,
+    "endTime": 107.19
+  },
+  {
+    "id": "s5237",
+    "musicId": "m122",
+    "text": "要是有人来问我",
+    "translation": "",
+    "distractors": "",
+    "startTime": 107.19,
+    "endTime": 115.63
+  },
+  {
+    "id": "s5238",
+    "musicId": "m122",
+    "text": "这是什么地方",
+    "translation": "",
+    "distractors": "",
+    "startTime": 115.63,
+    "endTime": 124.5
+  },
+  {
+    "id": "s5239",
+    "musicId": "m122",
+    "text": "我就骄傲地告诉他",
+    "translation": "",
+    "distractors": "",
+    "startTime": 124.5,
+    "endTime": 133.19
+  },
+  {
+    "id": "s5240",
+    "musicId": "m122",
+    "text": "这是祖国的边疆",
+    "translation": "",
+    "distractors": "",
+    "startTime": 133.19,
+    "endTime": 154.44
+  },
+  {
+    "id": "s5241",
+    "musicId": "m122",
+    "text": "各族人民团结紧",
+    "translation": "",
+    "distractors": "",
+    "startTime": 154.44,
+    "endTime": 160.07
+  },
+  {
+    "id": "s5242",
+    "musicId": "m122",
+    "text": "结成铁壁铜墙",
+    "translation": "",
+    "distractors": "",
+    "startTime": 160.07,
+    "endTime": 166.26
+  },
+  {
+    "id": "s5243",
+    "musicId": "m122",
+    "text": "歌唱领袖毛主席",
+    "translation": "",
+    "distractors": "",
+    "startTime": 166.26,
+    "endTime": 172.13
+  },
+  {
+    "id": "s5244",
+    "musicId": "m122",
+    "text": "歌唱共产党",
+    "translation": "",
+    "distractors": "",
+    "startTime": 172.13,
+    "endTime": 178.25
+  },
+  {
+    "id": "s5245",
+    "musicId": "m122",
+    "text": "毛主席啊共产党",
+    "translation": "",
+    "distractors": "",
+    "startTime": 178.25,
+    "endTime": 184.07
+  },
+  {
+    "id": "s5246",
+    "musicId": "m122",
+    "text": "抚育我们成长",
+    "translation": "",
+    "distractors": "",
+    "startTime": 184.07,
+    "endTime": 190.07
+  },
+  {
+    "id": "s5247",
+    "musicId": "m122",
+    "text": "草原上升起不落的太阳",
+    "translation": "",
+    "distractors": "",
+    "startTime": 190.07,
+    "endTime": 214.26
+  },
+  {
+    "id": "s5248",
+    "musicId": "m122",
+    "text": "毛主席啊共产党",
+    "translation": "",
+    "distractors": "",
+    "startTime": 214.26,
+    "endTime": 219.88
+  },
+  {
+    "id": "s5249",
+    "musicId": "m122",
+    "text": "抚育我们成长",
+    "translation": "",
+    "distractors": "",
+    "startTime": 219.88,
+    "endTime": 226
+  },
+  {
+    "id": "s5250",
+    "musicId": "m122",
+    "text": "草原上升起不落的太阳",
+    "translation": "",
+    "distractors": "",
+    "startTime": 226,
+    "endTime": 238.13
+  },
+  {
+    "id": "s5251",
+    "musicId": "m122",
+    "text": "草原上升起不落的太阳",
+    "translation": "",
+    "distractors": "",
+    "startTime": 238.13,
+    "endTime": 243.13
+  },
+  {
+    "id": "s5252",
+    "musicId": "m123",
+    "text": "情在燃烧 烧着绿绿的草",
+    "translation": "",
+    "distractors": "",
+    "startTime": 28.939,
+    "endTime": 33.969
+  },
+  {
+    "id": "s5253",
+    "musicId": "m123",
+    "text": "爱在奔跑 看见地广天高",
+    "translation": "",
+    "distractors": "",
+    "startTime": 33.969,
+    "endTime": 38.869
+  },
+  {
+    "id": "s5254",
+    "musicId": "m123",
+    "text": "那片阳光 照在谁的眉梢",
+    "translation": "",
+    "distractors": "",
+    "startTime": 38.869,
+    "endTime": 43.849
+  },
+  {
+    "id": "s5255",
+    "musicId": "m123",
+    "text": "我的幸福 落在你的怀抱",
+    "translation": "",
+    "distractors": "",
+    "startTime": 43.849,
+    "endTime": 48.929
+  },
+  {
+    "id": "s5256",
+    "musicId": "m123",
+    "text": "情在发酵 酿成欢乐醉倒",
+    "translation": "",
+    "distractors": "",
+    "startTime": 48.929,
+    "endTime": 53.929
+  },
+  {
+    "id": "s5257",
+    "musicId": "m123",
+    "text": "爱在敖包 歌声悠悠的飘",
+    "translation": "",
+    "distractors": "",
+    "startTime": 53.929,
+    "endTime": 58.989
+  },
+  {
+    "id": "s5258",
+    "musicId": "m123",
+    "text": "那片炊烟 被白云亲吻到",
+    "translation": "",
+    "distractors": "",
+    "startTime": 58.989,
+    "endTime": 63.939
+  },
+  {
+    "id": "s5259",
+    "musicId": "m123",
+    "text": "我愿策马与你 把梦想寻找",
+    "translation": "",
+    "distractors": "",
+    "startTime": 63.939,
+    "endTime": 70.99
+  },
+  {
+    "id": "s5260",
+    "musicId": "m123",
+    "text": "大草原的胸怀有谁知道",
+    "translation": "",
+    "distractors": "",
+    "startTime": 70.99,
+    "endTime": 73.899
+  },
+  {
+    "id": "s5261",
+    "musicId": "m123",
+    "text": "大草原的美丽有谁看到",
+    "translation": "",
+    "distractors": "",
+    "startTime": 73.899,
+    "endTime": 77.288
+  },
+  {
+    "id": "s5262",
+    "musicId": "m123",
+    "text": "那弯弯的月亮摇呀摇",
+    "translation": "",
+    "distractors": "",
+    "startTime": 77.288,
+    "endTime": 80.519
+  },
+  {
+    "id": "s5263",
+    "musicId": "m123",
+    "text": "和你唱起情歌一路唱到老",
+    "translation": "",
+    "distractors": "",
+    "startTime": 80.519,
+    "endTime": 84.299
+  },
+  {
+    "id": "s5264",
+    "musicId": "m123",
+    "text": "大草原的豪情有谁知道",
+    "translation": "",
+    "distractors": "",
+    "startTime": 84.299,
+    "endTime": 87.209
+  },
+  {
+    "id": "s5265",
+    "musicId": "m123",
+    "text": "大草原的宽广有谁看到",
+    "translation": "",
+    "distractors": "",
+    "startTime": 87.209,
+    "endTime": 90.689
+  },
+  {
+    "id": "s5266",
+    "musicId": "m123",
+    "text": "这长长的日子绕呀绕",
+    "translation": "",
+    "distractors": "",
+    "startTime": 90.689,
+    "endTime": 93.839
+  },
+  {
+    "id": "s5267",
+    "musicId": "m123",
+    "text": "和你唱的情歌 一生忘不掉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 93.839,
+    "endTime": 127.39
+  },
+  {
+    "id": "s5268",
+    "musicId": "m123",
+    "text": "情在发酵 酿成欢乐醉倒",
+    "translation": "",
+    "distractors": "",
+    "startTime": 127.39,
+    "endTime": 132.31
+  },
+  {
+    "id": "s5269",
+    "musicId": "m123",
+    "text": "爱在敖包 歌声悠悠的飘",
+    "translation": "",
+    "distractors": "",
+    "startTime": 132.31,
+    "endTime": 137.36
+  },
+  {
+    "id": "s5270",
+    "musicId": "m123",
+    "text": "那片炊烟 被白云亲吻到",
+    "translation": "",
+    "distractors": "",
+    "startTime": 137.36,
+    "endTime": 142.27
+  },
+  {
+    "id": "s5271",
+    "musicId": "m123",
+    "text": "我愿策马与你 把梦想寻找",
+    "translation": "",
+    "distractors": "",
+    "startTime": 142.27,
+    "endTime": 149
+  },
+  {
+    "id": "s5272",
+    "musicId": "m123",
+    "text": "大草原的胸怀有谁知道",
+    "translation": "",
+    "distractors": "",
+    "startTime": 149,
+    "endTime": 152.34
+  },
+  {
+    "id": "s5273",
+    "musicId": "m123",
+    "text": "大草原的美丽有谁看到",
+    "translation": "",
+    "distractors": "",
+    "startTime": 152.34,
+    "endTime": 155.56
+  },
+  {
+    "id": "s5274",
+    "musicId": "m123",
+    "text": "那弯弯的月亮摇呀摇",
+    "translation": "",
+    "distractors": "",
+    "startTime": 155.56,
+    "endTime": 159.5
+  },
+  {
+    "id": "s5275",
+    "musicId": "m123",
+    "text": "和你唱起情歌一路唱到老",
+    "translation": "",
+    "distractors": "",
+    "startTime": 159.5,
+    "endTime": 162.28
+  },
+  {
+    "id": "s5276",
+    "musicId": "m123",
+    "text": "大草原的豪情有谁知道",
+    "translation": "",
+    "distractors": "",
+    "startTime": 162.28,
+    "endTime": 165.48
+  },
+  {
+    "id": "s5277",
+    "musicId": "m123",
+    "text": "大草原的宽广有谁看到",
+    "translation": "",
+    "distractors": "",
+    "startTime": 165.48,
+    "endTime": 168.93
+  },
+  {
+    "id": "s5278",
+    "musicId": "m123",
+    "text": "这长长的日子绕呀绕",
+    "translation": "",
+    "distractors": "",
+    "startTime": 168.93,
+    "endTime": 172.12
+  },
+  {
+    "id": "s5279",
+    "musicId": "m123",
+    "text": "和你唱的情歌 一生忘不掉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 172.12,
+    "endTime": 179.2
+  },
+  {
+    "id": "s5280",
+    "musicId": "m123",
+    "text": "大草原的胸怀有谁知道",
+    "translation": "",
+    "distractors": "",
+    "startTime": 179.2,
+    "endTime": 182.24
+  },
+  {
+    "id": "s5281",
+    "musicId": "m123",
+    "text": "大草原的美丽有谁看到",
+    "translation": "",
+    "distractors": "",
+    "startTime": 182.24,
+    "endTime": 185.65
+  },
+  {
+    "id": "s5282",
+    "musicId": "m123",
+    "text": "那弯弯的月亮摇呀摇",
+    "translation": "",
+    "distractors": "",
+    "startTime": 185.65,
+    "endTime": 188.91
+  },
+  {
+    "id": "s5283",
+    "musicId": "m123",
+    "text": "和你唱起情歌一路唱到老",
+    "translation": "",
+    "distractors": "",
+    "startTime": 188.91,
+    "endTime": 192.34
+  },
+  {
+    "id": "s5284",
+    "musicId": "m123",
+    "text": "大草原的豪情有谁知道",
+    "translation": "",
+    "distractors": "",
+    "startTime": 192.34,
+    "endTime": 195.56
+  },
+  {
+    "id": "s5285",
+    "musicId": "m123",
+    "text": "大草原的宽广有谁看到",
+    "translation": "",
+    "distractors": "",
+    "startTime": 195.56,
+    "endTime": 198.95
+  },
+  {
+    "id": "s5286",
+    "musicId": "m123",
+    "text": "这长长的日子绕呀绕",
+    "translation": "",
+    "distractors": "",
+    "startTime": 198.95,
+    "endTime": 202.7
+  },
+  {
+    "id": "s5287",
+    "musicId": "m123",
+    "text": "和你唱的情歌 一生忘不掉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 202.7,
+    "endTime": 208.7
+  },
+  {
+    "id": "s5288",
+    "musicId": "m123",
+    "text": "一生忘不掉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 208.7,
+    "endTime": 212.23
+  },
+  {
+    "id": "s5289",
+    "musicId": "m123",
+    "text": "一 生 忘 不 掉",
+    "translation": "",
+    "distractors": "",
+    "startTime": 212.23,
+    "endTime": 217.23
   }
 ]
