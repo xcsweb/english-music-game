@@ -205,7 +205,8 @@ const playMusic = (id: string) => {
             @click="playMusic(music.id)"
             class="group cursor-pointer relative rounded-2xl overflow-hidden bg-white/85 backdrop-blur-md border border-slate-200 shadow-bili hover:shadow-biliHover hover:-translate-y-1 transition-all duration-300"
           >
-            <div class="aspect-video relative w-full h-full bg-gradient-to-br from-sky-100 to-pink-100">
+            <!-- Image & Overlay Container -->
+            <div class="aspect-square relative w-full h-full bg-gradient-to-br from-sky-100 to-pink-100">
               <img
                   v-if="music.coverUrl"
                   :src="getHighResCoverUrl(music.coverUrl)"
@@ -218,34 +219,42 @@ const playMusic = (id: string) => {
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                 </svg>
               </div>
-            </div>
 
-            <div class="p-3 sm:p-4">
-              <div class="flex items-center gap-2 mb-2">
-                <span
-                  class="px-2 py-0.5 rounded-full text-[10px] font-bold"
-                  :class="{
-                    'bg-emerald-500/15 text-emerald-700': music.difficulty === 'easy',
-                    'bg-amber-500/15 text-amber-800': music.difficulty === 'medium',
-                    'bg-rose-500/15 text-rose-700': music.difficulty === 'hard'
-                  }"
-                >
-                  {{ getDifficultyLabel(music.difficulty) }}
-                </span>
-                <span
-                  v-if="progressStore.getProgress(music.id)"
-                  class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-sky-500/15 text-sky-700"
-                >
-                  {{ progressStore.getProgress(music.id)?.currentIndex }} / {{ progressStore.getProgress(music.id)?.total }}
-                </span>
+              <!-- Dark Gradient Overlay for Text Readability -->
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent pointer-events-none"></div>
+
+              <!-- Overlay Content: Badges and Title -->
+              <div class="absolute bottom-0 left-0 w-full p-3 sm:p-4 flex flex-col gap-1.5 pointer-events-none">
+                <!-- Badges Row -->
+                <div class="flex flex-wrap items-center gap-1.5 mb-0.5">
+                  <span
+                    class="px-2 py-0.5 rounded-sm text-[10px] sm:text-xs font-black tracking-wide"
+                    :class="{
+                      'bg-emerald-500 text-white': music.difficulty === 'easy',
+                      'bg-amber-500 text-white': music.difficulty === 'medium',
+                      'bg-rose-500 text-white': music.difficulty === 'hard'
+                    }"
+                  >
+                    {{ getDifficultyLabel(music.difficulty) }}
+                  </span>
+                  <span
+                    v-if="progressStore.getProgress(music.id)"
+                    class="px-2 py-0.5 rounded-sm text-[10px] sm:text-xs font-black bg-white/20 backdrop-blur-md text-white border border-white/20"
+                  >
+                    {{ progressStore.getProgress(music.id)?.currentIndex }} / {{ progressStore.getProgress(music.id)?.total }}
+                  </span>
+                </div>
+
+                <!-- Title & Artist (Truncated to prevent layout break) -->
+                <div class="min-w-0">
+                  <h3 class="text-sm sm:text-base font-black text-white leading-tight truncate drop-shadow-md">
+                    {{ music.title }}
+                  </h3>
+                  <p class="text-[10px] sm:text-xs text-slate-300 truncate mt-0.5 drop-shadow-md">
+                    {{ music.artist }}
+                  </p>
+                </div>
               </div>
-
-              <h3 class="text-sm sm:text-base font-black text-slate-900 leading-snug line-clamp-2">
-                {{ music.title }}
-              </h3>
-              <p class="text-xs text-slate-500 truncate mt-1">
-                {{ music.artist }}
-              </p>
             </div>
           </div>
         </div>
