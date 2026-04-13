@@ -48,7 +48,7 @@
 
     <div v-else class="w-full max-w-5xl flex flex-col flex-1 min-h-0 py-4 sm:py-6 relative z-10">
         <div class="flex justify-between items-center mb-6 bg-white/80 border border-slate-200 rounded-2xl px-3 sm:px-4 py-3 backdrop-blur-md shadow-bili">
-          <button type="button" @click="router.push('/')" class="p-2 -ml-1 text-slate-500 hover:text-bili-pink transition-colors rounded-full hover:bg-slate-100">
+          <button type="button" @click="router.push('/')" class="p-2 -ml-1 text-slate-500 hover:text-bili-pink transition-colors rounded-full hover:bg-slate-100" title="返回">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
@@ -65,7 +65,7 @@
           <button
             @click="isSettingsOpen = true"
             class="p-2 -mr-1 text-slate-500 hover:text-bili-blue transition-colors rounded-full hover:bg-slate-100"
-            title="Settings"
+            title="设置"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -170,6 +170,15 @@
       </div>
 
     <SettingsModal :is-open="isSettingsOpen" @close="isSettingsOpen = false" />
+    
+    <!-- Live2D Character (Desktop Only) -->
+    <Live2DCharacter
+      v-if="!showStartOverlay && !audioLoadError && music"
+      :game-state="gameState"
+      :is-playing="isPlaying"
+      :is-wrong="isWrong"
+      :is-timeout="isTimeoutHandling"
+    />
   </div>
 </template>
 
@@ -184,6 +193,7 @@ import { playCorrectSound, playWrongSound, playVictorySound } from '../utils/sou
 import { useSettingsStore } from '../stores/settings'
 import { useProgressStore } from '../stores/progress'
 import SettingsModal from '../components/SettingsModal.vue'
+import Live2DCharacter from '../components/Live2DCharacter.vue'
 
 let fadeOutTimer: number | null = null;
 

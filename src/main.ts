@@ -5,6 +5,10 @@ import './style.css'
 import App from './App.vue'
 import router from './router'
 
+// Expose PIXI to window so pixi-live2d-display can access it
+import * as PIXI from 'pixi.js'
+window.PIXI = PIXI
+
 const app = createApp(App)
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
