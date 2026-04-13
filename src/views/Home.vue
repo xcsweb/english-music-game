@@ -80,8 +80,8 @@ const playMusic = (id: string) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-900 text-gray-100 p-4 sm:p-6 flex flex-col">
-    <div class="w-full mx-auto">
+  <div class="min-h-screen bg-gray-900 text-gray-100 p-4 sm:p-6 lg:p-8 flex flex-col">
+    <div class="w-full max-w-7xl mx-auto">
       <header class="mb-8 flex justify-between items-center relative">
           <div class="absolute -top-10 -left-10 w-32 h-32 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
           <div class="absolute top-0 right-0 w-32 h-32 bg-fuchsia-500/20 rounded-full blur-3xl pointer-events-none"></div>
@@ -190,14 +190,14 @@ const playMusic = (id: string) => {
           </div>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 relative z-10">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6 relative z-10">
           <div
             v-for="music in displayedMusics"
             :key="music.id"
             @click="playMusic(music.id)"
-            class="group cursor-pointer relative rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.25)] hover:-translate-y-2 transition-all duration-500 bg-gray-900"
+            class="group cursor-pointer relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.25)] hover:-translate-y-2 transition-all duration-500 bg-gray-900"
           >
-            <div class="aspect-[4/5] sm:aspect-square relative w-full h-full">
+            <div class="aspect-[4/5] relative w-full h-full">
               <img
                   v-if="music.coverUrl"
                   :src="getHighResCoverUrl(music.coverUrl)"
