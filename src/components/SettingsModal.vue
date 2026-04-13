@@ -128,7 +128,6 @@ const settingsStore = useSettingsStore()
             </button>
           </div>
 
-          <!-- Character Selector (Only shown when Live2D is enabled) -->
           <div v-if="settingsStore.enableLive2D" class="bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
             <label class="text-slate-600 font-bold text-sm flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">

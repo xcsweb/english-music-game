@@ -29,14 +29,14 @@ const modelsInfo: Record<string, { url: string, scale: number, x: number, y: num
     x: 200,
     y: 200,
     exp: { idle: 'f00', talk: 'f05', happy: 'f04', sad: 'f03', angry: 'f06' },
-    mot: { idle: 'Idle', tap: 'Tap', tapBody: 'TapBody' }
+    mot: { idle: 'Idle', tap: 'Tap', tapBody: 'Tap' }
   },
   shizuku: {
     url: 'https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display/test/assets/shizuku/shizuku.model.json',
     scale: 0.2,
     x: 100,
     y: 100,
-    exp: { idle: 1, talk: 3, happy: 2, sad: 4, angry: 5 }, // Cubism 2 uses index or different strings, usually index for expressions
+    exp: { idle: 'f01', talk: 'f02', happy: 'f04', sad: 'f03', angry: 'f03' },
     mot: { idle: 'idle', tap: 'tap_body', tapBody: 'tap_body' }
   }
 }
