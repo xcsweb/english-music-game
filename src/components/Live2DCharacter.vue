@@ -45,8 +45,8 @@ onMounted(async () => {
     model.x = 0
     model.y = 100 // Move down slightly
 
-    // Add model to stage
-    app.stage.addChild(model)
+    // Add model to stage (bypass TS type error between Pixi v6 and v7 DisplayObject)
+    app.stage.addChild(model as unknown as PIXI.DisplayObject)
 
     // Initial idle motion
     model.motion('Idle')
