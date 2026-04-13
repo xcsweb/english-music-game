@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, watch, onBeforeUnmount } from 'vue'
-import * as PIXI from 'pixi.js'
+import * as PIXI from 'pixi.js-legacy'
 // Note: We use Cubism 4 since the Hiyori model requires it
 import { Live2DModel } from 'pixi-live2d-display/cubism4'
 
@@ -21,8 +21,8 @@ const canvasRef = ref<HTMLCanvasElement | null>(null)
 let app: PIXI.Application | null = null
 let model: Live2DModel | null = null
 
-// Use official Hiyori model from jsDelivr
-const modelUrl = 'https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display/test/assets/hiyori/hiyori_pro_t10.model3.json'
+// Use official Haru model from jsDelivr
+const modelUrl = 'https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display/test/assets/haru/haru_greeter_t03.model3.json'
 
 onMounted(async () => {
   if (!canvasRef.value) return
@@ -60,23 +60,25 @@ onMounted(async () => {
 // We trigger expressions or motions to make her react to the user
 watch(() => props.gameState, (newState) => {
   if (!model) return
-  if (newState === 'build') {
+  if (newState === 'victory') {
+    // Success reaction (happy expression)
+    model.expression('f04')
+    model.motion('Tap')
+  } else {
+    // Reset to idle
+    model.expression('f00')
     model.motion('Idle')
-    model.expression('f04') // Serious/Thinking expression
-  } else if (newState === 'victory') {
-    model.motion('TapBody') // Typically a reaction or joyful motion
-    model.expression('f05') // Smile/Happy
-  } else if (newState === 'memorize') {
-    model.motion('Idle')
-    model.expression('f01') // Normal
   }
 })
 
-watch(() => props.isWrong, (wrong) => {
-  if (wrong && model) {
-    model.expression('f03') // Sad/Surprised
-  } else if (!wrong && model && props.gameState !== 'success') {
-    model.expression('f01')
+watch(() => props.isWrong, (isWrong) => {
+  if (!model) return
+  if (isWrong) {
+    // Sad/Wrong reaction
+    model.expression('f03')
+    model.motion('Tap')
+  } else {
+    model.expression('f00')
   }
 })
 
