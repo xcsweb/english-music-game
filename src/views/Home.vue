@@ -11,9 +11,6 @@ const router = useRouter()
 
 const handleImageError = (e: Event) => {
   const target = e.target as HTMLImageElement
-  // If the image fails to load, simply hide it. The background color and icon from v-else will NOT magically show up,
-  // but hiding the broken image is better than showing a broken icon. A better approach is to change its src to a transparent pixel
-  // or a local fallback image, but for now we just hide the broken <img> element to reveal the dark background.
   target.style.display = 'none'
 }
 
@@ -51,12 +48,6 @@ const displayedMusics = computed(() => {
 
 const getHighResCoverUrl = (url: string) => {
   if (!url) return url
-  // Meting API often redirects to NetEase with a size parameter like ?param=300y300
-  // By appending our own parameter, we can sometimes override it, or at least try to request a larger size
-  // If it's a direct NetEase URL, we can replace the param.
-  // Since it's a 302 redirect from injahow.cn, we can't easily manipulate the final URL here without fetching it first.
-  // However, we can try appending &pic_size=800 (if the API supports it) or just use it as is if we can't change it.
-  // Another trick: some APIs support &size=800
   if (url.includes('api.injahow.cn/meting')) {
     return url + '&size=800'
   }
