@@ -173,7 +173,7 @@
     
     <!-- Live2D Character (Desktop Only) -->
     <Live2DCharacter
-      v-if="!showStartOverlay && !audioLoadError && music"
+      v-if="settingsStore.enableLive2D && !showStartOverlay && !audioLoadError && music"
       :game-state="gameState"
       :is-playing="isPlaying"
       :is-wrong="isWrong"

@@ -121,12 +121,12 @@ onBeforeUnmount(() => {
   right: -50px;
   width: 400px;
   height: 600px;
-  z-index: 10;
-  /* Hide on small screens, only show on large desktop monitors */
+  z-index: 20;
+  /* Hide on small screens, show on md and above */
   display: none;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .live2d-container {
     display: block;
   }

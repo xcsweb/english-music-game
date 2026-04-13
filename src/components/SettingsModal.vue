@@ -104,6 +104,28 @@ const settingsStore = useSettingsStore()
             />
           </button>
         </div>
+
+        <div class="h-px w-full bg-gradient-to-r from-transparent via-gray-700 to-transparent"></div>
+
+        <!-- Enable Live2D Character Toggle -->
+        <div class="flex items-center justify-between group">
+          <label class="text-gray-200 font-medium text-sm flex items-center gap-2 cursor-pointer" @click="settingsStore.enableLive2D = !settingsStore.enableLive2D">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            显示动态二次元歌姬 (桌面端)
+          </label>
+          <button 
+            @click="settingsStore.enableLive2D = !settingsStore.enableLive2D"
+            class="relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-gray-900 shadow-[0_0_10px_rgba(16,185,129,0.2)]"
+            :class="settingsStore.enableLive2D ? 'bg-emerald-500' : 'bg-gray-700'"
+          >
+            <span 
+              class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform"
+              :class="settingsStore.enableLive2D ? 'translate-x-6' : 'translate-x-1'"
+            />
+          </button>
+        </div>
       </div>
 
       <!-- Footer -->
