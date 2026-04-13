@@ -1,85 +1,70 @@
 <template>
-  <div class="min-h-screen bg-black text-white flex flex-col items-center justify-center p-4 sm:p-6 relative overflow-hidden font-sans">
-    <!-- Background glow & Grid -->
-    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-50"></div>
-    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none"></div>
-    <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-pink-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="min-h-[100svh] bg-gradient-to-b from-sky-50 via-white to-pink-50 text-slate-900 flex flex-col items-center justify-center p-4 sm:p-6 relative overflow-hidden">
+    <div class="absolute -top-24 -left-24 w-80 h-80 bg-bili-blue/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-32 right-10 w-96 h-96 bg-bili-pink/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-[-140px] left-1/3 w-[520px] h-[520px] bg-sky-200/35 rounded-full blur-3xl pointer-events-none"></div>
 
-    <div v-if="!music || !sentences.length" class="text-center relative z-10">
-      <p class="text-xl mb-4 text-cyan-300">Loading or No Sentences Found...</p>
-      <button type="button" @click="router.push('/')" class="px-8 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 rounded-2xl font-bold shadow-[0_0_20px_rgba(8,145,178,0.4)] transition-all active:scale-95">Back to Home</button>
+    <div v-if="!music || !sentences.length" class="text-center relative z-10 w-full max-w-md bg-white/80 border border-slate-200 rounded-3xl p-8 backdrop-blur-md shadow-bili">
+      <p class="text-lg font-semibold text-slate-700">歌曲加载中，或暂无可用句子</p>
+      <button type="button" @click="router.push('/')" class="mt-6 px-8 py-3 rounded-full bg-bili-pink hover:bg-bili-pink/90 text-white font-semibold shadow-bili transition-colors">返回首页</button>
     </div>
 
-    <!-- Start Overlay to handle browser autoplay policies -->
-    <div v-else-if="showStartOverlay" class="absolute inset-0 bg-black/90 z-50 flex flex-col items-center justify-center backdrop-blur-md animate-fade-in p-6">
-      <div class="text-xs font-mono text-cyan-400 tracking-widest mb-2 select-none">TRACK.INITIALIZE //</div>
-      <h2 class="text-3xl md:text-5xl font-black italic text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500 mb-8 text-center [text-shadow:0_0_15px_rgba(34,211,238,0.4)]">
+    <div v-else-if="showStartOverlay" class="absolute inset-0 bg-white/70 z-50 flex flex-col items-center justify-center backdrop-blur-md animate-fade-in p-6">
+      <h2 class="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-bili-blue to-bili-pink mb-4 text-center">
         {{ music.title }}
       </h2>
 
-      <div v-if="audioLoadError" class="text-red-400 text-center mb-8 max-w-md">
-        <p class="font-black text-xl mb-2 italic">ERROR // AUDIO_LOAD_FAILED</p>
-        <p class="text-sm font-mono text-red-300">The audio cannot be played due to network issues. Please try another track.</p>
-        <button type="button" @click="router.push('/')" class="mt-6 px-8 py-3 bg-red-950 border border-red-500 text-red-400 font-bold italic skew-x-[-15deg] hover:bg-red-900 transition-colors">
-          <span class="block skew-x-[15deg]">GO BACK</span>
-        </button>
+      <div v-if="audioLoadError" class="text-center mb-8 max-w-md bg-white/90 border border-rose-200 rounded-2xl p-6 shadow-bili">
+        <p class="font-semibold text-rose-700 mb-2">音频加载失败</p>
+        <p class="text-sm text-slate-600">可能是网络或跨域限制导致无法播放，请换一首歌或稍后重试。</p>
+        <button type="button" @click="router.push('/')" class="mt-5 px-8 py-3 rounded-full bg-rose-500 hover:bg-rose-500/90 text-white font-semibold shadow-bili transition-colors">返回首页</button>
       </div>
 
       <div v-else-if="!isAudioLoaded" class="flex flex-col items-center w-full max-w-sm px-4">
-        <div class="w-full bg-slate-900 h-2 mb-4 overflow-hidden border border-slate-800 skew-x-[-15deg]">
-          <div class="bg-gradient-to-r from-cyan-500 to-pink-500 h-full transition-all duration-200 ease-out relative"
-               :style="{ width: loadingPhase === 'decoding' ? '100%' : `${loadingProgress}%` }">
-            <div class="absolute top-0 right-0 w-2 h-full bg-white/70"></div>
-          </div>
+        <div class="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+          <div class="h-full bg-gradient-to-r from-bili-blue to-bili-pink transition-all duration-200 ease-out" :style="{ width: loadingPhase === 'decoding' ? '100%' : `${loadingProgress}%` }"></div>
         </div>
-        <p class="text-cyan-400 font-bold mb-2 text-sm sm:text-base italic font-mono">
-          {{ loadingPhase === 'decoding' ? 'DECODING...' : `DOWNLOADING (${loadingProgress}%)...` }}
+        <p class="mt-3 text-sm font-semibold text-slate-600">
+          {{ loadingPhase === 'decoding' ? '正在解码音频…' : `正在下载音频 (${loadingProgress}%)…` }}
         </p>
       </div>
 
-      <button type="button" v-else @click="handleStartGame"
-              class="group relative px-12 py-4 bg-pink-600 text-white font-black italic skew-x-[-15deg] hover:bg-pink-500 transition-all duration-300 [box-shadow:0_0_20px_rgba(236,72,153,0.5)] overflow-hidden mt-4">
-        <div class="transform skew-x-[15deg] flex items-center gap-3 text-2xl tracking-widest relative z-10">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-          </svg>
-          START_LINK //
-        </div>
-        <div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></div>
+      <button type="button" v-else @click="handleStartGame" class="mt-6 px-12 py-4 rounded-full bg-bili-pink hover:bg-bili-pink/90 text-white font-black text-lg shadow-bili transition-colors active:scale-[0.99]">
+        开始游戏
       </button>
     </div>
 
-    <div v-else-if="gameState === 'victory'" class="text-center animate-fade-in relative z-10">
-      <div class="text-xs font-mono text-cyan-400 tracking-widest mb-2">MISSION.ACCOMPLISHED //</div>
-      <h1 class="text-6xl sm:text-7xl font-black italic bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-6 [text-shadow:0_0_20px_rgba(34,211,238,0.6)]">FULL COMBO!</h1>
-      <p class="text-xl mb-10 text-gray-300">Track <span class="text-pink-400 font-bold">"{{ music.title }}"</span> cleared.</p>
-      <button type="button" @click="router.push('/')" class="px-10 py-4 bg-cyan-600 text-white font-black italic skew-x-[-15deg] hover:bg-cyan-500 [box-shadow:0_0_20px_rgba(34,211,238,0.4)] transition-all">
-        <span class="block skew-x-[15deg]">RETURN TO MENU</span>
+    <div v-else-if="gameState === 'victory'" class="text-center animate-fade-in relative z-10 w-full max-w-lg bg-white/80 border border-slate-200 rounded-3xl p-10 backdrop-blur-md shadow-bili">
+      <h1 class="text-4xl sm:text-5xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-bili-blue to-bili-pink">
+        通关成功！
+      </h1>
+      <p class="mt-3 text-slate-600 font-semibold">
+        你已完成：<span class="text-slate-900">{{ music.title }}</span>
+      </p>
+      <button type="button" @click="router.push('/')" class="mt-8 px-10 py-4 rounded-full bg-bili-blue hover:bg-bili-blue/90 text-white font-black shadow-bili transition-colors">
+        返回选歌
       </button>
     </div>
 
-    <div v-else class="w-full max-w-2xl flex flex-col flex-1 max-h-screen py-4 sm:py-6 relative z-10">
-        <!-- Header -->
-        <div class="flex justify-between items-center mb-6">
-          <button type="button" @click="router.push('/')" class="p-2 -ml-2 text-cyan-500/50 hover:text-pink-500 transition-colors">
+    <div v-else class="w-full max-w-5xl flex flex-col flex-1 min-h-0 py-4 sm:py-6 relative z-10">
+        <div class="flex justify-between items-center mb-6 bg-white/80 border border-slate-200 rounded-2xl px-3 sm:px-4 py-3 backdrop-blur-md shadow-bili">
+          <button type="button" @click="router.push('/')" class="p-2 -ml-1 text-slate-500 hover:text-bili-pink transition-colors rounded-full hover:bg-slate-100">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
           </button>
           <div class="text-center flex-1 mx-4">
-            <h2 class="text-lg sm:text-xl font-black italic text-white tracking-widest truncate [text-shadow:0_0_10px_rgba(255,255,255,0.3)]">{{ music.title }}</h2>
+            <h2 class="text-sm sm:text-base font-black text-slate-900 truncate">{{ music.title }}</h2>
             <div class="flex items-center justify-center gap-2 mt-2">
-              <div class="h-1.5 w-32 bg-slate-800 skew-x-[-15deg] overflow-hidden">
-                <div class="h-full bg-gradient-to-r from-cyan-500 to-pink-500 transition-all duration-300 relative" :style="{ width: `${(currentIndex / sentences.length) * 100}%` }">
-                  <div class="absolute top-0 right-0 w-1 h-full bg-white/70"></div>
-                </div>
+              <div class="h-2 w-32 bg-slate-200 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-bili-blue to-bili-pink transition-all duration-300" :style="{ width: `${(currentIndex / sentences.length) * 100}%` }"></div>
               </div>
-              <p class="text-[10px] text-cyan-400 font-mono font-bold tracking-widest">{{ currentIndex + 1 }}/{{ sentences.length }}</p>
+              <p class="text-[10px] text-slate-600 font-bold">{{ currentIndex + 1 }}/{{ sentences.length }}</p>
             </div>
           </div>
           <button
             @click="isSettingsOpen = true"
-            class="p-2 -mr-2 text-cyan-500/50 hover:text-cyan-400 transition-colors"
+            class="p-2 -mr-1 text-slate-500 hover:text-bili-blue transition-colors rounded-full hover:bg-slate-100"
             title="Settings"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -89,103 +74,95 @@
           </button>
         </div>
 
-        <!-- Playback indicator -->
         <div class="flex justify-center mb-6">
-          <div class="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center transition-all duration-500 [clip-path:polygon(20%_0,100%_0,80%_100%,0_100%)] border border-cyan-500/30"
-               :class="isPlaying ? 'bg-pink-500/20 shadow-[0_0_30px_rgba(236,72,153,0.4)] scale-110 border-pink-500' : 'bg-slate-900/50 backdrop-blur-md'">
-            <div class="transform skew-x-[15deg]">
-              <svg v-if="isPlaying" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 sm:h-10 sm:w-10 text-pink-400 animate-pulse drop-shadow-[0_0_10px_rgba(236,72,153,0.8)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-              </svg>
-              <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 sm:h-10 sm:w-10 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-              </svg>
-            </div>
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-slate-200 backdrop-blur-md shadow-bili">
+            <span class="text-xs font-bold" :class="isPlaying ? 'text-bili-pink' : 'text-slate-500'">
+              {{ isPlaying ? '播放中' : '待播放' }}
+            </span>
+            <div class="w-2 h-2 rounded-full" :class="isPlaying ? 'bg-bili-pink animate-pulse' : 'bg-slate-300'"></div>
           </div>
         </div>
 
-      <!-- Memorize Phase -->
-        <div v-if="gameState === 'memorize'" class="flex flex-col items-center animate-fade-in relative">
-          <div class="absolute -right-4 top-0 text-[80px] font-black text-slate-800/20 italic select-none pointer-events-none z-0">
-            MEMORIZE
-          </div>
-          <p class="text-2xl sm:text-3xl lg:text-4xl font-black italic text-center mb-6 leading-relaxed relative z-10 px-4 [text-shadow:0_0_10px_rgba(255,255,255,0.2)]">
-            {{ currentSentence?.text }}
-          </p>
-          <p class="text-sm sm:text-base text-cyan-400/80 mb-8 font-medium tracking-wide">
-            {{ currentSentence?.translation }}
-          </p>
-          
-          <!-- Countdown Display -->
-          <div class="mt-4 flex items-center gap-3">
-            <div class="text-xs font-mono text-cyan-500/50">TIME_LEFT //</div>
-            <div class="text-2xl font-black italic" :class="countdown <= 3 ? 'text-pink-500 animate-pulse drop-shadow-[0_0_8px_rgba(236,72,153,0.8)]' : 'text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]'">
-              00:0{{ countdown }}
+        <div v-if="gameState === 'memorize'" class="w-full flex flex-col items-center animate-fade-in flex-1 min-h-0">
+          <div class="w-full bg-white/85 border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-bili backdrop-blur-md">
+            <div class="flex items-center justify-between gap-3">
+              <div class="text-xs font-bold text-slate-500">记忆这句话</div>
+              <div class="px-3 py-1 rounded-full text-xs font-black"
+                   :class="countdown <= 3 ? 'bg-bili-pink text-white animate-pulse' : 'bg-bili-blue/10 text-bili-blue'">
+                {{ countdown }}s
+              </div>
+            </div>
+
+            <div class="mt-4 text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 leading-relaxed text-center">
+              {{ currentSentence?.text }}
+            </div>
+            <div class="mt-3 text-sm sm:text-base text-slate-600 text-center">
+              {{ currentSentence?.translation }}
             </div>
           </div>
         </div>
 
         <!-- Build Phase -->
-        <div v-if="gameState === 'build' || gameState === 'success'" class="flex-1 flex flex-col animate-fade-in relative z-10">
+        <div v-if="gameState === 'build' || gameState === 'success'" class="flex-1 min-h-0 flex flex-col animate-fade-in relative z-10">
           <!-- Instruction / Countdown -->
           <div class="flex justify-between items-center mb-6">
-            <div class="text-xs font-mono tracking-widest text-cyan-400/70 flex flex-col">
-              <span>REBUILD_SEQUENCE //</span>
-              <span class="text-slate-400 text-[10px]">{{ currentSentence?.translation }}</span>
+            <div class="text-xs font-bold text-slate-600 flex flex-col">
+              <span>把句子拼回来</span>
+              <span class="text-slate-500 text-[11px]">{{ currentSentence?.translation }}</span>
             </div>
             
             <!-- Countdown Display -->
-            <div v-if="buildCountdown > 0 && gameState === 'build' && !isTimeoutHandling" class="text-cyan-400 font-bold flex items-center gap-2 italic">
+            <div v-if="buildCountdown > 0 && gameState === 'build' && !isTimeoutHandling" class="text-slate-600 font-bold flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               00:{{ buildCountdown.toString().padStart(2, '0') }}
             </div>
-            <div v-else-if="isTimeoutHandling" class="text-pink-500 font-black italic flex items-center gap-2 animate-pulse">
-              TIME_OUT //
+            <div v-else-if="isTimeoutHandling" class="text-bili-pink font-black flex items-center gap-2 animate-pulse">
+              超时啦
             </div>
           </div>
 
           <!-- Selected Words Area -->
           <TransitionGroup name="word" tag="div"
-               class="min-h-[140px] bg-slate-900/80 backdrop-blur-md p-5 sm:p-6 mb-6 flex flex-wrap content-start gap-3 transition-all duration-300 [clip-path:polygon(0_0,calc(100%-20px)_0,100%_20px,100%_100%,20px_100%,0_calc(100%-20px))] border-l-4"
+               class="min-h-[140px] bg-white/85 backdrop-blur-md p-5 sm:p-6 mb-6 flex flex-wrap content-start gap-3 transition-all duration-300 rounded-3xl border shadow-bili"
                :class="{
-                   'border-pink-500 animate-[shake_0.5s_ease-in-out] shadow-[inset_0_0_30px_rgba(236,72,153,0.2)]': isWrong,
-                   'border-cyan-400 shadow-[inset_0_0_30px_rgba(34,211,238,0.2)]': isSuccess,
-                   'border-slate-700': !isWrong && !isSuccess
+                   'border-bili-pink animate-[shake_0.5s_ease-in-out]': isWrong,
+                   'border-emerald-400': isSuccess,
+                   'border-slate-200': !isWrong && !isSuccess
                  }">
               <button type="button" v-for="(word, index) in selectedWords" :key="word.id"
                       @click="removeWord(index)"
-                      class="group relative px-6 py-3 bg-cyan-600 text-white font-black italic skew-x-[-15deg] hover:bg-pink-500 transition-all hover:scale-105 active:scale-95 touch-manipulation [box-shadow:0_0_15px_rgba(34,211,238,0.3)] hover:[box-shadow:0_0_20px_rgba(236,72,153,0.5)]"
+                      class="group relative px-5 py-2.5 bg-bili-pink text-white font-black rounded-full hover:bg-bili-pink/90 transition-all active:scale-95 touch-manipulation shadow-bili"
                       :class="{ 'animate-[pop-shake_0.4s_ease-out]': word.isAnimating }"
                       :disabled="gameState === 'success' || isTimeoutHandling">
-                <span class="block skew-x-[15deg]">{{ word.text }}</span>
+                <span class="block">{{ word.text }}</span>
             </button>
           </TransitionGroup>
 
           <!-- Word Pool Area -->
-          <TransitionGroup name="word" tag="div" class="flex-1 flex flex-wrap content-start justify-center gap-3 sm:gap-4 relative">
+          <TransitionGroup name="word" tag="div" class="flex-1 min-h-0 overflow-auto flex flex-wrap content-start justify-center gap-3 sm:gap-4 relative pr-1">
             <button type="button" v-for="(word, index) in wordPool" :key="word.id"
                     @click="selectWord(index)"
-                    class="relative px-6 py-3 bg-black text-slate-300 font-black italic skew-x-[-15deg] transition-all border border-slate-700 hover:border-cyan-500 active:scale-95 touch-manipulation"
+                    class="relative px-5 py-2.5 bg-white/85 text-slate-800 font-black rounded-full transition-all border border-slate-200 hover:border-bili-blue/50 hover:bg-white active:scale-95 touch-manipulation shadow-bili"
                     :class="{
                       'opacity-0 scale-50 pointer-events-none': word.used,
-                      'hover:bg-cyan-500 hover:text-black hover:[box-shadow:0_0_20px_rgba(34,211,238,0.4)]': !word.used && gameState !== 'success' && !isTimeoutHandling
+                      'hover:shadow-biliHover': !word.used && gameState !== 'success' && !isTimeoutHandling
                     }"
                     :disabled="word.used || gameState === 'success' || isTimeoutHandling">
-              <span class="block skew-x-[15deg]">{{ word.text }}</span>
+              <span class="block">{{ word.text }}</span>
             </button>
           </TransitionGroup>
 
           <!-- Replay Audio Button -->
           <div class="mt-auto flex justify-center pb-2 pt-4">
             <button type="button" @click="playAudioSegment" :disabled="isTimeoutHandling" 
-                    class="group relative flex items-center gap-2 px-8 py-3 bg-slate-900 text-cyan-500/70 font-black italic skew-x-[-15deg] hover:text-cyan-400 hover:bg-slate-800 transition-all border border-cyan-900/50 hover:border-cyan-400/50 active:scale-95 touch-manipulation disabled:opacity-50 disabled:pointer-events-none">
-              <div class="transform skew-x-[15deg] flex items-center gap-2">
+                    class="group relative flex items-center gap-2 px-8 py-3 bg-bili-blue text-white font-black rounded-full hover:bg-bili-blue/90 transition-colors shadow-bili active:scale-95 touch-manipulation disabled:opacity-50 disabled:pointer-events-none">
+              <div class="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                 </svg>
-                REPLAY_AUDIO
+                再听一遍
               </div>
             </button>
           </div>

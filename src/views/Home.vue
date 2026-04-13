@@ -9,9 +9,27 @@ const musicStore = useMusicStore()
 const progressStore = useProgressStore()
 const router = useRouter()
 
+const fallbackCover = `data:image/svg+xml,${encodeURIComponent(`
+  <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+    <defs>
+      <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0" stop-color="#E0F2FE"/>
+        <stop offset="0.55" stop-color="#FFFFFF"/>
+        <stop offset="1" stop-color="#FCE7F3"/>
+      </linearGradient>
+    </defs>
+    <rect width="1200" height="675" rx="48" fill="url(#g)"/>
+    <circle cx="250" cy="160" r="120" fill="#FB7299" fill-opacity="0.12"/>
+    <circle cx="980" cy="520" r="160" fill="#00AEEC" fill-opacity="0.12"/>
+    <path d="M540 245v230c0 44-36 80-80 80s-80-36-80-80 36-80 80-80c15 0 29 4 40 11V271l320-76v210c0 44-36 80-80 80s-80-36-80-80 36-80 80-80c15 0 29 4 40 11V244z" fill="#0B1220" fill-opacity="0.35"/>
+  </svg>
+`)}`
+
 const handleImageError = (e: Event) => {
   const target = e.target as HTMLImageElement
-  target.style.display = 'none'
+  if (target.dataset.fallbackApplied === '1') return
+  target.dataset.fallbackApplied = '1'
+  target.src = fallbackCover
 }
 
 const isSettingsOpen = ref(false)
@@ -71,46 +89,47 @@ const playMusic = (id: string) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-900 text-gray-100 p-4 sm:p-6 lg:p-8 flex flex-col">
-    <div class="w-full max-w-7xl mx-auto">
-      <header class="mb-8 flex justify-between items-center relative">
-          <div class="absolute -top-10 -left-10 w-32 h-32 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
-          <div class="absolute top-0 right-0 w-32 h-32 bg-fuchsia-500/20 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="min-h-screen text-slate-900 px-4 sm:px-6 lg:px-10 py-6 lg:py-10">
+    <div class="relative">
+      <div class="absolute -top-10 -left-10 w-56 h-56 bg-bili-blue/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -top-16 right-10 w-64 h-64 bg-bili-pink/15 rounded-full blur-3xl pointer-events-none"></div>
+
+      <header class="mb-8 flex justify-between items-start gap-4 relative">
           <div class="relative z-10">
-            <h1 class="text-3xl font-extrabold bg-gradient-to-r from-cyan-400 to-fuchsia-500 bg-clip-text text-transparent mb-1 drop-shadow-[0_0_15px_rgba(34,211,238,0.3)]">
+            <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-bili-blue to-bili-pink">
               Neon English
             </h1>
-            <p class="text-gray-400 text-xs sm:text-sm">Tap a song to start the challenge</p>
+            <p class="text-slate-500 text-xs sm:text-sm mt-1">点一首歌开始闯关 · 记忆 → 重排 → 过关</p>
           </div>
           
           <div class="flex items-center gap-3 relative z-10">
             <router-link
               to="/demo-alignment"
-              class="p-2 rounded-xl bg-gradient-to-r from-purple-600/80 to-pink-600/80 border border-pink-500/50 hover:from-purple-500 hover:to-pink-500 transition-all text-sm shadow-[0_0_10px_rgba(236,72,153,0.5)] backdrop-blur-sm group flex items-center gap-2"
+              class="px-3 py-2 rounded-full bg-white/80 border border-slate-200 hover:border-bili-blue/40 hover:bg-white transition-all text-sm shadow-bili backdrop-blur-sm group flex items-center gap-2"
               title="Test Alignment Demo"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-bili-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
               </svg>
-              <span class="text-white font-medium hidden sm:inline">Demo</span>
+              <span class="text-slate-700 font-semibold hidden sm:inline">Demo</span>
             </router-link>
 
             <router-link
               to="/admin"
-              class="p-2 rounded-xl bg-gray-800/80 border border-gray-700/50 hover:bg-gray-700 hover:border-cyan-500/50 transition-all text-sm shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-sm group"
+              class="p-2 rounded-full bg-white/80 border border-slate-200 hover:border-bili-pink/40 hover:bg-white transition-all text-sm shadow-bili backdrop-blur-sm group"
               title="Admin"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-hover:text-cyan-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500 group-hover:text-bili-pink transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h-8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </router-link>
 
             <button
               @click="isSettingsOpen = true"
-              class="p-2 rounded-xl bg-gray-800/80 border border-gray-700/50 hover:bg-gray-700 hover:border-cyan-500/50 transition-all text-sm shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur-sm group"
+              class="p-2 rounded-full bg-white/80 border border-slate-200 hover:border-bili-blue/40 hover:bg-white transition-all text-sm shadow-bili backdrop-blur-sm group"
               title="Settings"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-hover:text-cyan-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500 group-hover:text-bili-blue transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
@@ -118,12 +137,12 @@ const playMusic = (id: string) => {
           </div>
         </header>
 
-      <div v-if="musicStore.musics.length === 0" class="text-center py-20 bg-gray-800/40 rounded-3xl border border-gray-700/50 backdrop-blur-md relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-fuchsia-500/5 pointer-events-none"></div>
-        <div class="text-gray-400 mb-6 text-lg relative z-10">暂无音乐数据</div>
+      <div v-if="musicStore.musics.length === 0" class="text-center py-20 bg-white/80 rounded-3xl border border-slate-200 backdrop-blur-md relative overflow-hidden shadow-bili">
+        <div class="absolute inset-0 bg-gradient-to-br from-bili-blue/10 to-bili-pink/10 pointer-events-none"></div>
+        <div class="text-slate-600 mb-6 text-lg relative z-10 font-semibold">暂无音乐数据</div>
         <router-link 
           to="/admin" 
-          class="relative z-10 inline-block px-8 py-3 rounded-xl bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-medium transition-all shadow-[0_0_20px_rgba(8,145,178,0.4)] hover:shadow-[0_0_30px_rgba(8,145,178,0.6)]"
+          class="relative z-10 inline-flex items-center justify-center px-8 py-3 rounded-full bg-bili-pink hover:bg-bili-pink/90 text-white font-semibold transition-all shadow-bili"
         >
           前往管理后台添加
         </router-link>
@@ -131,49 +150,47 @@ const playMusic = (id: string) => {
 
       <div v-else class="flex flex-col gap-6">
         <div class="flex flex-col sm:flex-row gap-4 justify-between items-center z-10 relative">
-          <!-- Difficulty Filter -->
-          <div class="flex items-center gap-2 bg-gray-800/80 p-1.5 rounded-xl border border-gray-700/50 backdrop-blur-sm shadow-[0_0_10px_rgba(0,0,0,0.5)]">
+          <div class="flex items-center gap-2 bg-white/80 p-1.5 rounded-full border border-slate-200 backdrop-blur-sm shadow-bili">
             <button
               @click="difficultyFilter = 'all'"
-              class="px-3 py-1.5 text-xs sm:text-sm rounded-lg font-medium transition-all"
-              :class="difficultyFilter === 'all' ? 'bg-gray-700 text-white shadow-md' : 'text-gray-400 hover:text-gray-200 hover:bg-gray-700/50'"
+              class="px-3 py-1.5 text-xs sm:text-sm rounded-full font-semibold transition-all"
+              :class="difficultyFilter === 'all' ? 'bg-slate-900 text-white' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'"
             >
               全部
             </button>
             <button
               @click="difficultyFilter = 'easy'"
-              class="px-3 py-1.5 text-xs sm:text-sm rounded-lg font-medium transition-all"
-              :class="difficultyFilter === 'easy' ? 'bg-green-500/20 text-green-400 shadow-md border border-green-500/30' : 'text-gray-400 hover:text-green-400 hover:bg-green-500/10'"
+              class="px-3 py-1.5 text-xs sm:text-sm rounded-full font-semibold transition-all"
+              :class="difficultyFilter === 'easy' ? 'bg-emerald-500/15 text-emerald-700 border border-emerald-500/20' : 'text-slate-600 hover:text-emerald-700 hover:bg-emerald-500/10'"
             >
               简单
             </button>
             <button
               @click="difficultyFilter = 'medium'"
-              class="px-3 py-1.5 text-xs sm:text-sm rounded-lg font-medium transition-all"
-              :class="difficultyFilter === 'medium' ? 'bg-yellow-500/20 text-yellow-400 shadow-md border border-yellow-500/30' : 'text-gray-400 hover:text-yellow-400 hover:bg-yellow-500/10'"
+              class="px-3 py-1.5 text-xs sm:text-sm rounded-full font-semibold transition-all"
+              :class="difficultyFilter === 'medium' ? 'bg-amber-500/15 text-amber-800 border border-amber-500/20' : 'text-slate-600 hover:text-amber-800 hover:bg-amber-500/10'"
             >
               中等
             </button>
             <button
               @click="difficultyFilter = 'hard'"
-              class="px-3 py-1.5 text-xs sm:text-sm rounded-lg font-medium transition-all"
-              :class="difficultyFilter === 'hard' ? 'bg-red-500/20 text-red-400 shadow-md border border-red-500/30' : 'text-gray-400 hover:text-red-400 hover:bg-red-500/10'"
+              class="px-3 py-1.5 text-xs sm:text-sm rounded-full font-semibold transition-all"
+              :class="difficultyFilter === 'hard' ? 'bg-rose-500/15 text-rose-700 border border-rose-500/20' : 'text-slate-600 hover:text-rose-700 hover:bg-rose-500/10'"
             >
               困难
             </button>
           </div>
 
-          <!-- Sort Dropdown -->
           <div class="relative w-full sm:w-auto">
             <select
               v-model="sortOption"
-              class="w-full sm:w-48 appearance-none bg-gray-800/80 border border-gray-700/50 text-gray-200 text-sm rounded-xl px-4 py-2.5 pr-8 focus:outline-none focus:border-cyan-500/50 focus:ring-1 focus:ring-cyan-500/50 backdrop-blur-sm shadow-[0_0_10px_rgba(0,0,0,0.5)] cursor-pointer"
+              class="w-full sm:w-56 appearance-none bg-white/80 border border-slate-200 text-slate-700 text-sm rounded-full px-4 py-2.5 pr-9 focus:outline-none focus:border-bili-pink/40 focus:ring-2 focus:ring-bili-pink/20 backdrop-blur-sm shadow-bili cursor-pointer"
             >
               <option value="recently_played">最近学习</option>
               <option value="title_az">歌名 (A-Z)</option>
               <option value="difficulty">难度系数</option>
             </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400">
               <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                 <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
               </svg>
@@ -181,59 +198,54 @@ const playMusic = (id: string) => {
           </div>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6 relative z-10">
+        <div class="grid grid-cols-2 sm:[grid-template-columns:repeat(auto-fit,minmax(220px,1fr))] gap-4 sm:gap-6 relative z-10">
           <div
             v-for="music in displayedMusics"
             :key="music.id"
             @click="playMusic(music.id)"
-            class="group cursor-pointer relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.25)] hover:-translate-y-2 transition-all duration-500 bg-gray-900"
+            class="group cursor-pointer relative rounded-2xl overflow-hidden bg-white/85 backdrop-blur-md border border-slate-200 shadow-bili hover:shadow-biliHover hover:-translate-y-1 transition-all duration-300"
           >
-            <div class="aspect-[4/5] relative w-full h-full">
+            <div class="aspect-video relative w-full h-full bg-gradient-to-br from-sky-100 to-pink-100">
               <img
                   v-if="music.coverUrl"
                   :src="getHighResCoverUrl(music.coverUrl)"
                   :alt="music.title"
                   @error="handleImageError"
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
-              <div v-else class="w-full h-full flex items-center justify-center text-gray-500 bg-gray-800">
+              <div v-else class="w-full h-full flex items-center justify-center text-slate-400">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                 </svg>
               </div>
-              
-              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 flex flex-col justify-end z-10 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                <div class="flex items-center gap-2 mb-2 flex-wrap">
-                  <span 
-                    class="px-2 py-0.5 rounded-full text-[10px] font-semibold backdrop-blur-md border uppercase tracking-wider"
-                    :class="{
-                      'bg-green-500/20 text-green-300 border-green-500/30': music.difficulty === 'easy',
-                      'bg-yellow-500/20 text-yellow-300 border-yellow-500/30': music.difficulty === 'medium',
-                      'bg-red-500/20 text-red-300 border-red-500/30': music.difficulty === 'hard'
-                    }"
-                  >
-                    {{ getDifficultyLabel(music.difficulty) }}
-                  </span>
-                  <span v-if="progressStore.getProgress(music.id)" class="text-[10px] text-white/90 font-medium bg-black/40 px-2 py-0.5 rounded-full backdrop-blur-md border border-white/10">
-                    {{ progressStore.getProgress(music.id)?.currentIndex }} / {{ progressStore.getProgress(music.id)?.total }}
-                  </span>
-                </div>
+            </div>
 
-                <h3 class="text-base sm:text-xl font-bold text-white tracking-tight leading-tight mb-0.5 line-clamp-2 drop-shadow-md">
-                  {{ music.title }}
-                </h3>
-                <p class="text-xs sm:text-sm text-gray-300 truncate drop-shadow-md">
-                  {{ music.artist }}
-                </p>
+            <div class="p-3 sm:p-4">
+              <div class="flex items-center gap-2 mb-2">
+                <span
+                  class="px-2 py-0.5 rounded-full text-[10px] font-bold"
+                  :class="{
+                    'bg-emerald-500/15 text-emerald-700': music.difficulty === 'easy',
+                    'bg-amber-500/15 text-amber-800': music.difficulty === 'medium',
+                    'bg-rose-500/15 text-rose-700': music.difficulty === 'hard'
+                  }"
+                >
+                  {{ getDifficultyLabel(music.difficulty) }}
+                </span>
+                <span
+                  v-if="progressStore.getProgress(music.id)"
+                  class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-sky-500/15 text-sky-700"
+                >
+                  {{ progressStore.getProgress(music.id)?.currentIndex }} / {{ progressStore.getProgress(music.id)?.total }}
+                </span>
               </div>
 
-              <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100 shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-0.5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-                </svg>
-              </div>
+              <h3 class="text-sm sm:text-base font-black text-slate-900 leading-snug line-clamp-2">
+                {{ music.title }}
+              </h3>
+              <p class="text-xs text-slate-500 truncate mt-1">
+                {{ music.artist }}
+              </p>
             </div>
           </div>
         </div>
