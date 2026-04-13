@@ -1,8 +1,9 @@
 <template>
-  <div class="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-4 sm:p-6 relative overflow-x-hidden overflow-y-auto">
-    <!-- Background glow -->
-    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none"></div>
-    <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-fuchsia-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+  <div class="min-h-screen bg-black text-white flex flex-col items-center justify-center p-4 sm:p-6 relative overflow-hidden font-sans">
+    <!-- Background glow & Grid -->
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-50"></div>
+    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-pink-500/20 rounded-full blur-[120px] pointer-events-none"></div>
 
     <div v-if="!music || !sentences.length" class="text-center relative z-10">
       <p class="text-xl mb-4 text-cyan-300">Loading or No Sentences Found...</p>
@@ -10,167 +11,186 @@
     </div>
 
     <!-- Start Overlay to handle browser autoplay policies -->
-    <div v-else-if="showStartOverlay" class="absolute inset-0 bg-gray-900/90 z-50 flex flex-col items-center justify-center backdrop-blur-sm animate-fade-in p-6">
-      <h2 class="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 mb-8 text-center drop-shadow-[0_0_10px_rgba(34,211,238,0.5)]">
+    <div v-else-if="showStartOverlay" class="absolute inset-0 bg-black/90 z-50 flex flex-col items-center justify-center backdrop-blur-md animate-fade-in p-6">
+      <div class="text-xs font-mono text-cyan-400 tracking-widest mb-2 select-none">TRACK.INITIALIZE //</div>
+      <h2 class="text-3xl md:text-5xl font-black italic text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-pink-500 mb-8 text-center [text-shadow:0_0_15px_rgba(34,211,238,0.4)]">
         {{ music.title }}
       </h2>
-      
+
       <div v-if="audioLoadError" class="text-red-400 text-center mb-8 max-w-md">
-        <p class="font-bold text-xl mb-2">Audio Failed to Load</p>
-        <p class="text-sm">The iTunes preview audio cannot be played due to network or CORS issues. Please try another song or refresh the page.</p>
-        <button type="button" @click="router.push('/')" class="mt-6 px-8 py-3 bg-gray-800 border border-red-500/50 rounded-xl hover:bg-gray-700 transition-all">Go Back</button>
-      </div>
-      
-      <div v-else-if="!isAudioLoaded" class="flex flex-col items-center w-full max-w-sm px-4">
-        <div class="w-full bg-gray-800 rounded-full h-3 mb-4 overflow-hidden border border-gray-700/50 shadow-inner">
-          <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-full rounded-full transition-all duration-200 ease-out"
-               :style="{ width: loadingPhase === 'decoding' ? '100%' : `${loadingProgress}%` }">
-          </div>
-        </div>
-        <p class="text-cyan-400 font-medium mb-2 text-sm sm:text-base">
-          {{ loadingPhase === 'decoding' ? '音频解压中...' : `正在下载高质量音频 (${loadingProgress}%)...` }}
-        </p>
-        <div class="text-gray-400 text-xs sm:text-sm text-center flex flex-col gap-2">
-          <p>为了保证游戏时能实现无缝的切词播放与绝对零延迟，需要将音频一次性载入内存，请耐心等待。</p>
-          <p v-if="loadingPhase === 'downloading'" class="text-amber-500/80 animate-pulse mt-1">
-            💡 提示：如果下载速度较慢，建议切换至 5G 网络（注意流量消耗）或更快的 Wi-Fi。
-          </p>
-        </div>
+        <p class="font-black text-xl mb-2 italic">ERROR // AUDIO_LOAD_FAILED</p>
+        <p class="text-sm font-mono text-red-300">The audio cannot be played due to network issues. Please try another track.</p>
+        <button type="button" @click="router.push('/')" class="mt-6 px-8 py-3 bg-red-950 border border-red-500 text-red-400 font-bold italic skew-x-[-15deg] hover:bg-red-900 transition-colors">
+          <span class="block skew-x-[15deg]">GO BACK</span>
+        </button>
       </div>
 
-      <button type="button" v-else @click="handleStartGame" 
-              class="px-12 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 rounded-full font-bold text-2xl shadow-[0_0_40px_rgba(34,211,238,0.6)] hover:shadow-[0_0_60px_rgba(34,211,238,0.8)] hover:scale-105 active:scale-95 transition-all transform flex items-center gap-3">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-        </svg>
-        START GAME
+      <div v-else-if="!isAudioLoaded" class="flex flex-col items-center w-full max-w-sm px-4">
+        <div class="w-full bg-slate-900 h-2 mb-4 overflow-hidden border border-slate-800 skew-x-[-15deg]">
+          <div class="bg-gradient-to-r from-cyan-500 to-pink-500 h-full transition-all duration-200 ease-out relative"
+               :style="{ width: loadingPhase === 'decoding' ? '100%' : `${loadingProgress}%` }">
+            <div class="absolute top-0 right-0 w-2 h-full bg-white/70"></div>
+          </div>
+        </div>
+        <p class="text-cyan-400 font-bold mb-2 text-sm sm:text-base italic font-mono">
+          {{ loadingPhase === 'decoding' ? 'DECODING...' : `DOWNLOADING (${loadingProgress}%)...` }}
+        </p>
+      </div>
+
+      <button type="button" v-else @click="handleStartGame"
+              class="group relative px-12 py-4 bg-pink-600 text-white font-black italic skew-x-[-15deg] hover:bg-pink-500 transition-all duration-300 [box-shadow:0_0_20px_rgba(236,72,153,0.5)] overflow-hidden mt-4">
+        <div class="transform skew-x-[15deg] flex items-center gap-3 text-2xl tracking-widest relative z-10">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+          </svg>
+          START_LINK //
+        </div>
+        <div class="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></div>
       </button>
     </div>
 
     <div v-else-if="gameState === 'victory'" class="text-center animate-fade-in relative z-10">
-      <h1 class="text-6xl font-extrabold bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent mb-6 drop-shadow-[0_0_20px_rgba(250,204,21,0.6)]">Victory!</h1>
-      <p class="text-xl mb-10 text-gray-300">You completed all sentences for <br><span class="text-cyan-400 font-bold">"{{ music.title }}"</span>!</p>
-      <button type="button" @click="router.push('/')" class="px-10 py-4 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl font-bold text-xl shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:shadow-[0_0_40px_rgba(16,185,129,0.7)] hover:scale-105 active:scale-95 transition-all">
-        Back to Home
+      <div class="text-xs font-mono text-cyan-400 tracking-widest mb-2">MISSION.ACCOMPLISHED //</div>
+      <h1 class="text-6xl sm:text-7xl font-black italic bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-6 [text-shadow:0_0_20px_rgba(34,211,238,0.6)]">FULL COMBO!</h1>
+      <p class="text-xl mb-10 text-gray-300">Track <span class="text-pink-400 font-bold">"{{ music.title }}"</span> cleared.</p>
+      <button type="button" @click="router.push('/')" class="px-10 py-4 bg-cyan-600 text-white font-black italic skew-x-[-15deg] hover:bg-cyan-500 [box-shadow:0_0_20px_rgba(34,211,238,0.4)] transition-all">
+        <span class="block skew-x-[15deg]">RETURN TO MENU</span>
       </button>
     </div>
 
-    <div v-else class="w-full max-w-2xl flex flex-col h-[85vh] relative z-10">
-      <!-- Header -->
-      <div class="flex justify-between items-center mb-6">
-        <button type="button" @click="router.push('/')" class="p-2 -ml-2 text-gray-400 hover:text-cyan-400 transition-colors rounded-full hover:bg-gray-800">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-        </button>
-        <div class="text-center">
-          <h2 class="text-xl sm:text-2xl font-bold text-gray-100">{{ music.title }}</h2>
-          <div class="flex items-center justify-center gap-2 mt-1">
-            <div class="h-1.5 w-32 bg-gray-800 rounded-full overflow-hidden">
-              <div class="h-full bg-cyan-500 transition-all duration-300" :style="{ width: `${(currentIndex / sentences.length) * 100}%` }"></div>
+    <div v-else class="w-full max-w-2xl flex flex-col flex-1 max-h-screen py-4 sm:py-6 relative z-10">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-6">
+          <button type="button" @click="router.push('/')" class="p-2 -ml-2 text-cyan-500/50 hover:text-pink-500 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+          </button>
+          <div class="text-center flex-1 mx-4">
+            <h2 class="text-lg sm:text-xl font-black italic text-white tracking-widest truncate [text-shadow:0_0_10px_rgba(255,255,255,0.3)]">{{ music.title }}</h2>
+            <div class="flex items-center justify-center gap-2 mt-2">
+              <div class="h-1.5 w-32 bg-slate-800 skew-x-[-15deg] overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-cyan-500 to-pink-500 transition-all duration-300 relative" :style="{ width: `${(currentIndex / sentences.length) * 100}%` }">
+                  <div class="absolute top-0 right-0 w-1 h-full bg-white/70"></div>
+                </div>
+              </div>
+              <p class="text-[10px] text-cyan-400 font-mono font-bold tracking-widest">{{ currentIndex + 1 }}/{{ sentences.length }}</p>
             </div>
-            <p class="text-xs text-cyan-500 font-medium">{{ currentIndex + 1 }} / {{ sentences.length }}</p>
+          </div>
+          <button
+            @click="isSettingsOpen = true"
+            class="p-2 -mr-2 text-cyan-500/50 hover:text-cyan-400 transition-colors"
+            title="Settings"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Playback indicator -->
+        <div class="flex justify-center mb-6">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center transition-all duration-500 [clip-path:polygon(20%_0,100%_0,80%_100%,0_100%)] border border-cyan-500/30"
+               :class="isPlaying ? 'bg-pink-500/20 shadow-[0_0_30px_rgba(236,72,153,0.4)] scale-110 border-pink-500' : 'bg-slate-900/50 backdrop-blur-md'">
+            <div class="transform skew-x-[15deg]">
+              <svg v-if="isPlaying" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 sm:h-10 sm:w-10 text-pink-400 animate-pulse drop-shadow-[0_0_10px_rgba(236,72,153,0.8)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+              </svg>
+              <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 sm:h-10 sm:w-10 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+              </svg>
+            </div>
           </div>
         </div>
-        <button 
-          @click="isSettingsOpen = true"
-          class="p-2 -mr-2 text-gray-400 hover:text-cyan-400 transition-colors rounded-full hover:bg-gray-800"
-          title="Settings"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Playback indicator -->
-      <div class="flex justify-center mb-6">
-        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center transition-all duration-500" 
-             :class="isPlaying ? 'bg-cyan-500 shadow-[0_0_30px_rgba(34,211,238,0.6)] scale-110' : 'bg-gray-800 border border-gray-700/50 shadow-lg'">
-          <svg v-if="isPlaying" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 sm:h-10 sm:w-10 text-white animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-          </svg>
-          <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 sm:h-10 sm:w-10 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-          </svg>
-        </div>
-      </div>
 
       <!-- Memorize Phase -->
-      <div v-if="gameState === 'memorize'" class="flex-1 flex flex-col items-center justify-center">
-        <div class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center leading-relaxed animate-pulse bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(34,211,238,0.5)] px-4">
-          {{ currentSentence?.text }}
-        </div>
-        <div class="text-lg sm:text-xl text-gray-400 mt-8 text-center px-4 font-medium">
-          {{ currentSentence?.translation }}
-        </div>
-        <div class="mt-16 flex items-center gap-3">
-          <div class="w-12 h-12 rounded-full border-4 border-gray-800 border-t-cyan-500 animate-spin"></div>
-          <span class="text-cyan-500 font-bold text-xl">{{ countdown }}s</span>
-        </div>
-      </div>
-
-      <!-- Build Phase -->
-      <div v-if="gameState === 'build' || gameState === 'success'" class="flex-1 flex flex-col">
-        
-        <!-- Translation Hint -->
-        <div class="text-center text-lg sm:text-xl text-gray-300 mb-6 font-medium px-4 flex flex-col items-center">
-          <span>{{ currentSentence?.translation }}</span>
+        <div v-if="gameState === 'memorize'" class="flex flex-col items-center animate-fade-in relative">
+          <div class="absolute -right-4 top-0 text-[80px] font-black text-slate-800/20 italic select-none pointer-events-none z-0">
+            MEMORIZE
+          </div>
+          <p class="text-2xl sm:text-3xl lg:text-4xl font-black italic text-center mb-6 leading-relaxed relative z-10 px-4 [text-shadow:0_0_10px_rgba(255,255,255,0.2)]">
+            {{ currentSentence?.text }}
+          </p>
+          <p class="text-sm sm:text-base text-cyan-400/80 mb-8 font-medium tracking-wide">
+            {{ currentSentence?.translation }}
+          </p>
+          
           <!-- Countdown Display -->
-          <div v-if="buildCountdown > 0 && gameState === 'build' && !isTimeoutHandling" class="mt-2 text-cyan-500 font-bold flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            {{ buildCountdown }}s
-          </div>
-          <div v-else-if="isTimeoutHandling" class="mt-2 text-red-400 font-bold flex items-center gap-2 animate-pulse">
-            Time's up!
+          <div class="mt-4 flex items-center gap-3">
+            <div class="text-xs font-mono text-cyan-500/50">TIME_LEFT //</div>
+            <div class="text-2xl font-black italic" :class="countdown <= 3 ? 'text-pink-500 animate-pulse drop-shadow-[0_0_8px_rgba(236,72,153,0.8)]' : 'text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.8)]'">
+              00:0{{ countdown }}
+            </div>
           </div>
         </div>
 
-        <!-- Selected Words Area -->
-        <TransitionGroup name="word" tag="div"
-             class="min-h-[140px] bg-gray-800/60 backdrop-blur-sm rounded-3xl p-5 sm:p-6 mb-6 flex flex-wrap content-start gap-3 border-2 transition-all duration-300 shadow-[inset_0_0_20px_rgba(0,0,0,0.2)]"
-             :class="{
-                 'border-red-500 animate-[shake_0.5s_ease-in-out] shadow-[0_0_20px_rgba(239,68,68,0.4)]': isWrong,
-                 'border-green-500 shadow-[0_0_30px_rgba(34,197,94,0.5)]': isSuccess,
-                 'border-gray-700/50 hover:border-cyan-500/30': !isWrong && !isSuccess
-               }">
-            <button type="button" v-for="(word, index) in selectedWords" :key="word.id"
-                    @click="removeWord(index)"
-                    class="px-5 py-3 sm:px-6 sm:py-3.5 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-2xl text-lg sm:text-xl font-bold shadow-[0_0_15px_rgba(8,145,178,0.4)] transition-all hover:scale-105 active:scale-95 touch-manipulation"
-                    :class="{ 'animate-[pop-shake_0.4s_ease-out]': word.isAnimating }"
-                    :disabled="gameState === 'success' || isTimeoutHandling">
-            {{ word.text }}
-          </button>
-        </TransitionGroup>
+        <!-- Build Phase -->
+        <div v-if="gameState === 'build' || gameState === 'success'" class="flex-1 flex flex-col animate-fade-in relative z-10">
+          <!-- Instruction / Countdown -->
+          <div class="flex justify-between items-center mb-6">
+            <div class="text-xs font-mono tracking-widest text-cyan-400/70 flex flex-col">
+              <span>REBUILD_SEQUENCE //</span>
+              <span class="text-slate-400 text-[10px]">{{ currentSentence?.translation }}</span>
+            </div>
+            
+            <!-- Countdown Display -->
+            <div v-if="buildCountdown > 0 && gameState === 'build' && !isTimeoutHandling" class="text-cyan-400 font-bold flex items-center gap-2 italic">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              00:{{ buildCountdown.toString().padStart(2, '0') }}
+            </div>
+            <div v-else-if="isTimeoutHandling" class="text-pink-500 font-black italic flex items-center gap-2 animate-pulse">
+              TIME_OUT //
+            </div>
+          </div>
 
-        <!-- Word Pool Area -->
-        <TransitionGroup name="word" tag="div" class="flex-1 flex flex-wrap content-start justify-center gap-3 sm:gap-4 relative">
-          <button type="button" v-for="(word, index) in wordPool" :key="word.id"
-                  @click="selectWord(index)"
-                  class="px-5 py-3 sm:px-6 sm:py-3.5 bg-gray-800 text-gray-200 rounded-2xl text-lg sm:text-xl font-bold shadow-lg transition-all border border-gray-700/50 active:scale-95 touch-manipulation"
-                  :class="{ 
-                    'opacity-0 scale-50 pointer-events-none': word.used,
-                    'hover:border-cyan-500/50 hover:bg-gray-750': !word.used && gameState !== 'success' && !isTimeoutHandling
-                  }"
-                  :disabled="word.used || gameState === 'success' || isTimeoutHandling">
-            {{ word.text }}
-          </button>
-        </TransitionGroup>
-        
-        <!-- Replay Audio Button -->
-        <div class="mt-auto flex justify-center pb-2 pt-4">
-          <button type="button" @click="playAudioSegment" :disabled="isTimeoutHandling" class="flex items-center gap-2 px-8 py-4 bg-gray-800/80 hover:bg-gray-700 rounded-full text-gray-300 font-medium transition-all shadow-lg active:scale-95 touch-manipulation border border-gray-700/50 hover:border-cyan-500/30 hover:text-cyan-400 disabled:opacity-50 disabled:pointer-events-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-            </svg>
-            Replay Audio
-          </button>
+          <!-- Selected Words Area -->
+          <TransitionGroup name="word" tag="div"
+               class="min-h-[140px] bg-slate-900/80 backdrop-blur-md p-5 sm:p-6 mb-6 flex flex-wrap content-start gap-3 transition-all duration-300 [clip-path:polygon(0_0,calc(100%-20px)_0,100%_20px,100%_100%,20px_100%,0_calc(100%-20px))] border-l-4"
+               :class="{
+                   'border-pink-500 animate-[shake_0.5s_ease-in-out] shadow-[inset_0_0_30px_rgba(236,72,153,0.2)]': isWrong,
+                   'border-cyan-400 shadow-[inset_0_0_30px_rgba(34,211,238,0.2)]': isSuccess,
+                   'border-slate-700': !isWrong && !isSuccess
+                 }">
+              <button type="button" v-for="(word, index) in selectedWords" :key="word.id"
+                      @click="removeWord(index)"
+                      class="group relative px-6 py-3 bg-cyan-600 text-white font-black italic skew-x-[-15deg] hover:bg-pink-500 transition-all hover:scale-105 active:scale-95 touch-manipulation [box-shadow:0_0_15px_rgba(34,211,238,0.3)] hover:[box-shadow:0_0_20px_rgba(236,72,153,0.5)]"
+                      :class="{ 'animate-[pop-shake_0.4s_ease-out]': word.isAnimating }"
+                      :disabled="gameState === 'success' || isTimeoutHandling">
+                <span class="block skew-x-[15deg]">{{ word.text }}</span>
+            </button>
+          </TransitionGroup>
+
+          <!-- Word Pool Area -->
+          <TransitionGroup name="word" tag="div" class="flex-1 flex flex-wrap content-start justify-center gap-3 sm:gap-4 relative">
+            <button type="button" v-for="(word, index) in wordPool" :key="word.id"
+                    @click="selectWord(index)"
+                    class="relative px-6 py-3 bg-black text-slate-300 font-black italic skew-x-[-15deg] transition-all border border-slate-700 hover:border-cyan-500 active:scale-95 touch-manipulation"
+                    :class="{
+                      'opacity-0 scale-50 pointer-events-none': word.used,
+                      'hover:bg-cyan-500 hover:text-black hover:[box-shadow:0_0_20px_rgba(34,211,238,0.4)]': !word.used && gameState !== 'success' && !isTimeoutHandling
+                    }"
+                    :disabled="word.used || gameState === 'success' || isTimeoutHandling">
+              <span class="block skew-x-[15deg]">{{ word.text }}</span>
+            </button>
+          </TransitionGroup>
+
+          <!-- Replay Audio Button -->
+          <div class="mt-auto flex justify-center pb-2 pt-4">
+            <button type="button" @click="playAudioSegment" :disabled="isTimeoutHandling" 
+                    class="group relative flex items-center gap-2 px-8 py-3 bg-slate-900 text-cyan-500/70 font-black italic skew-x-[-15deg] hover:text-cyan-400 hover:bg-slate-800 transition-all border border-cyan-900/50 hover:border-cyan-400/50 active:scale-95 touch-manipulation disabled:opacity-50 disabled:pointer-events-none">
+              <div class="transform skew-x-[15deg] flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+                REPLAY_AUDIO
+              </div>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
 
     <SettingsModal :is-open="isSettingsOpen" @close="isSettingsOpen = false" />
   </div>
