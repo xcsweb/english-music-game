@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { useMusicStore } from '../../stores/music'
 import { useSentenceStore } from '../../stores/sentence'
 import { useRouter } from 'vue-router'
+import ConfirmModal from '../../components/ConfirmModal.vue'
 
 const musicStore = useMusicStore()
 const sentenceStore = useSentenceStore()
@@ -48,11 +49,43 @@ const saveMusic = () => {
   resetForm()
 }
 
-const deleteMusic = (id: string) => {
-  if (confirm('Are you sure you want to delete this music?')) {
-    musicStore.deleteMusic(id)
-    sentenceStore.deleteSentencesByMusicId(id)
+// Modal State Management
+const confirmModal = ref({
+  isOpen: false,
+  title: '',
+  message: '',
+  isDanger: false,
+  confirmText: '确定',
+  showCancel: true,
+  onConfirm: () => {}
+})
+
+const openModal = (options: { title: string; message: string; isDanger?: boolean; confirmText?: string; showCancel?: boolean; onConfirm: () => void }) => {
+  confirmModal.value = {
+    isOpen: true,
+    title: options.title,
+    message: options.message,
+    isDanger: options.isDanger || false,
+    confirmText: options.confirmText || '确定',
+    showCancel: options.showCancel !== false,
+    onConfirm: () => {
+      options.onConfirm()
+      confirmModal.value.isOpen = false
+    }
   }
+}
+
+const deleteMusic = (id: string) => {
+  openModal({
+    title: '删除音乐',
+    message: '确定要删除这首音乐吗？相关的句子数据也将被删除。',
+    isDanger: true,
+    confirmText: '删除',
+    onConfirm: () => {
+      musicStore.deleteMusic(id)
+      sentenceStore.deleteSentencesByMusicId(id)
+    }
+  })
 }
 
 const goToSentences = (id: string) => {
@@ -60,120 +93,165 @@ const goToSentences = (id: string) => {
 }
 
 const handleResetDefaults = () => {
-  if (confirm('⚠️ WARNING: This will overwrite ALL your current music and sentences with the default test data. Proceed?')) {
-    musicStore.resetToDefaults()
-    sentenceStore.resetToDefaults()
-    alert('✅ Success: Default data restored!')
-  }
+  openModal({
+    title: '恢复默认数据',
+    message: '警告：这将会用默认的测试数据覆盖你当前所有的音乐和句子！确定继续吗？',
+    isDanger: false,
+    confirmText: '恢复',
+    onConfirm: () => {
+      musicStore.resetToDefaults()
+      sentenceStore.resetToDefaults()
+      setTimeout(() => {
+        openModal({
+          title: '成功',
+          message: '已成功恢复默认数据！',
+          confirmText: '好的',
+          showCancel: false,
+          onConfirm: () => {}
+        })
+      }, 300)
+    }
+  })
 }
 
 const handleClearAll = () => {
-  if (confirm('🚨 DANGER: This will delete ALL music and sentences permanently. Are you absolutely sure?')) {
-    musicStore.clearAll()
-    sentenceStore.clearAll()
-    alert('🗑️ Success: All data has been cleared.')
-  }
+  openModal({
+    title: '清空所有数据',
+    message: '危险：这将会永久删除所有的音乐和句子数据！你绝对确定吗？',
+    isDanger: true,
+    confirmText: '清空',
+    onConfirm: () => {
+      musicStore.clearAll()
+      sentenceStore.clearAll()
+      setTimeout(() => {
+        openModal({
+          title: '成功',
+          message: '所有数据已清空。',
+          confirmText: '好的',
+          showCancel: false,
+          onConfirm: () => {}
+        })
+      }, 300)
+    }
+  })
 }
 </script>
 
 <template>
-  <div class="p-6 max-w-4xl mx-auto min-h-screen bg-gray-900 text-gray-100">
-    <div class="flex justify-between items-center mb-6">
-      <h1 class="text-2xl font-bold text-gray-100">Music Management</h1>
-      <button type="button" @click="$router.push('/')" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Back to Home</button>
+  <div class="p-6 max-w-4xl mx-auto min-h-[100svh] bg-sky-50 text-slate-800 font-sans">
+    <div class="flex justify-between items-center mb-6 bg-white border border-slate-200 p-4 rounded-2xl shadow-sm">
+      <h1 class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-bili-blue to-bili-pink">音乐管理</h1>
+      <button type="button" @click="$router.push('/')" class="text-slate-500 hover:text-bili-blue font-bold transition-colors">返回首页</button>
     </div>
 
     <!-- Data Management Tools -->
-    <div class="bg-gray-800 border border-gray-700 p-6 rounded-xl shadow-lg mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm mb-6 flex flex-col md:flex-row items-center justify-between gap-4">
       <div>
-        <h2 class="text-xl font-semibold text-cyan-400">Data Management</h2>
-        <p class="text-sm text-gray-400 mt-1">Manage your local storage cache safely</p>
+        <h2 class="text-xl font-bold text-slate-800">数据管理</h2>
+        <p class="text-sm text-slate-500 mt-1">安全地管理本地缓存数据</p>
       </div>
       <div class="flex gap-3 w-full md:w-auto">
-        <button type="button" @click="handleResetDefaults" class="flex-1 md:flex-none px-5 py-2.5 bg-gray-700 hover:bg-gray-600 border border-cyan-500/50 rounded-lg text-cyan-300 font-medium transition-all shadow-[0_0_10px_rgba(8,145,178,0.2)]">
-          🔄 Reset Defaults
+        <button type="button" @click="handleResetDefaults" class="flex-1 md:flex-none px-6 py-2.5 bg-sky-50 hover:bg-sky-100 border border-sky-200 rounded-full text-sky-600 font-bold transition-all">
+          🔄 恢复默认
         </button>
-        <button type="button" @click="handleClearAll" class="flex-1 md:flex-none px-5 py-2.5 bg-red-900/40 hover:bg-red-800/60 border border-red-500/50 rounded-lg text-red-400 font-medium transition-all shadow-[0_0_10px_rgba(239,68,68,0.2)]">
-          🗑️ Clear All
+        <button type="button" @click="handleClearAll" class="flex-1 md:flex-none px-6 py-2.5 bg-rose-50 hover:bg-rose-100 border border-rose-200 rounded-full text-rose-500 font-bold transition-all">
+          🗑️ 清空数据
         </button>
       </div>
     </div>
 
     <!-- Form -->
-    <div class="bg-gray-800 border border-gray-700 p-6 rounded-xl shadow-lg mb-8">
-      <h2 class="text-xl font-semibold mb-4 text-cyan-400">{{ isEditing ? 'Edit Music' : 'Add New Music' }}</h2>
-      <form @submit.prevent="saveMusic" class="space-y-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm mb-6">
+      <h2 class="text-xl font-bold mb-5 text-slate-800">{{ isEditing ? '编辑音乐' : '添加新音乐' }}</h2>
+      <form @submit.prevent="saveMusic" class="space-y-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label class="block text-sm font-medium mb-1 text-gray-300">Title</label>
-            <input v-model="form.title" type="text" required class="w-full bg-gray-700 border-gray-600 rounded p-2 text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all" />
+            <label class="block text-sm font-bold mb-1.5 text-slate-600">标题</label>
+            <input v-model="form.title" type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 focus:ring-2 focus:ring-bili-blue/20 focus:border-bili-blue outline-none transition-all" />
           </div>
           <div>
-            <label class="block text-sm font-medium mb-1 text-gray-300">Artist</label>
-            <input v-model="form.artist" type="text" required class="w-full bg-gray-700 border-gray-600 rounded p-2 text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all" />
+            <label class="block text-sm font-bold mb-1.5 text-slate-600">歌手</label>
+            <input v-model="form.artist" type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 focus:ring-2 focus:ring-bili-blue/20 focus:border-bili-blue outline-none transition-all" />
           </div>
           <div>
-            <label class="block text-sm font-medium mb-1 text-gray-300">Cover URL</label>
-            <input v-model="form.coverUrl" type="url" required class="w-full bg-gray-700 border-gray-600 rounded p-2 text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all" />
+            <label class="block text-sm font-bold mb-1.5 text-slate-600">封面 URL</label>
+            <input v-model="form.coverUrl" type="url" required class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 focus:ring-2 focus:ring-bili-blue/20 focus:border-bili-blue outline-none transition-all" />
           </div>
           <div>
-            <label class="block text-sm font-medium mb-1 text-gray-300">Audio URL</label>
-            <input v-model="form.audioUrl" type="url" required class="w-full bg-gray-700 border-gray-600 rounded p-2 text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all" />
+            <label class="block text-sm font-bold mb-1.5 text-slate-600">音频 URL</label>
+            <input v-model="form.audioUrl" type="url" required class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 focus:ring-2 focus:ring-bili-blue/20 focus:border-bili-blue outline-none transition-all" />
           </div>
           <div>
-            <label class="block text-sm font-medium mb-1 text-gray-300">Difficulty</label>
-            <select v-model="form.difficulty" class="w-full bg-gray-700 border-gray-600 rounded p-2 text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent outline-none transition-all">
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
+            <label class="block text-sm font-bold mb-1.5 text-slate-600">难度</label>
+            <select v-model="form.difficulty" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-slate-800 focus:ring-2 focus:ring-bili-blue/20 focus:border-bili-blue outline-none transition-all">
+              <option value="easy">简单</option>
+              <option value="medium">中等</option>
+              <option value="hard">困难</option>
             </select>
           </div>
         </div>
-        <div class="flex gap-3 pt-4">
-          <button type="submit" class="bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-6 py-2 rounded-lg hover:from-cyan-500 hover:to-blue-500 font-medium transition-all shadow-[0_0_10px_rgba(8,145,178,0.3)]">
-            {{ isEditing ? 'Update' : 'Add' }}
+        <div class="flex gap-3 pt-2">
+          <button type="submit" class="bg-bili-blue text-white px-8 py-2.5 rounded-full hover:bg-bili-blue/90 font-bold transition-all shadow-sm">
+            {{ isEditing ? '更新' : '添加' }}
           </button>
-          <button v-if="isEditing" type="button" @click="resetForm" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-500 transition-all">
-            Cancel
+          <button v-if="isEditing" type="button" @click="resetForm" class="bg-slate-100 text-slate-600 border border-slate-200 px-8 py-2.5 rounded-full hover:bg-slate-200 font-bold transition-all">
+            取消
           </button>
         </div>
       </form>
     </div>
 
     <!-- List -->
-    <div class="bg-gray-800 border border-gray-700 p-6 rounded-xl shadow-lg">
-      <h2 class="text-xl font-semibold mb-4 text-cyan-400">Music List</h2>
-      <div class="overflow-x-auto">
+    <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
+      <h2 class="text-xl font-bold mb-5 text-slate-800">音乐列表</h2>
+      <div class="overflow-x-auto rounded-xl border border-slate-100">
         <table class="w-full text-left border-collapse">
           <thead>
-            <tr class="border-b border-gray-700 text-gray-400">
-              <th class="p-3">Title</th>
-              <th class="p-3">Artist</th>
-              <th class="p-3">Difficulty</th>
-              <th class="p-3">Actions</th>
+            <tr class="bg-slate-50 border-b border-slate-200 text-slate-500 font-bold text-sm">
+              <th class="p-4">标题</th>
+              <th class="p-4">歌手</th>
+              <th class="p-4">难度</th>
+              <th class="p-4">操作</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="music in musicStore.musics" :key="music.id" class="border-b border-gray-700/50 hover:bg-gray-700/30 transition-colors">
-              <td class="p-3 text-gray-200">{{ music.title }}</td>
-              <td class="p-3 text-gray-400">{{ music.artist }}</td>
-              <td class="p-3">
-                <span class="px-2 py-1 text-xs rounded border border-gray-600 capitalize text-gray-300">
-                  {{ music.difficulty }}
+            <tr v-for="music in musicStore.musics" :key="music.id" class="border-b border-slate-100 hover:bg-sky-50/50 transition-colors">
+              <td class="p-4 font-bold text-slate-800">{{ music.title }}</td>
+              <td class="p-4 text-slate-500 text-sm">{{ music.artist }}</td>
+              <td class="p-4">
+                <span class="px-2.5 py-1 text-[10px] font-black rounded-sm border"
+                      :class="{
+                        'bg-emerald-50 text-emerald-600 border-emerald-200': music.difficulty === 'easy',
+                        'bg-amber-50 text-amber-600 border-amber-200': music.difficulty === 'medium',
+                        'bg-rose-50 text-rose-600 border-rose-200': music.difficulty === 'hard'
+                      }">
+                  {{ music.difficulty === 'easy' ? '简单' : music.difficulty === 'medium' ? '中等' : '困难' }}
                 </span>
               </td>
-              <td class="p-3 space-x-3">
-                <button type="button" @click="editMusic(music)" class="text-cyan-500 hover:text-cyan-400 hover:underline">Edit</button>
-                <button type="button" @click="goToSentences(music.id)" class="text-emerald-500 hover:text-emerald-400 hover:underline">Sentences</button>
-                <button type="button" @click="deleteMusic(music.id)" class="text-red-500 hover:text-red-400 hover:underline">Delete</button>
+              <td class="p-4 space-x-4 text-sm font-bold">
+                <button type="button" @click="editMusic(music)" class="text-bili-blue hover:text-sky-600">编辑</button>
+                <button type="button" @click="goToSentences(music.id)" class="text-emerald-500 hover:text-emerald-600">句子</button>
+                <button type="button" @click="deleteMusic(music.id)" class="text-rose-500 hover:text-rose-600">删除</button>
               </td>
             </tr>
             <tr v-if="musicStore.musics.length === 0">
-              <td colspan="4" class="p-6 text-center text-gray-500">No music found. Add one above!</td>
+              <td colspan="4" class="p-8 text-center text-slate-400 font-medium">没有找到音乐。请在上方添加！</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+
+    <!-- Confirm Modal -->
+    <ConfirmModal 
+      :is-open="confirmModal.isOpen"
+      :title="confirmModal.title"
+      :message="confirmModal.message"
+      :is-danger="confirmModal.isDanger"
+      :confirm-text="confirmModal.confirmText"
+      :show-cancel="confirmModal.showCancel"
+      @confirm="confirmModal.onConfirm"
+      @cancel="confirmModal.isOpen = false"
+    />
   </div>
 </template>
