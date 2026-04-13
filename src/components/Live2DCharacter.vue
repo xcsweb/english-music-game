@@ -7,8 +7,8 @@
 <script setup lang="ts">
 import { ref, onMounted, watch, onBeforeUnmount } from 'vue'
 import * as PIXI from 'pixi.js'
-// Note: We use Cubism 4 since the Hiyori model requires it
-import { Live2DModel } from 'pixi-live2d-display/cubism4'
+import { Live2DModel } from 'pixi-live2d-display'
+import { useSettingsStore } from '../stores/settings'
 
 const props = defineProps<{
   gameState: 'memorize' | 'build' | 'success' | 'victory'
@@ -20,89 +20,123 @@ const props = defineProps<{
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 let app: PIXI.Application | null = null
 let model: Live2DModel | null = null
+const settingsStore = useSettingsStore()
 
-// Use official Haru model from jsDelivr
-const modelUrl = 'https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display/test/assets/haru/haru_greeter_t03.model3.json'
+const modelsInfo: Record<string, { url: string, scale: number, x: number, y: number, exp: Record<string, string | number>, mot: Record<string, string> }> = {
+  haru: {
+    url: 'https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display/test/assets/haru/haru_greeter_t03.model3.json',
+    scale: 0.12,
+    x: 200,
+    y: 200,
+    exp: { idle: 'f00', talk: 'f05', happy: 'f04', sad: 'f03', angry: 'f06' },
+    mot: { idle: 'Idle', tap: 'Tap', tapBody: 'TapBody' }
+  },
+  shizuku: {
+    url: 'https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display/test/assets/shizuku/shizuku.model.json',
+    scale: 0.2,
+    x: 100,
+    y: 100,
+    exp: { idle: 1, talk: 3, happy: 2, sad: 4, angry: 5 }, // Cubism 2 uses index or different strings, usually index for expressions
+    mot: { idle: 'idle', tap: 'tap_body', tapBody: 'tap_body' }
+  }
+}
+
+const loadModel = async () => {
+  if (!app) return
+  
+  const currentKey = settingsStore.live2dModel || 'haru'
+  const info = modelsInfo[currentKey]
+
+  // Cleanup old model
+  if (model) {
+    app.stage.removeChild(model as any)
+    model.destroy()
+    model = null
+  }
+
+  try {
+    model = await Live2DModel.from(info.url)
+    
+    ;(model as any).scale.set(info.scale)
+    ;(model as any).x = info.x
+    ;(model as any).y = info.y
+
+    app.stage.addChild(model as any)
+    model.motion(info.mot.idle)
+  } catch (error) {
+    console.error('Failed to load Live2D model:', error)
+  }
+}
 
 onMounted(async () => {
   if (!canvasRef.value) return
 
-  // 1. Init Pixi Application with webgl auto-detect enabled explicitly
   app = new PIXI.Application({
     view: canvasRef.value,
-    backgroundAlpha: 0, // Transparent background
+    backgroundAlpha: 0,
     width: 400,
     height: 600,
     autoStart: true,
   })
 
-  try {
-    // 2. Load the Live2D model
-    model = await Live2DModel.from(modelUrl)
-    
-    // 3. Set scale and position to fit the right corner
-    ;(model as any).scale.set(0.12) // Scale down further to fit the screen properly
-    ;(model as any).x = 200 // Move to the right
-    ;(model as any).y = 200 // Move down slightly
-
-    // Add model to stage
-    app.stage.addChild(model as any)
-
-    // Initial idle motion
-    model.motion('Idle')
-  } catch (error) {
-    console.error('Failed to load Live2D model:', error)
-  }
+  await loadModel()
 })
 
+watch(() => settingsStore.live2dModel, () => {
+  loadModel()
+})
+
+const getExp = (key: 'idle' | 'talk' | 'happy' | 'sad' | 'angry') => {
+  const currentKey = settingsStore.live2dModel || 'haru'
+  return modelsInfo[currentKey]?.exp[key]
+}
+
+const getMot = (key: 'idle' | 'tap' | 'tapBody') => {
+  const currentKey = settingsStore.live2dModel || 'haru'
+  return modelsInfo[currentKey]?.mot[key]
+}
+
 // Handle state changes and trigger respective motions
-// Available motions in typical Cubism4 models: Idle, TapBody, TapHead, etc.
-// We trigger expressions or motions to make her react to the user
 watch(() => props.gameState, (newState) => {
   if (!model) return
   if (newState === 'victory') {
-    // Success reaction (happy expression)
-    model.expression('f04')
-    model.motion('Tap')
+    model.expression(getExp('happy') as any)
+    model.motion(getMot('tap'))
   } else {
-    // Reset to idle
-    model.expression('f00')
-    model.motion('Idle')
+    model.expression(getExp('idle') as any)
+    model.motion(getMot('idle'))
   }
 })
 
 watch(() => props.isWrong, (isWrong) => {
   if (!model) return
   if (isWrong) {
-    // Sad/Wrong reaction
-    model.expression('f03')
-    model.motion('Tap')
+    model.expression(getExp('sad') as any)
+    model.motion(getMot('tap'))
   } else {
-    model.expression('f00')
+    model.expression(getExp('idle') as any)
   }
 })
 
 watch(() => props.gameState, (state) => {
   if (state === 'success' && model) {
-    model.expression('f05') // Happy
-    model.motion('TapBody') // React joyfully
+    model.expression(getExp('happy') as any)
+    model.motion(getMot('tapBody'))
   }
 })
 
 watch(() => props.isTimeout, (timeout) => {
   if (timeout && model) {
-    model.expression('f06') // Angry or worried
+    model.expression(getExp('angry') as any)
   }
 })
 
 watch(() => props.isPlaying, (playing) => {
   if (!model) return
   if (playing) {
-    // When audio plays, simulate singing/speaking by randomizing mouth open
-    // A proper lip-sync requires audio context, but this simple trick works visually
-    model.expression('f05')
+    model.expression(getExp('talk') as any)
   } else {
-    model.expression('f01')
+    model.expression(getExp('idle') as any)
   }
 })
 

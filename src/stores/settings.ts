@@ -6,6 +6,7 @@ export const useSettingsStore = defineStore('settings', {
     autoFillOnTimeout: true,
     autoProceedOnTimeout: true,
     enableLive2D: true,
+    live2dModel: 'haru',
   }),
   persist: true,
 })

@@ -127,6 +127,41 @@ const settingsStore = useSettingsStore()
               />
             </button>
           </div>
+
+          <!-- Character Selector (Only shown when Live2D is enabled) -->
+          <div v-if="settingsStore.enableLive2D" class="bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
+            <label class="text-slate-600 font-bold text-sm flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              选择姬娘
+            </label>
+            <div class="grid grid-cols-2 gap-3">
+              <button 
+                @click="settingsStore.live2dModel = 'haru'"
+                class="relative py-2.5 px-3 rounded-lg border text-sm font-bold flex flex-col items-center gap-1 transition-all"
+                :class="settingsStore.live2dModel === 'haru' ? 'border-bili-blue bg-sky-50 text-bili-blue shadow-sm' : 'border-slate-200 bg-white text-slate-500 hover:border-slate-300 hover:bg-slate-50'"
+              >
+                <span>Haru</span>
+                <span class="text-[10px] font-normal opacity-70">元气学妹</span>
+                <div v-if="settingsStore.live2dModel === 'haru'" class="absolute -top-1.5 -right-1.5 w-4 h-4 bg-bili-blue rounded-full flex items-center justify-center text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                </div>
+              </button>
+              
+              <button 
+                @click="settingsStore.live2dModel = 'shizuku'"
+                class="relative py-2.5 px-3 rounded-lg border text-sm font-bold flex flex-col items-center gap-1 transition-all"
+                :class="settingsStore.live2dModel === 'shizuku' ? 'border-bili-pink bg-pink-50 text-bili-pink shadow-sm' : 'border-slate-200 bg-white text-slate-500 hover:border-slate-300 hover:bg-slate-50'"
+              >
+                <span>Shizuku</span>
+                <span class="text-[10px] font-normal opacity-70">知性学姐</span>
+                <div v-if="settingsStore.live2dModel === 'shizuku'" class="absolute -top-1.5 -right-1.5 w-4 h-4 bg-bili-pink rounded-full flex items-center justify-center text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                </div>
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- Footer -->
