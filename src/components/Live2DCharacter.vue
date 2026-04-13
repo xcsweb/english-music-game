@@ -7,6 +7,7 @@
 <script setup lang="ts">
 import { ref, onMounted, watch, onBeforeUnmount } from 'vue'
 import * as PIXI from 'pixi.js-legacy'
+window.PIXI = PIXI
 // Note: We use Cubism 4 since the Hiyori model requires it
 import { Live2DModel } from 'pixi-live2d-display/cubism4'
 
@@ -27,7 +28,7 @@ const modelUrl = 'https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display/test/a
 onMounted(async () => {
   if (!canvasRef.value) return
 
-  // 1. Init Pixi Application
+  // 1. Init Pixi Application with webgl auto-detect enabled explicitly
   app = new PIXI.Application({
     view: canvasRef.value,
     backgroundAlpha: 0, // Transparent background
@@ -41,12 +42,12 @@ onMounted(async () => {
     model = await Live2DModel.from(modelUrl)
     
     // 3. Set scale and position to fit the right corner
-    model.scale.set(0.2) // Scale down
-    model.x = 0
-    model.y = 100 // Move down slightly
+    model.scale.set(0.12) // Scale down further to fit the screen properly
+    model.x = 200 // Move to the right
+    model.y = 200 // Move down slightly
 
-    // Add model to stage (bypass TS type error between Pixi v6 and v7 DisplayObject)
-    app.stage.addChild(model as unknown as PIXI.DisplayObject)
+    // Add model to stage
+    app.stage.addChild(model as any)
 
     // Initial idle motion
     model.motion('Idle')
@@ -109,9 +110,11 @@ watch(() => props.isPlaying, (playing) => {
 onBeforeUnmount(() => {
   if (model) {
     model.destroy()
+    model = null
   }
   if (app) {
-    app.destroy(false, { children: true })
+    app.destroy(false, true)
+    app = null
   }
 })
 </script>
