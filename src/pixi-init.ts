@@ -1,4 +1,4 @@
-import * as PIXI from 'pixi.js-legacy'
+import * as PIXI from 'pixi.js'
 
 // Force Vite to not tree-shake the renderers by explicitly registering them
 if (PIXI.extensions && PIXI.Renderer) {

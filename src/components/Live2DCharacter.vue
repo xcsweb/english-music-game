@@ -6,8 +6,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, watch, onBeforeUnmount } from 'vue'
-import * as PIXI from 'pixi.js-legacy'
-window.PIXI = PIXI
+import * as PIXI from 'pixi.js'
 // Note: We use Cubism 4 since the Hiyori model requires it
 import { Live2DModel } from 'pixi-live2d-display/cubism4'
 
@@ -42,9 +41,9 @@ onMounted(async () => {
     model = await Live2DModel.from(modelUrl)
     
     // 3. Set scale and position to fit the right corner
-    model.scale.set(0.12) // Scale down further to fit the screen properly
-    model.x = 200 // Move to the right
-    model.y = 200 // Move down slightly
+    ;(model as any).scale.set(0.12) // Scale down further to fit the screen properly
+    ;(model as any).x = 200 // Move to the right
+    ;(model as any).y = 200 // Move down slightly
 
     // Add model to stage
     app.stage.addChild(model as any)
