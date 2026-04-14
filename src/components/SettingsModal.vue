@@ -108,8 +108,8 @@ const settingsStore = useSettingsStore()
 
           <div class="h-px w-full bg-slate-100"></div>
 
-          <!-- Enable Live2D Character Toggle -->
-          <div class="flex items-center justify-between group">
+          <!-- Enable Live2D Character Toggle (Hidden on mobile) -->
+          <div class="hidden md:flex items-center justify-between group">
             <label class="text-slate-700 font-bold text-sm flex items-center gap-2 cursor-pointer" @click="settingsStore.enableLive2D = !settingsStore.enableLive2D">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -128,7 +128,8 @@ const settingsStore = useSettingsStore()
             </button>
           </div>
 
-          <div v-if="settingsStore.enableLive2D" class="bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
+          <!-- Character Selector (Only shown when Live2D is enabled, hidden on mobile) -->
+          <div v-if="settingsStore.enableLive2D" class="hidden md:block bg-slate-50 rounded-xl p-4 border border-slate-100 space-y-3">
             <label class="text-slate-600 font-bold text-sm flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
